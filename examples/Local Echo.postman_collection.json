@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Local Echo",
+    "description": "Import this collection and select the Local environment. Run your own echo service on port 3000, or change base_url to the API you want to test.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Echo",
+      "item": [
+        {
+          "name": "Send JSON",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"message\": \"Hello from API Manager\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": "{{base_url}}/echo"
+          }
+        }
+      ]
+    }
+  ]
+}
