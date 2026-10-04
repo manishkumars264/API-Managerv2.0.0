@@ -1,0 +1,9 @@
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+TimeoutError: Timeout 30000ms exceeded.
+    at _ProgressController.run (D:\Framework\API Manager v1.0.0\node_modules\playwright-core\lib\coreBundle.js:12360:32)
+    at DispatcherConnection.dispatch (D:\Framework\API Manager v1.0.0\node_modules\playwright-core\lib\coreBundle.js:19135:44)
+
+Node.js v24.19.0

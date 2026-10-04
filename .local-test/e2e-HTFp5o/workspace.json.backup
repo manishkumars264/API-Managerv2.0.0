@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "2f9330c2-cb06-42de-9cee-934233b42bff",
+      "name": "Imported APIs",
+      "description": "",
+      "folders": [],
+      "requests": [
+        {
+          "id": "3a0c387a-72b5-4b7f-9b58-8a7860e45852",
+          "name": "Imported email request",
+          "method": "GET",
+          "url": "http://127.0.0.1:59476/echo?email=changed@example.com&repeat=updated&repeat=two",
+          "params": [
+            {
+              "id": "4728b33a-0a1c-496c-9021-6c6e55ba8e6f",
+              "key": "email",
+              "value": "changed@example.com",
+              "enabled": true
+            },
+            {
+              "id": "b3dd7c4e-ac86-4936-a0a3-e93c794e2880",
+              "key": "repeat",
+              "value": "updated",
+              "enabled": true
+            },
+            {
+              "id": "ae8f6670-e37f-4886-864a-1f944c90295a",
+              "key": "repeat",
+              "value": "two",
+              "enabled": true
+            }
+          ],
+          "headers": [],
+          "body": {
+            "mode": "none",
+            "raw": "",
+            "language": "json",
+            "fields": []
+          },
+          "auth": {
+            "type": "none"
+          },
+          "description": "",
+          "collectionId": "2f9330c2-cb06-42de-9cee-934233b42bff"
+        },
+        {
+          "id": "6745f10c-d1f1-432a-afc0-cfc8f91bb23c",
+          "name": "Imported email request copy",
+          "method": "GET",
+          "url": "http://127.0.0.1:59476/echo?email=changed@example.com&repeat=updated&repeat=two",
+          "params": [
+            {
+              "id": "4728b33a-0a1c-496c-9021-6c6e55ba8e6f",
+              "key": "email",
+              "value": "changed@example.com",
+              "enabled": true
+            },
+            {
+              "id": "b3dd7c4e-ac86-4936-a0a3-e93c794e2880",
+              "key": "repeat",
+              "value": "updated",
+              "enabled": true
+            },
+            {
+              "id": "ae8f6670-e37f-4886-864a-1f944c90295a",
+              "key": "repeat",
+              "value": "two",
+              "enabled": true
+            }
+          ],
+          "headers": [],
+          "body": {
+            "mode": "none",
+            "raw": "",
+            "language": "json",
+            "fields": []
+          },
+          "auth": {
+            "type": "none"
+          },
+          "description": "",
+          "collectionId": "2f9330c2-cb06-42de-9cee-934233b42bff"
+        }
+      ],
+      "variables": [],
+      "auth": {
+        "type": "none"
+      }
+    }
+  ],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "3efd5b1e-d63d-44e9-9dff-60889358c1d6",
+      "request": {
+        "id": "b8c2c578-9bff-41ea-9b87-8d8599ceaa76",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "2393f98d-3069-48d9-bb0a-ea3649355675",
+      "request": {
+        "id": "3a0c387a-72b5-4b7f-9b58-8a7860e45852",
+        "name": "Imported email request",
+        "method": "GET",
+        "url": "http://127.0.0.1:59476/echo?email=changed@example.com&repeat=updated&repeat=two",
+        "params": [
+          {
+            "id": "4728b33a-0a1c-496c-9021-6c6e55ba8e6f",
+            "key": "email",
+            "value": "changed@example.com",
+            "enabled": true
+          },
+          {
+            "id": "b3dd7c4e-ac86-4936-a0a3-e93c794e2880",
+            "key": "repeat",
+            "value": "updated",
+            "enabled": true
+          },
+          {
+            "id": "ae8f6670-e37f-4886-864a-1f944c90295a",
+            "key": "repeat",
+            "value": "two",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "collectionId": "2f9330c2-cb06-42de-9cee-934233b42bff"
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "07b60902-bfdc-4096-8b03-09f4f60e5ab5",
+      "request": {
+        "id": "7713f536-1a8b-4e34-8ae9-0d8c7c3f5c07",
+        "name": "Imported email request copy",
+        "method": "GET",
+        "url": "http://127.0.0.1:59476/echo?email=changed@example.com&repeat=updated&repeat=two",
+        "params": [
+          {
+            "id": "4728b33a-0a1c-496c-9021-6c6e55ba8e6f",
+            "key": "email",
+            "value": "changed@example.com",
+            "enabled": true
+          },
+          {
+            "id": "b3dd7c4e-ac86-4936-a0a3-e93c794e2880",
+            "key": "repeat",
+            "value": "updated",
+            "enabled": true
+          },
+          {
+            "id": "ae8f6670-e37f-4886-864a-1f944c90295a",
+            "key": "repeat",
+            "value": "two",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "collectionId": "2f9330c2-cb06-42de-9cee-934233b42bff"
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "07b60902-bfdc-4096-8b03-09f4f60e5ab5",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

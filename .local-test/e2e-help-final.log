@@ -1,0 +1,55 @@
+
+Running 11 tests using 1 worker
+
+(node:22584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\workspace.spec.ts:68:1 › imports collections and environments, sends JSON, copies, zooms and downloads responses (45.5s)
+  ok  2 tests\e2e\workspace.spec.ts:113:1 › restores drafts, active tabs, editor mode, zoom, theme and overflowing tabs after close (41.3s)
+  ok  3 tests\e2e\workspace.spec.ts:145:1 › restores workspace backups with confirmation and supports native JSON import/export (15.0s)
+  ok  4 tests\e2e\workspace.spec.ts:165:1 › shows import and request errors, cancels requests, and isolates HTML preview (19.0s)
+  ok  5 tests\e2e\workspace.spec.ts:191:1 › runs inherited scripts and dynamic globals, restores history responses and replays within the 200-run cap (28.2s)
+  ok  6 tests\e2e\workspace.spec.ts:241:1 › configures SOAP, beautifies without rounding JSON, wraps editors and uses advanced authorization forms (27.9s)
+  ok  7 tests\e2e\workspace.spec.ts:281:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run (11.2s)
+  ok  8 tests\e2e\workspace.spec.ts:306:1 › a Cancel pointer action cannot resend after the response completes (4.4s)
+  ok  9 tests\e2e\workspace.spec.ts:326:1 › keeps response and console usable at the minimum window size and restores the layout (11.0s)
+  x  10 tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft (45.2s)
+(node:3616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 11 tests\e2e\workspace.spec.ts:420:1 › searches response text with highlighted matches, counts and Enter navigation (12.8s)
+
+
+  1) tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft 
+
+    TimeoutError: locator.screenshot: Timeout 29994.966000000015ms exceeded.
+    Call log:
+      - taking element screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+
+
+      408 |     expect(draft.searchParams.get('body')).toContain('Screenshots / videos:');
+      409 |     await dialog.locator('.api-help-panel').evaluate(element => { element.scrollTop = 0; });
+    > 410 |     await dialog.screenshot({ path: path.join(appRoot, 'docs', 'help.png') });
+          |                  ^
+      411 |     await app.evaluate(({ shell }) => { shell.openExternal = async () => { throw new Error('No default email app'); }; });
+      412 |     await dialog.getByRole('button', { name: 'Report bugs', exact: true }).click();
+      413 |     await expect(page.locator('.notice-stack')).toContainText('Set a default email app');
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:410:18
+
+    Error Context: test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\error-context.md
+
+    Error Context: test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft 
+  10 passed (4.4m)

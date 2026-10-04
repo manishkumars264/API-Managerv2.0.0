@@ -1,0 +1,66 @@
+{
+  "format": "api-manager",
+  "exportedAt": "2026-10-02T05:24:17.549Z",
+  "version": 1,
+  "collections": [],
+  "environments": [
+    {
+      "id": "5ba48adb-6e2a-4303-8e72-7921afc69f68",
+      "name": "Imported from file",
+      "variables": [
+        {
+          "id": "2706f7df-91b9-4399-bd74-e859173e9c9b",
+          "key": "base",
+          "value": "http://127.0.0.1:49475",
+          "enabled": true,
+          "extra": {
+            "postman": {}
+          }
+        }
+      ],
+      "extra": {
+        "postman": {}
+      }
+    }
+  ],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "3f924407-3b0e-47ac-8cba-ab676e58625d",
+      "request": {
+        "id": "2a8b7ec3-6625-4b53-b177-cc3c8110727b",
+        "name": "Restored workspace",
+        "method": "GET",
+        "url": "http://127.0.0.1:49475/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "3f924407-3b0e-47ac-8cba-ab676e58625d",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

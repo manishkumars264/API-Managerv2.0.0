@@ -1,0 +1,25 @@
+const fs = require('node:fs');
+let source = fs.readFileSync('.local-test/portable-help-cdp.cjs', 'utf8');
+const anchor = "    await help.getByRole('button', { name: 'Done', exact: true }).click();";
+if (source.split(anchor).length !== 2) throw new Error('Portable helper insertion point changed');
+source = source.replace(anchor, anchor + `
+    await expect.poll(() => page.evaluate(() => document.documentElement.dataset.accent)).toBe('blue');
+    await page.locator('.sidebar-rail').getByRole('button', { name: 'Settings', exact: true }).click();
+    await page.getByRole('radio', { name: 'Red', exact: true }).locator('..').click();
+    await page.getByRole('button', { name: 'Done', exact: true }).click();
+    await expect.poll(() => page.evaluate(() => ({ accent: document.documentElement.dataset.accent, saved: localStorage.getItem('api-manager-accent') }))).toEqual({ accent: 'red', saved: 'red' });
+    await page.getByRole('button', { name: 'Console', exact: true }).click();
+    await page.getByRole('separator', { name: 'Resize console' }).focus();
+    await page.keyboard.press('Home'); await page.keyboard.press('ArrowUp');
+    await expect.poll(() => page.evaluate(() => localStorage.getItem('api-manager-console-height'))).toBe('110');
+    await page.getByRole('button', { name: 'Close console', exact: true }).click();
+    await page.getByRole('button', { name: 'Request actions' }).click();
+    await page.getByRole('button', { name: 'Generate code…', exact: true }).click();
+    await expect(page.getByRole('combobox', { name: 'Code language' }).locator('option')).toHaveCount(6);
+    await page.getByRole('combobox', { name: 'Code language' }).selectOption('python');
+    await expect(page.getByRole('textbox', { name: 'Generated request code' })).toHaveValue(/http[.]client/);
+    await page.getByRole('button', { name: 'Done', exact: true }).click();
+`);
+source = source.replace('soapTransportAndPersistence:true,visualLimitation:', 'soapTransportAndPersistence:true,accentSetting:true,resizableConsole:true,codeGeneration:true,visualLimitation:');
+source = source.replace('portable-help-cdp-result.json', 'portable-options-cdp-result.json');
+fs.writeFileSync('.local-test/portable-options-cdp.cjs', source);

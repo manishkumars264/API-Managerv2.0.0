@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "actualPortable": true,
+  "wrapper": {
+    "id": 25324,
+    "started": "2026-10-03T04:37:45.1316142Z"
+  },
+  "executable": "C:\\Users\\mukes\\AppData\\Local\\Temp\\3KAZ4tQxiMRdFBP0vsPuhr43OoD\\API Manager.exe",
+  "profile": "D:\\Framework\\API Manager v1.0.0\\.local-test\\portable-cdp-profile-ku00yP",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "/json",
+      "bodyBytes": 0
+    },
+    {
+      "method": "POST",
+      "url": "/soap",
+      "contentType": "application/soap+xml; charset=utf-8; action=\"urn:PortableEcho\"",
+      "bodyBytes": 213
+    }
+  ],
+  "savedRuns": 2,
+  "jsonRendered": true,
+  "helpAndResponseSearch": true,
+  "soapTransportAndPersistence": true,
+  "visualLimitation": "Hidden renderer connected through CDP cannot have native background throttling disabled; SOAP Monaco redraw is not asserted."
+}

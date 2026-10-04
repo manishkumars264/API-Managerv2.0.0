@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [
+    {
+      "id": "wrap-local",
+      "name": "Local wrap environment",
+      "variables": [
+        {
+          "id": "b44e67de-2f63-4c74-9300-d82ac64b80dc",
+          "key": "query",
+          "value": "resolved",
+          "enabled": true
+        },
+        {
+          "id": "2297c03d-f347-4cda-9e5c-0e538770064b",
+          "key": "payload",
+          "value": "resolved body value",
+          "enabled": true
+        },
+        {
+          "id": "d8a25dc6-7550-4ea6-ac92-d68264dd5cca",
+          "key": "token",
+          "value": "resolved-token",
+          "enabled": true
+        },
+        {
+          "id": "1541d522-eb84-473b-9470-d56cd30ca9be",
+          "key": "header",
+          "value": "resolved-header",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "globals": [
+    {
+      "id": "6b2263eb-087a-49e3-a0bb-bed39effcac6",
+      "key": "base_url",
+      "value": "http://127.0.0.1:59858",
+      "enabled": true
+    }
+  ],
+  "activeEnvironmentId": "wrap-local",
+  "tabs": [
+    {
+      "id": "db9dadf0-ec59-4d6d-babb-66e89829b437",
+      "request": {
+        "id": "50e41a0b-b6a9-4295-bdcf-0b3d3d0d7f44",
+        "name": "Wrap and variables",
+        "method": "POST",
+        "url": "{{base_url}}/echo?from={{query}}",
+        "params": [],
+        "headers": [
+          {
+            "id": "f4d91f59-213a-4553-98a5-e4d3f3ca0b73",
+            "key": "X-Run-Guid",
+            "value": "{{header}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"value\":\"{{payload}}\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Body",
+      "responseTab": "Body:Raw",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "85c34c91-cf00-4ee1-999a-1da8b72986c9",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "72c29220-83a8-4f50-aa70-194663200802",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "8e49f662-ab92-4e8b-a21b-eb8c7035a7ca",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "fe2cd143-0df6-40fa-8b02-9da9179384e7",
+            "key": "Date",
+            "value": "Sat, 03 Oct 2026 04:38:13 GMT",
+            "enabled": true
+          },
+          {
+            "id": "52de5094-fae6-4c4d-81ba-67fa0e640ed9",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "e34a9638-a5c9-44e4-bcc3-276ffaaeda1d",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "09edbb7f-5fc2-4b11-93bb-ec16f4bbd95e",
+            "key": "Content-Length",
+            "value": "1550",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo?from=resolved\",\"body\":{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"},\"authorization\":\"Bearer resolved-token\",\"correlation\":\"resolved-header\",\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 183.75,
+        "size": 1550,
+        "url": "http://127.0.0.1:59858/echo?from=resolved",
+        "receivedAt": "2026-10-03T04:38:13.690Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "db9dadf0-ec59-4d6d-babb-66e89829b437",
+  "history": [
+    {
+      "id": "3f6cfb81-5247-4c5a-ae74-af60f3d96923",
+      "request": {
+        "id": "50e41a0b-b6a9-4295-bdcf-0b3d3d0d7f44",
+        "name": "Wrap and variables",
+        "method": "POST",
+        "url": "{{base_url}}/echo?from={{query}}",
+        "params": [],
+        "headers": [
+          {
+            "id": "f4d91f59-213a-4553-98a5-e4d3f3ca0b73",
+            "key": "X-Run-Guid",
+            "value": "{{header}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"value\":\"{{payload}}\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "85c34c91-cf00-4ee1-999a-1da8b72986c9",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "72c29220-83a8-4f50-aa70-194663200802",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "8e49f662-ab92-4e8b-a21b-eb8c7035a7ca",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "fe2cd143-0df6-40fa-8b02-9da9179384e7",
+            "key": "Date",
+            "value": "Sat, 03 Oct 2026 04:38:13 GMT",
+            "enabled": true
+          },
+          {
+            "id": "52de5094-fae6-4c4d-81ba-67fa0e640ed9",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "e34a9638-a5c9-44e4-bcc3-276ffaaeda1d",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "09edbb7f-5fc2-4b11-93bb-ec16f4bbd95e",
+            "key": "Content-Length",
+            "value": "1550",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo?from=resolved\",\"body\":{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"},\"authorization\":\"Bearer resolved-token\",\"correlation\":\"resolved-header\",\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 183.75,
+        "size": 1550,
+        "url": "http://127.0.0.1:59858/echo?from=resolved",
+        "receivedAt": "2026-10-03T04:38:13.690Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-03T04:38:13.690Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

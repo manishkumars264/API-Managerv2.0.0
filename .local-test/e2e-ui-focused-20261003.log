@@ -1,0 +1,47 @@
+
+Running 2 tests using 1 worker
+
+(node:28804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:231:1 › persists independent request and response wrapping while resolving variables without inline announcements (23.6s)
+  x  2 tests\e2e\workspace.spec.ts:566:1 › searches response text with highlighted matches, cyclic navigation and tooltips below controls (39.7s)
+
+
+  1) tests\e2e\workspace.spec.ts:566:1 › searches response text with highlighted matches, cyclic navigation and tooltips below controls 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.response-body .monaco-hover[data-api-manager-find-tooltip="true"][role="tooltip"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.response-body .monaco-hover[data-api-manager-find-tooltip="true"][role="tooltip"]') with timeout 10000ms
+      - waiting for locator('.response-body .monaco-hover[data-api-manager-find-tooltip="true"][role="tooltip"]')
+
+
+      592 |     await find.locator('.monaco-custom-toggle').first().hover();
+      593 |     const findTooltip = page.locator('.response-body .monaco-hover[data-api-manager-find-tooltip="true"][role="tooltip"]');
+    > 594 |     await expect(findTooltip).toBeVisible();
+          |                               ^
+      595 |     await expect.poll(async () => (await findTooltip.boundingBox())?.y ?? 0).toBeGreaterThanOrEqual(findBox.y + findBox.height + 6);
+      596 |     const tip = (await findTooltip.boundingBox())!;
+      597 |     expect(tip.x).toBeGreaterThanOrEqual(0);
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:594:31
+
+    Error Context: test-results\workspace-searches-respons-e3ade-and-tooltips-below-controls\error-context.md
+
+    Error Context: test-results\workspace-searches-respons-e3ade-and-tooltips-below-controls\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-searches-respons-e3ade-and-tooltips-below-controls\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-searches-respons-e3ade-and-tooltips-below-controls\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace.spec.ts:566:1 › searches response text with highlighted matches, cyclic navigation and tooltips below controls 
+  1 passed (1.1m)

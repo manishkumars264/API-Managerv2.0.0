@@ -1,0 +1,9 @@
+
+Running 2 tests using 1 worker
+
+(node:27240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:64:1 › imports collections and environments, sends JSON, copies, zooms and downloads responses (45.3s)
+  ok 2 tests\e2e\workspace.spec.ts:161:1 › shows import and request errors, cancels requests, and isolates HTML preview (19.1s)
+
+  2 passed (1.1m)

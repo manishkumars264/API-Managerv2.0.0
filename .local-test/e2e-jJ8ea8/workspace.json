@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [
+    {
+      "id": "6c4447f0-9d30-4117-8b4d-d6edddbb8e1b",
+      "key": "base_url",
+      "value": "http://127.0.0.1:51497",
+      "enabled": true
+    },
+    {
+      "id": "33e4eef2-7a0d-4aaf-a65c-58884201fc92",
+      "key": "token",
+      "value": "resolved-run-token",
+      "enabled": true
+    }
+  ],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "80dc98c4-6be2-4ace-b337-fe662db7f176",
+      "request": {
+        "id": "5096083e-fffa-4967-ae1a-c11e36e54801",
+        "name": "Captured API",
+        "method": "POST",
+        "url": "http://127.0.0.1:51497/echo?edited=later",
+        "params": [
+          {
+            "id": "c452bdca-814f-491d-932e-13614f96c365",
+            "key": "edited",
+            "value": "later",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"message\":\"{{sent_value}}\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": "",
+        "scripts": {
+          "preRequest": "pm.variables.set(\"sent_value\", \"captured-body\"); pm.request.headers.upsert({key:\"X-Run-Guid\", value:\"captured-header\"});",
+          "postResponse": ""
+        }
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "c2b0b0f0-fa39-407e-a40b-38e4b6bf3dc1",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "7e3f7e7c-2667-4227-91d5-66ee99991d88",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "833cf614-d319-45c5-8e5d-7e4b5b2e0564",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "bc83b16c-f5b1-422b-9d65-f3c654206ab2",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:24:32 GMT",
+            "enabled": true
+          },
+          {
+            "id": "1236dc93-cd1a-4bcd-89e1-1afb53d8c41f",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "eb678e5a-58ca-4c11-a5f8-cebe50093807",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "01058cd8-fde0-48b8-9493-505f17ac586f",
+            "key": "Content-Length",
+            "value": "226",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo\",\"body\":{\"message\":\"captured-body\"},\"authorization\":\"Bearer resolved-run-token\",\"correlation\":\"captured-header\",\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 47.61,
+        "size": 226,
+        "url": "http://127.0.0.1:51497/echo",
+        "receivedAt": "2026-10-04T03:24:32.065Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:51497/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:51497/echo' \\\n  --data-binary '{\"message\":\"captured-body\"}' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:51497' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: captured-header' \\\n  --header 'Authorization: Bearer resolved-run-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 27'"
+      }
+    }
+  ],
+  "activeTabId": "80dc98c4-6be2-4ace-b337-fe662db7f176",
+  "history": [
+    {
+      "id": "ca097d86-50c8-4dfa-a527-bafb1660a7ed",
+      "request": {
+        "id": "5096083e-fffa-4967-ae1a-c11e36e54801",
+        "name": "Captured API",
+        "method": "POST",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "script-1791084271920-2aec00dc7403a",
+            "key": "X-Run-Guid",
+            "value": "captured-header",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"message\":\"{{sent_value}}\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": "",
+        "scripts": {
+          "preRequest": "pm.variables.set(\"sent_value\", \"captured-body\"); pm.request.headers.upsert({key:\"X-Run-Guid\", value:\"captured-header\"});",
+          "postResponse": ""
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "c2b0b0f0-fa39-407e-a40b-38e4b6bf3dc1",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "7e3f7e7c-2667-4227-91d5-66ee99991d88",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "833cf614-d319-45c5-8e5d-7e4b5b2e0564",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "bc83b16c-f5b1-422b-9d65-f3c654206ab2",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:24:32 GMT",
+            "enabled": true
+          },
+          {
+            "id": "1236dc93-cd1a-4bcd-89e1-1afb53d8c41f",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "eb678e5a-58ca-4c11-a5f8-cebe50093807",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "01058cd8-fde0-48b8-9493-505f17ac586f",
+            "key": "Content-Length",
+            "value": "226",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo\",\"body\":{\"message\":\"captured-body\"},\"authorization\":\"Bearer resolved-run-token\",\"correlation\":\"captured-header\",\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 47.61,
+        "size": 226,
+        "url": "http://127.0.0.1:51497/echo",
+        "receivedAt": "2026-10-04T03:24:32.065Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:51497/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:51497/echo' \\\n  --data-binary '{\"message\":\"captured-body\"}' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:51497' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: captured-header' \\\n  --header 'Authorization: Bearer resolved-run-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 27'"
+      },
+      "timestamp": "2026-10-04T03:24:32.065Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:51497/echo' \\\n  --data-binary '{\"message\":\"captured-body\"}' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:51497' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: captured-header' \\\n  --header 'Authorization: Bearer resolved-run-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 27'",
+      "requestUrl": "http://127.0.0.1:51497/echo"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

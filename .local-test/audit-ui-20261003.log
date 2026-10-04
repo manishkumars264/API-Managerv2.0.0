@@ -1,0 +1,40 @@
+# npm audit report
+
+http-cache-semantics  *
+Severity: high
+http-cache-semantics max-stale handling can disclose cross-user cached responses - https://github.com/advisories/GHSA-ch52-4w7c-c8xp
+fix available via `npm audit fix --force`
+Will install electron-builder@26.5.0, which is a breaking change
+node_modules/http-cache-semantics
+  cacheable-request  >=0.1.0
+  Depends on vulnerable versions of http-cache-semantics
+  node_modules/cacheable-request
+    got  >=8.0.0
+    Depends on vulnerable versions of cacheable-request
+    node_modules/got
+      @electron/get  <=4.0.3
+      Depends on vulnerable versions of got
+      node_modules/app-builder-lib/node_modules/@electron/get
+        app-builder-lib  26.6.0 - 27.0.0-alpha.2
+        Depends on vulnerable versions of @electron/get
+        Depends on vulnerable versions of dmg-builder
+        Depends on vulnerable versions of electron-builder-squirrel-windows
+        node_modules/app-builder-lib
+          dmg-builder  26.6.0 - 27.0.0-alpha.2
+          Depends on vulnerable versions of app-builder-lib
+          node_modules/dmg-builder
+            electron-builder  19.25.0 || 26.6.0 - 27.0.0-alpha.2
+            Depends on vulnerable versions of app-builder-lib
+            Depends on vulnerable versions of dmg-builder
+            node_modules/electron-builder
+          electron-builder-squirrel-windows  26.6.0 - 27.0.0-alpha.2
+          Depends on vulnerable versions of app-builder-lib
+          node_modules/electron-builder-squirrel-windows
+
+8 high severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force

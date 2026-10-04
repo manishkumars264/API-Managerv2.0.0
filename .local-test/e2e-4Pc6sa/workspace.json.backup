@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "code-collection",
+      "name": "Code collection",
+      "description": "",
+      "requests": [
+        {
+          "id": "ceaee565-2bab-445b-bd9a-60b5523cfe69",
+          "name": "Generated example",
+          "method": "POST",
+          "url": "{{base_url}}/echo?repeat=old",
+          "params": [
+            {
+              "id": "3dbc839a-d81e-40a8-8d3a-580e59c1a5bf",
+              "key": "repeat",
+              "value": "one",
+              "enabled": true
+            },
+            {
+              "id": "673e1093-381e-44ae-81f2-bc316fbb9cc8",
+              "key": "repeat",
+              "value": "two",
+              "enabled": true
+            }
+          ],
+          "headers": [
+            {
+              "id": "fe64b56a-f442-4ce9-a644-2db91701e7e7",
+              "key": "X-Custom",
+              "value": "{{header_value}}",
+              "enabled": true
+            },
+            {
+              "id": "0e6deb7c-e3eb-499f-8481-c32a9b9fb1eb",
+              "key": "Disabled",
+              "value": "excluded",
+              "enabled": false
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "language": "json",
+            "raw": "{\"message\":\"{{body_value}}\"}",
+            "fields": []
+          },
+          "auth": {
+            "type": "inherit"
+          },
+          "description": "",
+          "collectionId": "code-collection"
+        }
+      ],
+      "folders": [],
+      "variables": [],
+      "auth": {
+        "type": "bearer",
+        "token": "{{token}}"
+      }
+    }
+  ],
+  "environments": [],
+  "globals": [
+    {
+      "id": "9b1635e2-c38b-4a2b-9282-c7f64893f792",
+      "key": "base_url",
+      "value": "http://127.0.0.1:60409",
+      "enabled": true
+    },
+    {
+      "id": "e8015575-e178-4aca-ad48-eb038d8efe3c",
+      "key": "header_value",
+      "value": "generated-header",
+      "enabled": true
+    },
+    {
+      "id": "3e4a8cc2-b98c-4314-ab26-9a01cc00a8cc",
+      "key": "body_value",
+      "value": "generated-body",
+      "enabled": true
+    },
+    {
+      "id": "c76a3e3b-23ac-45f3-91a9-5cefcdd0d7c9",
+      "key": "token",
+      "value": "generated-token",
+      "enabled": true
+    }
+  ],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "128a7563-2510-4f59-8276-f2bc1fa79d12",
+      "request": {
+        "id": "ceaee565-2bab-445b-bd9a-60b5523cfe69",
+        "name": "Generated example",
+        "method": "POST",
+        "url": "{{base_url}}/echo?repeat=old",
+        "params": [
+          {
+            "id": "3dbc839a-d81e-40a8-8d3a-580e59c1a5bf",
+            "key": "repeat",
+            "value": "one",
+            "enabled": true
+          },
+          {
+            "id": "673e1093-381e-44ae-81f2-bc316fbb9cc8",
+            "key": "repeat",
+            "value": "two",
+            "enabled": true
+          }
+        ],
+        "headers": [
+          {
+            "id": "fe64b56a-f442-4ce9-a644-2db91701e7e7",
+            "key": "X-Custom",
+            "value": "{{header_value}}",
+            "enabled": true
+          },
+          {
+            "id": "0e6deb7c-e3eb-499f-8481-c32a9b9fb1eb",
+            "key": "Disabled",
+            "value": "excluded",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"message\":\"{{body_value}}\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "code-collection"
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "128a7563-2510-4f59-8276-f2bc1fa79d12",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

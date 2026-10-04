@@ -1,0 +1,79 @@
+
+Running 5 tests using 1 worker
+
+(node:26708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:779:1 › imports cURL query params, preserves literal email, saves updates, and duplicates within the collection (24.8s)
+  ok 2 tests\e2e\workspace.spec.ts:819:1 › shows fresh HTTP error and empty bodies and clears the old response on connection failure (28.2s)
+  x  3 tests\e2e\workspace.spec.ts:841:1 › imports structured and inline collection params and duplicates a saved folder request (20.7s)
+(node:31316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  4 tests\e2e\workspace.spec.ts:860:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values (50.0s)
+(node:25420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 5 tests\e2e\workspace.spec.ts:908:1 › console retains the cURL actually sent after scripts and variable resolution (13.9s)
+
+
+  1) tests\e2e\workspace.spec.ts:841:1 › imports structured and inline collection params and duplicates a saved folder request 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "/echo?email=a%40b.com&inline=yes"
+    Received: "/echo?inline=yes&email=a%40b.com"
+
+    Call Log:
+    - Timeout 10000ms exceeded while waiting on the predicate
+
+      848 |     await page.getByRole('button', { name: 'Send', exact: true }).click();
+      849 |     await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+    > 850 |     await expect.poll(async () => { try { return JSON.parse((await readWorkspace(dataDir)).history[0].response!.body).path; } catch { return ''; } }).toBe('/echo?email=a%40b.com&inline=yes');
+          |                                                                                                                                                       ^
+      851 |     const tabs = await page.getByRole('tab').count();
+      852 |     await page.getByRole('button', { name: 'Actions for Query API', exact: true }).click(); await page.getByRole('button', { name: 'Duplicate request', exact: true }).click();
+      853 |     await expect(page.getByRole('tab')).toHaveCount(tabs);
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:850:151
+
+    Error Context: test-results\workspace-imports-structur-03156-ates-a-saved-folder-request\error-context.md
+
+    Error Context: test-results\workspace-imports-structur-03156-ates-a-saved-folder-request\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-imports-structur-03156-ates-a-saved-folder-request\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-imports-structur-03156-ates-a-saved-folder-request\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\workspace.spec.ts:860:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values 
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Development', exact: true })
+
+
+      891 |     await expect.poll(async () => { try { return JSON.parse((await readWorkspace(dataDir)).history[0].response!.body).authorization; } catch { return ''; } }).toBe('Bearer saved-global');
+      892 |     await page.getByRole('button', { name: 'Environments', exact: true }).click();
+    > 893 |     await page.getByRole('button', { name: 'Development', exact: true }).click();
+          |                                                                          ^
+      894 |     await page.locator('.environment-panel').getByRole('textbox', { name: 'Value', exact: true }).fill('full-editor-token');
+      895 |     await page.getByRole('button', { name: 'Save environment', exact: true }).click();
+      896 |     await page.getByRole('button', { name: 'Set active', exact: true }).click();
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:893:74
+
+    Error Context: test-results\workspace-edits-environmen-f67aa-le-scope-and-current-values\error-context.md
+
+    Error Context: test-results\workspace-edits-environmen-f67aa-le-scope-and-current-values\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-edits-environmen-f67aa-le-scope-and-current-values\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-edits-environmen-f67aa-le-scope-and-current-values\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\e2e\workspace.spec.ts:841:1 › imports structured and inline collection params and duplicates a saved folder request 
+    tests\e2e\workspace.spec.ts:860:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values 
+  3 passed (2.4m)

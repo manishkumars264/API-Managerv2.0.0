@@ -1,0 +1,43 @@
+
+Running 2 tests using 1 worker
+
+(node:7032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:185:1 › runs inherited scripts and dynamic globals, restores history responses and replays within the 200-run cap (33.1s)
+  x  2 tests\e2e\workspace.spec.ts:275:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run (23.8s)
+
+
+  1) tests\e2e\workspace.spec.ts:275:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Request cancelled."
+    Received: undefined
+
+    Call Log:
+    - Timeout 10000ms exceeded while waiting on the predicate
+
+      292 |     await expect(page.locator('.console-run-url')).toContainText('/slow');
+      293 |     await page.locator('.url-bar').getByRole('button', { name: 'Cancel', exact: true }).click();
+    > 294 |     await expect.poll(async () => { try { return (await readWorkspace(dataDir)).history[0]?.error; } catch { return ''; } }).toBe('Request cancelled.');
+          |                                                                                                                              ^
+      295 |     expect((await readWorkspace(dataDir)).history[0].request.url).toBe(`${baseUrl}/slow?long`);
+      296 |     await expect(page.locator('.console-list')).toContainText('Request cancelled.');
+      297 |   } finally { await cleanup(app); }
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:294:126
+
+    Error Context: test-results\workspace-keeps-OAuth-acqu-8ab2d-table-cancelled-console-run\error-context.md
+
+    Error Context: test-results\workspace-keeps-OAuth-acqu-8ab2d-table-cancelled-console-run\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-keeps-OAuth-acqu-8ab2d-table-cancelled-console-run\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-keeps-OAuth-acqu-8ab2d-table-cancelled-console-run\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace.spec.ts:275:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run 
+  1 passed (57.7s)

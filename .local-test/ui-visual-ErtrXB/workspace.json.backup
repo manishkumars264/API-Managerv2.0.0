@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "91f715d5-fa72-4e14-92b4-5b896355292c",
+      "request": {
+        "id": "ab6f865d-5d53-430c-bebc-2a2207cb2159",
+        "name": "Get customers",
+        "method": "GET",
+        "url": "https://api.example.com/customers",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "duration": 42,
+        "size": 180,
+        "url": "https://api.example.com/customers",
+        "receivedAt": "2026-10-03T04:28:32.519Z",
+        "headers": [
+          {
+            "id": "889d28da-3b8a-4950-a83a-b3060b9d5a78",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "body": "{\"customers\":[{\"id\":1,\"name\":\"Asha\",\"status\":\"active\"},{\"id\":2,\"name\":\"Ravi\",\"status\":\"active\"}],\"total\":2}"
+      }
+    },
+    {
+      "id": "37d037af-61b2-418a-9436-8b8cfdd9bdd7",
+      "request": {
+        "id": "ff1dc50e-eb92-45da-8b17-da0545d774b5",
+        "name": "Create customer",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "e726a169-be73-4193-844c-0fc66ed6b95f",
+      "request": {
+        "id": "59eddd50-c969-4c11-bf8e-6babefd307ef",
+        "name": "Update order",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "aac009a8-a9b7-4830-897a-deaae9a3422c",
+      "request": {
+        "id": "42d3aacc-822f-4e42-9987-e4728fd693ef",
+        "name": "Product details",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "ff93c3d2-121e-463b-ba1e-416ee88c6518",
+      "request": {
+        "id": "1eb858f5-4723-450f-a0d0-bdb0c266d3d8",
+        "name": "SOAP customer",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "e3aea018-5413-4723-a5cc-d1fc0cd2cda2",
+      "request": {
+        "id": "0b173b99-0cad-451b-95f6-a077459aa1d7",
+        "name": "Local health",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "da468e69-5f3e-4ba8-9f75-b162fc9976db",
+      "request": {
+        "id": "aaab6f03-59dc-41d7-b084-3d73cd57ee65",
+        "name": "Search products",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "91f715d5-fa72-4e14-92b4-5b896355292c",
+  "history": [],
+  "settings": {
+    "theme": "light",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

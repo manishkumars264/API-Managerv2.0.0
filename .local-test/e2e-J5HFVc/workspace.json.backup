@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [
+    {
+      "id": "wrap-local",
+      "name": "Local wrap environment",
+      "variables": [
+        {
+          "id": "a8e6652c-cf79-410b-a353-1ac7f3305850",
+          "key": "query",
+          "value": "resolved",
+          "enabled": true
+        },
+        {
+          "id": "a3de719e-e7f2-4159-8a65-2467b7a39445",
+          "key": "payload",
+          "value": "resolved body value",
+          "enabled": true
+        },
+        {
+          "id": "d68fa30f-c7b8-4360-8f51-4f3f42b3a1e1",
+          "key": "token",
+          "value": "resolved-token",
+          "enabled": true
+        },
+        {
+          "id": "8effafbc-b36b-4335-9a15-e86a736dd43b",
+          "key": "header",
+          "value": "resolved-header",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "globals": [
+    {
+      "id": "818cd9d4-3767-46f9-b3dc-ba17f6bca8c0",
+      "key": "base_url",
+      "value": "http://127.0.0.1:49561",
+      "enabled": true
+    }
+  ],
+  "activeEnvironmentId": "wrap-local",
+  "tabs": [
+    {
+      "id": "07ce456b-ba71-4bf3-97c1-05e5df3965e6",
+      "request": {
+        "id": "10ad5217-35a5-4d57-bf74-eabd285f4fc9",
+        "name": "Wrap and variables",
+        "method": "POST",
+        "url": "{{base_url}}/echo?from={{query}}",
+        "params": [
+          {
+            "id": "f3fd9103-1605-478a-bf14-36cdec0cde18",
+            "key": "from",
+            "value": "{{query}}",
+            "enabled": true
+          }
+        ],
+        "headers": [
+          {
+            "id": "8c024c4b-bc1c-44ce-b411-a76bec59a1e8",
+            "key": "X-Run-Guid",
+            "value": "{{header}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"value\":\"{{payload}}\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Body",
+      "responseTab": "Body:Raw",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "83cf74ec-1780-473b-81e6-fc9e08ddf3e7",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "0bf6d643-ff7a-4044-9254-ffeda9905b66",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "20917e23-9f2b-427c-9102-da7402a90d78",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "cae905b2-a5f7-4a66-8fb9-7878a9a13cb8",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:39:55 GMT",
+            "enabled": true
+          },
+          {
+            "id": "60eefb19-0375-400d-9e52-ea09cf7d8b52",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "d040e40f-e522-4770-82b4-44128fb488f4",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "5672f1cc-e25a-4722-a456-e7aecad3a5e5",
+            "key": "Content-Length",
+            "value": "1550",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo?from=resolved\",\"body\":{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"},\"authorization\":\"Bearer resolved-token\",\"correlation\":\"resolved-header\",\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 114.3,
+        "size": 1550,
+        "url": "http://127.0.0.1:49561/echo?from=resolved",
+        "receivedAt": "2026-10-04T03:39:55.417Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:49561/echo?from=resolved",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:49561/echo?from=resolved' \\\n  --data-binary '{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:49561' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: resolved-header' \\\n  --header 'Authorization: Bearer resolved-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 1341'"
+      }
+    }
+  ],
+  "activeTabId": "07ce456b-ba71-4bf3-97c1-05e5df3965e6",
+  "history": [
+    {
+      "id": "9359d0ae-284d-488d-b6ee-5890df9fcced",
+      "request": {
+        "id": "10ad5217-35a5-4d57-bf74-eabd285f4fc9",
+        "name": "Wrap and variables",
+        "method": "POST",
+        "url": "{{base_url}}/echo?from={{query}}",
+        "params": [
+          {
+            "id": "f3fd9103-1605-478a-bf14-36cdec0cde18",
+            "key": "from",
+            "value": "{{query}}",
+            "enabled": true
+          }
+        ],
+        "headers": [
+          {
+            "id": "8c024c4b-bc1c-44ce-b411-a76bec59a1e8",
+            "key": "X-Run-Guid",
+            "value": "{{header}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"value\":\"{{payload}}\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "83cf74ec-1780-473b-81e6-fc9e08ddf3e7",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "0bf6d643-ff7a-4044-9254-ffeda9905b66",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "20917e23-9f2b-427c-9102-da7402a90d78",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "cae905b2-a5f7-4a66-8fb9-7878a9a13cb8",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:39:55 GMT",
+            "enabled": true
+          },
+          {
+            "id": "60eefb19-0375-400d-9e52-ea09cf7d8b52",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "d040e40f-e522-4770-82b4-44128fb488f4",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "5672f1cc-e25a-4722-a456-e7aecad3a5e5",
+            "key": "Content-Length",
+            "value": "1550",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo?from=resolved\",\"body\":{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"},\"authorization\":\"Bearer resolved-token\",\"correlation\":\"resolved-header\",\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 114.3,
+        "size": 1550,
+        "url": "http://127.0.0.1:49561/echo?from=resolved",
+        "receivedAt": "2026-10-04T03:39:55.417Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:49561/echo?from=resolved",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:49561/echo?from=resolved' \\\n  --data-binary '{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:49561' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: resolved-header' \\\n  --header 'Authorization: Bearer resolved-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 1341'"
+      },
+      "timestamp": "2026-10-04T03:39:55.417Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:49561/echo?from=resolved' \\\n  --data-binary '{\"value\":\"resolved body value\",\"long\":\"long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-long-content-\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:49561' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: resolved-header' \\\n  --header 'Authorization: Bearer resolved-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 1341'",
+      "requestUrl": "http://127.0.0.1:49561/echo?from=resolved"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

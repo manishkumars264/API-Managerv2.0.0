@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "f4b23bde-12f9-4cad-b40a-9ac174c4fc48",
+      "request": {
+        "id": "73adb5a9-bef3-4ec6-8399-ad9f375e684e",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:52168/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "5bde2a89-ff49-4a2e-ab8e-b96ab1c1d136",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "618b5bd4-c4a0-4caa-8715-a2b557e4b9c7",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "c586f79a-59c6-4185-b7ca-70e89f624c62",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "4ae8a198-4543-478b-8c61-ec22358a749e",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:21:10 GMT",
+            "enabled": true
+          },
+          {
+            "id": "2d27f983-7da4-4bac-a923-a7ea6b8023dc",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "a1845164-9775-49af-981f-4ae6ed9d2949",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "5bb38e5e-4ab1-4497-bce5-e8c7a3faa59d",
+            "key": "Content-Length",
+            "value": "152",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 169.53,
+        "size": 152,
+        "url": "http://127.0.0.1:52168/echo",
+        "receivedAt": "2026-10-02T16:21:10.607Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "f4b23bde-12f9-4cad-b40a-9ac174c4fc48",
+  "history": [
+    {
+      "id": "165190fb-ad05-45f5-8831-06be7dcbce7d",
+      "request": {
+        "id": "73adb5a9-bef3-4ec6-8399-ad9f375e684e",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:52168/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "5bde2a89-ff49-4a2e-ab8e-b96ab1c1d136",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "618b5bd4-c4a0-4caa-8715-a2b557e4b9c7",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "c586f79a-59c6-4185-b7ca-70e89f624c62",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "4ae8a198-4543-478b-8c61-ec22358a749e",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:21:10 GMT",
+            "enabled": true
+          },
+          {
+            "id": "2d27f983-7da4-4bac-a923-a7ea6b8023dc",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "a1845164-9775-49af-981f-4ae6ed9d2949",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "5bb38e5e-4ab1-4497-bce5-e8c7a3faa59d",
+            "key": "Content-Length",
+            "value": "152",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 169.53,
+        "size": 152,
+        "url": "http://127.0.0.1:52168/echo",
+        "receivedAt": "2026-10-02T16:21:10.607Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T16:21:10.607Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

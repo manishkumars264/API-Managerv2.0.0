@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "c28e7898-1b9d-41ef-95c3-e6aa52f99fea",
+      "request": {
+        "id": "fe2784ea-3114-4caf-b00d-d40a5f87f1df",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "tokenUrl": "http://127.0.0.1:65399/token?delay",
+            "clientId": "client",
+            "clientSecret": "secret",
+            "grantType": "client_credentials",
+            "accessToken": "acquired-ui-token",
+            "refreshToken": "refresh-ui-token",
+            "tokenType": "Bearer"
+          },
+          "token": "acquired-ui-token"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Authorization",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "f9ae0563-2a33-4df0-8eb1-d8851c28d26e",
+      "request": {
+        "id": "25d9f036-076c-4653-9420-25f1df04559e",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:65399/edited-after-send",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "activeTabId": "f9ae0563-2a33-4df0-8eb1-d8851c28d26e",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

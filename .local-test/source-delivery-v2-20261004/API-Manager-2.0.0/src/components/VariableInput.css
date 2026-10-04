@@ -1,0 +1,28 @@
+.variable-input { position: relative; display: inline-flex; min-width: 0; width: 100%; }
+.variable-input > input, .variable-input > textarea { min-width: 0; width: 100%; }
+.url-bar > .variable-input { flex: 1; width: auto; min-width: 0; }
+.url-bar > .variable-input > input { min-width: 0; flex: 1; border: 0; padding: 11px 13px; font-size: 12px; font-family: Consolas, 'Cascadia Code', monospace; }
+.variable-input.variable-highlighted > input, .variable-input.variable-highlighted > textarea { color: transparent; caret-color: var(--text); }
+.variable-input > input::placeholder, .variable-input > textarea::placeholder { color: var(--muted); }
+.variable-input-mirror { position: absolute; display: flex; align-items: center; overflow: hidden; color: var(--text); pointer-events: none; }
+.variable-input-content { display: block; flex: 1; min-width: 0; white-space: pre; }
+.variable-textarea .variable-input-mirror { align-items: flex-start; }
+.variable-textarea .variable-input-content { overflow-wrap: break-word; }
+.variable-token { color: var(--orange); background: var(--orange-soft); border-radius: 2px; }
+.variable-token.variable-missing, .variable-token.variable-error { color: var(--red); background: #ba454518; text-decoration: underline dotted; }
+.variable-token.variable-dynamic { border-bottom: 1px dotted var(--orange); }
+.variable-masked > input { box-shadow: inset 0 -2px var(--orange); }
+.kv-key > .variable-input, .kv-value > .variable-input { flex: 1; min-width: 0; height: 32px; }
+.kv-key > .variable-input > input, .kv-value > .variable-input > input { min-width: 0; flex: 1; border: 0; height: 32px; font-size: 11px; width: 100%; }
+.variable-value-tooltip { position: fixed; z-index: 1200; max-width: min(430px, calc(100vw - 16px)); max-height: min(320px, calc(100vh - 16px)); overflow: auto; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 6px; padding: 11px 13px; box-shadow: 0 5px 22px #0005; color: var(--text); font-size: 11px; line-height: 1.6; pointer-events: none; }
+.variable-value-tooltip > strong { display: block; color: var(--orange); font: 600 12px Consolas, monospace; margin-bottom: 7px; overflow-wrap: anywhere; }
+.variable-value-tooltip.variable-missing > strong, .variable-value-tooltip.variable-error > strong { color: var(--red); }
+.variable-value-tooltip dl { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 3px 10px; margin: 0; }
+.variable-value-tooltip dt { color: var(--muted); }
+.variable-value-tooltip dd { margin: 0; overflow-wrap: anywhere; }
+.variable-tooltip-value { font-family: Consolas, monospace; white-space: pre-wrap; }
+.variable-value-tooltip p { margin: 8px 0 0; color: var(--soft); }
+.monaco-editor .monaco-variable-token { color: var(--orange) !important; background: var(--orange-soft); border-radius: 2px; }
+.monaco-editor .monaco-variable-token.variable-missing, .monaco-editor .monaco-variable-token.variable-error { color: var(--red) !important; background: #ba454518; text-decoration: underline dotted; }
+.monaco-editor .monaco-variable-token.variable-dynamic { border-bottom: 1px dotted var(--orange); }
+@media (max-height: 760px) { .url-bar > .variable-input > input { padding-top: 8px; padding-bottom: 8px; } }

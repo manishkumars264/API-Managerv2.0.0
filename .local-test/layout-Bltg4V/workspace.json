@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "97c8caa8-a073-495e-be19-6caf503a9b95",
+      "request": {
+        "id": "5ca789e1-fde2-40cb-b51a-7202072eaecd",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sample\":true}",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Body",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "body": "{\"message\":\"first response line\",\"result\":\"readable JSON\",\"nested\":{\"success\":true},\"done\":true}",
+        "headers": [
+          {
+            "id": "9643f3bc-dc68-4ccd-9606-233cfeec7c43",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "duration": 10,
+        "size": 100,
+        "url": "http://localhost/test",
+        "receivedAt": "2026-10-02T16:07:53.550Z"
+      }
+    }
+  ],
+  "activeTabId": "97c8caa8-a073-495e-be19-6caf503a9b95",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

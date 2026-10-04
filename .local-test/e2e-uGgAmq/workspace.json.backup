@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "7b701f40-1b61-48f1-8d64-6d31c7027bee",
+      "request": {
+        "id": "7a93b63b-c8e9-4af4-a216-f7346f16bb8b",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:60424/html",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "f2970e1b-d2ce-4449-9360-d8afa69adbd5",
+            "key": "Content-Type",
+            "value": "text/html",
+            "enabled": true
+          },
+          {
+            "id": "aba5153f-9de7-4b02-aba3-2aca59220092",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:10:06 GMT",
+            "enabled": true
+          },
+          {
+            "id": "da4f5373-650c-4065-ae4b-d62de24500c4",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c7ef2839-f12f-4178-aec9-af0cea992e82",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "37a32a76-f20f-43d2-aaa7-565be46d89bb",
+            "key": "Content-Length",
+            "value": "109",
+            "enabled": true
+          }
+        ],
+        "body": "<h1>Safe preview</h1><script>window.parent.compromised=true</script><img src=\"https://invalid.example/track\">",
+        "binary": false,
+        "duration": 11.1,
+        "size": 109,
+        "url": "http://127.0.0.1:60424/html",
+        "receivedAt": "2026-10-02T16:10:06.910Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "7b701f40-1b61-48f1-8d64-6d31c7027bee",
+  "history": [
+    {
+      "id": "8890ad57-1e59-4683-989d-3e6c24050463",
+      "request": {
+        "id": "7a93b63b-c8e9-4af4-a216-f7346f16bb8b",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:60424/html",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "f2970e1b-d2ce-4449-9360-d8afa69adbd5",
+            "key": "Content-Type",
+            "value": "text/html",
+            "enabled": true
+          },
+          {
+            "id": "aba5153f-9de7-4b02-aba3-2aca59220092",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:10:06 GMT",
+            "enabled": true
+          },
+          {
+            "id": "da4f5373-650c-4065-ae4b-d62de24500c4",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c7ef2839-f12f-4178-aec9-af0cea992e82",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "37a32a76-f20f-43d2-aaa7-565be46d89bb",
+            "key": "Content-Length",
+            "value": "109",
+            "enabled": true
+          }
+        ],
+        "body": "<h1>Safe preview</h1><script>window.parent.compromised=true</script><img src=\"https://invalid.example/track\">",
+        "binary": false,
+        "duration": 11.1,
+        "size": 109,
+        "url": "http://127.0.0.1:60424/html",
+        "receivedAt": "2026-10-02T16:10:06.910Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T16:10:06.910Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    },
+    {
+      "id": "d054626e-35b8-463a-95e5-665df8e310a2",
+      "request": {
+        "id": "7a93b63b-c8e9-4af4-a216-f7346f16bb8b",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:60424/slow?long",
+        "params": [
+          {
+            "id": "428b6589-858e-4319-95f9-0994ceb9da74",
+            "key": "long",
+            "value": "",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "timestamp": "2026-10-02T16:10:02.879Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "error": "Request cancelled."
+    },
+    {
+      "id": "624e13f6-4359-4506-a28b-d4c75b38ba82",
+      "request": {
+        "id": "7a93b63b-c8e9-4af4-a216-f7346f16bb8b",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "{{undefined}}/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "timestamp": "2026-10-02T16:09:58.958Z",
+      "error": "Error invoking remote method 'request:send': Error: Unresolved variable: {{undefined}}",
+      "scriptResults": {
+        "tests": [],
+        "logs": [],
+        "error": "Error invoking remote method 'request:send': Error: Unresolved variable: {{undefined}}"
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

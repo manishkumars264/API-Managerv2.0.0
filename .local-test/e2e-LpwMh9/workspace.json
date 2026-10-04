@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "c080ac1a-04ba-4bc2-8fd6-4a449be4670c",
+      "request": {
+        "id": "9deca965-49fb-46d9-b5ed-30b22cd60457",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/search",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body:Raw",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "d4a6c91e-dcab-41cf-abde-b9c497bcae6b",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "eb61ecb8-e01b-4ef1-a4fe-926f76d3658a",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 04:56:48 GMT",
+            "enabled": true
+          },
+          {
+            "id": "71c0681d-1367-4f53-b50b-f8f0c89f1957",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "a277d188-702f-429a-b105-289aa3359dfb",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "82b995b7-41b7-417e-af5c-5c41a70f83c3",
+            "key": "Content-Length",
+            "value": "92",
+            "enabled": true
+          }
+        ],
+        "body": "{\"items\":[\"match-token first\",\"match-token second\",\"match-token third\"],\"other\":\"unrelated\"}",
+        "binary": false,
+        "duration": 145.08,
+        "size": 92,
+        "url": "http://127.0.0.1:57586/search",
+        "receivedAt": "2026-10-04T04:56:49.013Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:57586/search",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:57586/search' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:57586' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      }
+    }
+  ],
+  "activeTabId": "c080ac1a-04ba-4bc2-8fd6-4a449be4670c",
+  "history": [
+    {
+      "id": "1bce3887-4ba6-4d0c-9547-6d5a75ae0121",
+      "request": {
+        "id": "9deca965-49fb-46d9-b5ed-30b22cd60457",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/search",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "d4a6c91e-dcab-41cf-abde-b9c497bcae6b",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "eb61ecb8-e01b-4ef1-a4fe-926f76d3658a",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 04:56:48 GMT",
+            "enabled": true
+          },
+          {
+            "id": "71c0681d-1367-4f53-b50b-f8f0c89f1957",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "a277d188-702f-429a-b105-289aa3359dfb",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "82b995b7-41b7-417e-af5c-5c41a70f83c3",
+            "key": "Content-Length",
+            "value": "92",
+            "enabled": true
+          }
+        ],
+        "body": "{\"items\":[\"match-token first\",\"match-token second\",\"match-token third\"],\"other\":\"unrelated\"}",
+        "binary": false,
+        "duration": 145.08,
+        "size": 92,
+        "url": "http://127.0.0.1:57586/search",
+        "receivedAt": "2026-10-04T04:56:49.013Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:57586/search",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:57586/search' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:57586' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T04:56:49.013Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:57586/search' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:57586' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:57586/search"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

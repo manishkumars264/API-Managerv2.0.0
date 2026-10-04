@@ -1,0 +1,48 @@
+
+Running 5 tests using 1 worker
+
+(node:27696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:779:1 › imports cURL query params, preserves literal email, saves updates, and duplicates within the collection (24.8s)
+  x  2 tests\e2e\workspace.spec.ts:819:1 › shows fresh HTTP error and empty bodies and clears the old response on connection failure (22.3s)
+(node:15092) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 tests\e2e\workspace.spec.ts:841:1 › imports structured and inline collection params and duplicates a saved folder request (14.4s)
+  ok 4 tests\e2e\workspace.spec.ts:860:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values (35.7s)
+  ok 5 tests\e2e\workspace.spec.ts:913:1 › console retains the cURL actually sent after scripts and variable resolution (10.5s)
+
+
+  1) tests\e2e\workspace.spec.ts:819:1 › shows fresh HTTP error and empty bodies and clears the old response on connection failure 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 2
+
+    Call Log:
+    - Timeout 10000ms exceeded while waiting on the predicate
+
+      824 |       await page.getByRole('button', { name: 'Send', exact: true }).click();
+      825 |       await expect(page.locator('.response-metrics .status')).toContainText(String(code));
+    > 826 |       await expect.poll(async () => { try { return (await readWorkspace(dataDir)).history.length; } catch { return 0; } }).toBe(index + 1);
+          |                                                                                                                            ^
+      827 |       const body = (await readWorkspace(dataDir)).history[0].response!.body;
+      828 |       if (code === 204) { expect(body).toBe(''); await expect(page.locator('.response-body .view-lines')).not.toContainText('fresh-response'); }
+      829 |       else { expect(body).toContain(`fresh-response-${code}`); await expect(page.locator('.response-body .view-lines')).toContainText(`fresh-response-${code}`); }
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:826:124
+
+    Error Context: test-results\workspace-shows-fresh-HTTP-a2a4f-ponse-on-connection-failure\error-context.md
+
+    Error Context: test-results\workspace-shows-fresh-HTTP-a2a4f-ponse-on-connection-failure\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-shows-fresh-HTTP-a2a4f-ponse-on-connection-failure\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-shows-fresh-HTTP-a2a4f-ponse-on-connection-failure\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace.spec.ts:819:1 › shows fresh HTTP error and empty bodies and clears the old response on connection failure 
+  4 passed (1.8m)

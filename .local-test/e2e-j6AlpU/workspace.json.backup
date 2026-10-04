@@ -1,0 +1,359 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "b005a417-6903-48bd-8e08-d54c845a7a17",
+      "name": "Example API",
+      "description": "",
+      "folders": [
+        {
+          "id": "fd91fb1b-2a84-4299-90dc-867a85963cdc",
+          "name": "Users",
+          "folders": [],
+          "requests": [
+            {
+              "id": "bf411193-c60e-4e45-a86a-590b0aeaddba",
+              "name": "Create user",
+              "method": "POST",
+              "url": "{{base_url}}/echo",
+              "params": [],
+              "headers": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"API Manager\"}",
+                "language": "json",
+                "fields": []
+              },
+              "auth": {
+                "type": "inherit"
+              },
+              "description": "",
+              "collectionId": "b005a417-6903-48bd-8e08-d54c845a7a17",
+              "folderId": "fd91fb1b-2a84-4299-90dc-867a85963cdc",
+              "extra": {
+                "postman": {
+                  "item": {},
+                  "request": {},
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"API Manager\"}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "auth": {
+            "type": "inherit"
+          },
+          "variables": [],
+          "extra": {
+            "postman": {
+              "folder": {},
+              "order": [
+                "bf411193-c60e-4e45-a86a-590b0aeaddba"
+              ]
+            }
+          }
+        }
+      ],
+      "requests": [],
+      "variables": [],
+      "auth": {
+        "type": "bearer",
+        "token": "{{token}}"
+      },
+      "extra": {
+        "postman": {
+          "collection": {},
+          "info": {},
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "{{token}}"
+              }
+            ]
+          },
+          "order": [
+            "fd91fb1b-2a84-4299-90dc-867a85963cdc"
+          ]
+        }
+      }
+    }
+  ],
+  "environments": [
+    {
+      "id": "c7b3ba00-17ac-4283-b65c-72e275f68479",
+      "name": "Local",
+      "variables": [
+        {
+          "id": "8260f1a6-e5f2-479b-a6d5-508d017cbe5c",
+          "key": "base_url",
+          "value": "http://127.0.0.1:54217",
+          "enabled": true,
+          "extra": {
+            "postman": {}
+          }
+        },
+        {
+          "id": "6d96e015-61fd-4a07-8bf6-58ec605be6f1",
+          "key": "token",
+          "value": "local-demo-token",
+          "enabled": true,
+          "extra": {
+            "postman": {}
+          }
+        }
+      ],
+      "extra": {
+        "postman": {}
+      }
+    }
+  ],
+  "globals": [],
+  "activeEnvironmentId": "c7b3ba00-17ac-4283-b65c-72e275f68479",
+  "tabs": [
+    {
+      "id": "596a0791-e0c7-4ebe-a973-0a845df83868",
+      "request": {
+        "id": "71dbd24a-a846-4a74-ad84-d48ffb989083",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "2bc9e497-6a14-4a0c-a4c4-3a7a11741069",
+      "request": {
+        "id": "bf411193-c60e-4e45-a86a-590b0aeaddba",
+        "name": "Create user",
+        "method": "POST",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"API Manager\"}",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "b005a417-6903-48bd-8e08-d54c845a7a17",
+        "folderId": "fd91fb1b-2a84-4299-90dc-867a85963cdc",
+        "extra": {
+          "postman": {
+            "item": {},
+            "request": {},
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"API Manager\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      },
+      "dirty": false,
+      "editorTab": "Body",
+      "responseTab": "Body:Pretty",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "d16ff672-2230-4543-9105-92b06beecc21",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "1bcc78ab-1f69-4bba-b058-a76ec5e236c3",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "c7782c72-737e-4636-9b77-b0998604fd3b",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ac72d927-37f9-4a2a-b778-688f16e31881",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 14:44:22 GMT",
+            "enabled": true
+          },
+          {
+            "id": "e386ce86-1997-4963-a33a-dd5363e7f625",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "df083d40-d5f1-4ed9-a2b9-1a22248b6ada",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "9f61ca96-ba28-4aec-a250-f9a93304efab",
+            "key": "Content-Length",
+            "value": "206",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo\",\"body\":{\"name\":\"API Manager\"},\"authorization\":\"Bearer local-demo-token\",\"correlation\":null,\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 141.71,
+        "size": 206,
+        "url": "http://127.0.0.1:54217/echo",
+        "receivedAt": "2026-10-02T14:44:22.431Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "2bc9e497-6a14-4a0c-a4c4-3a7a11741069",
+  "history": [
+    {
+      "id": "58cd1105-f46e-4c4c-a21d-c97264ea398f",
+      "request": {
+        "id": "bf411193-c60e-4e45-a86a-590b0aeaddba",
+        "name": "Create user",
+        "method": "POST",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"API Manager\"}",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "b005a417-6903-48bd-8e08-d54c845a7a17",
+        "folderId": "fd91fb1b-2a84-4299-90dc-867a85963cdc",
+        "extra": {
+          "postman": {
+            "item": {},
+            "request": {},
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"API Manager\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "d16ff672-2230-4543-9105-92b06beecc21",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "1bcc78ab-1f69-4bba-b058-a76ec5e236c3",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "c7782c72-737e-4636-9b77-b0998604fd3b",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ac72d927-37f9-4a2a-b778-688f16e31881",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 14:44:22 GMT",
+            "enabled": true
+          },
+          {
+            "id": "e386ce86-1997-4963-a33a-dd5363e7f625",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "df083d40-d5f1-4ed9-a2b9-1a22248b6ada",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "9f61ca96-ba28-4aec-a250-f9a93304efab",
+            "key": "Content-Length",
+            "value": "206",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo\",\"body\":{\"name\":\"API Manager\"},\"authorization\":\"Bearer local-demo-token\",\"correlation\":null,\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 141.71,
+        "size": 206,
+        "url": "http://127.0.0.1:54217/echo",
+        "receivedAt": "2026-10-02T14:44:22.431Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T14:44:22.431Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

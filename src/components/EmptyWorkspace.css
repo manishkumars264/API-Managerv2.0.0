@@ -1,0 +1,5 @@
+.workspace-empty { display: flex; flex: 1; min-height: 0; align-items: center; justify-content: center; flex-direction: column; padding: 30px; text-align: center; }
+.workspace-empty-icon { color: var(--orange); background: var(--orange-soft); border-radius: 14px; padding: 19px; display: inline-flex; margin-bottom: 17px; }
+.workspace-empty h2 { color: var(--text); font-size: 19px; font-weight: 600; margin: 0 0 10px; }
+.workspace-empty p { color: var(--soft); font-size: 12px; line-height: 1.7; max-width: 470px; margin: 0 0 23px; }
+.workspace-empty > div { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }

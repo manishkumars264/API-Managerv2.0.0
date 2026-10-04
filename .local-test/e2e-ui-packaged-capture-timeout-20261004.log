@@ -1,0 +1,67 @@
+
+Running 25 tests using 1 worker
+
+(node:31236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\workspace.spec.ts:70:1 › changes accent colours in both themes without altering requests and restores the selection (1.7m)
+  ok  2 tests\e2e\workspace.spec.ts:111:1 › resizes console by pointer and keyboard and preserves the preferred height across reopening (27.5s)
+  ok  3 tests\e2e\workspace.spec.ts:162:1 › previews and copies all request code languages without sending or modifying the request (36.1s)
+  ok  4 tests\e2e\workspace.spec.ts:217:1 › imports collections and environments, sends JSON, copies, zooms and downloads responses (45.1s)
+  ok  5 tests\e2e\workspace.spec.ts:262:1 › restores drafts, active tabs, editor mode, zoom, theme and overflowing tabs after close (40.5s)
+  ok  6 tests\e2e\workspace.spec.ts:296:1 › scrolls overflowing tabs without overlap and supports Ctrl-wheel and middle-click closing (43.3s)
+  ok  7 tests\e2e\workspace.spec.ts:380:1 › persists independent request and response wrapping while resolving variables without inline announcements (23.3s)
+  ok  8 tests\e2e\workspace.spec.ts:436:1 › restores workspace backups with confirmation and supports native JSON import/export (15.2s)
+  ok  9 tests\e2e\workspace.spec.ts:456:1 › shows import and request errors, cancels requests, and isolates HTML preview (19.4s)
+  ok 10 tests\e2e\workspace.spec.ts:482:1 › runs inherited scripts and dynamic globals, restores history responses and replays within the 200-run cap (31.8s)
+  ok 11 tests\e2e\workspace.spec.ts:538:1 › configures SOAP, beautifies without rounding JSON, wraps editors and uses advanced authorization forms (28.2s)
+  ok 12 tests\e2e\workspace.spec.ts:578:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run (12.8s)
+  ok 13 tests\e2e\workspace.spec.ts:603:1 › a Cancel pointer action cannot resend after the response completes (5.7s)
+  ok 14 tests\e2e\workspace.spec.ts:623:1 › keeps response and console usable at the minimum window size and restores the layout (14.6s)
+  ok 15 tests\e2e\workspace.spec.ts:662:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft (31.8s)
+  ok 16 tests\e2e\workspace.spec.ts:728:1 › searches response text with highlighted matches, cyclic navigation and tooltips below controls (42.7s)
+  ok 17 tests\e2e\workspace.spec.ts:792:1 › imports cURL query params, preserves literal email, saves updates, and duplicates within the collection (22.3s)
+  ok 18 tests\e2e\workspace.spec.ts:832:1 › shows fresh HTTP error and empty bodies and clears the old response on connection failure (41.2s)
+  ok 19 tests\e2e\workspace.spec.ts:857:1 › imports structured and inline collection params and duplicates a saved folder request (11.5s)
+  ok 20 tests\e2e\workspace.spec.ts:876:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values (34.5s)
+  ok 21 tests\e2e\workspace.spec.ts:929:1 › console retains the cURL actually sent after scripts and variable resolution (10.3s)
+  ok 22 tests\e2e\workspace.spec.ts:949:1 › closes the last tab, restores an empty workspace, and starts again by new/import/open (36.3s)
+  ok 23 tests\e2e\workspace.spec.ts:982:1 › adds popup environment variables with plus and saves using Ctrl+S (21.2s)
+  ok 24 tests\e2e\workspace.spec.ts:1013:1 › keeps newest Console runs and script messages at the top without changing saved history order (9.0s)
+  x  25 tests\e2e\workspace.spec.ts:1030:1 › uses Grey theme with every accent and restores it without changing request bytes (1.4m)
+
+
+  1) tests\e2e\workspace.spec.ts:1030:1 › uses Grey theme with every accent and restores it without changing request bytes 
+
+    TimeoutError: page.screenshot: Timeout 30000ms exceeded.
+    Call log:
+      - taking page screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+      1045 |       await expect(page.getByRole('textbox', { name: 'Request URL', exact: true })).toHaveValue(`${baseUrl}/echo?grey=preserved`);
+      1046 |     }
+    > 1047 |     await page.screenshot({ path: path.join(appRoot, '.local-test', 'grey-theme-followup-20261004.png') });
+           |                ^
+      1048 |     await closeNormally(app); ({ app, page } = await launch(dataDir));
+      1049 |     await expect(page.locator('html')).toHaveAttribute('data-theme', 'grey');
+      1050 |     await expect(page.getByRole('textbox', { name: 'Request URL', exact: true })).toHaveValue(`${baseUrl}/echo?grey=preserved`);
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:1047:16
+
+    Error Context: test-results\workspace-uses-Grey-theme--56819-hout-changing-request-bytes\error-context.md
+
+    Error Context: test-results\workspace-uses-Grey-theme--56819-hout-changing-request-bytes\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-uses-Grey-theme--56819-hout-changing-request-bytes\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-uses-Grey-theme--56819-hout-changing-request-bytes\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Slow test file: tests\e2e\workspace.spec.ts (13.1m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  1 failed
+    tests\e2e\workspace.spec.ts:1030:1 › uses Grey theme with every accent and restores it without changing request bytes 
+  24 passed (13.2m)

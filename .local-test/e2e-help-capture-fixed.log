@@ -1,0 +1,42 @@
+
+Running 1 test using 1 worker
+
+(node:23392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft (43.7s)
+
+
+  1) tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft 
+
+    TimeoutError: locator.screenshot: Timeout 29989.775ms exceeded.
+    Call log:
+      - taking element screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+
+
+      391 |     // Capture documentation before resizing a hidden native window, whose
+      392 |     // compositor may suspend screenshot delivery after the size changes.
+    > 393 |     await dialog.screenshot({ path: path.join(appRoot, 'docs', 'help.png') });
+          |                  ^
+      394 |     for (const size of [[1000, 650], [1024, 768], [1420, 820], [1420, 900]]) {
+      395 |       await app.evaluate(({ BrowserWindow }, [width, height]) => { const window = BrowserWindow.getAllWindows()[0]; window.unmaximize(); window.setSize(width, height); }, size);
+      396 |       await expect.poll(async () => {
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:393:18
+
+    Error Context: test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\error-context.md
+
+    Error Context: test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft 

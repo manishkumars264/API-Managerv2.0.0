@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "7643d060-9da8-4a0c-9383-4b0aa0679273",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/disconnect",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": [],
+        "error": "Error invoking remote method 'request:send': Error: other side closed"
+      }
+    }
+  ],
+  "activeTabId": "7643d060-9da8-4a0c-9383-4b0aa0679273",
+  "history": [
+    {
+      "id": "c51e995c-e413-4e92-992d-b27c3bda002d",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/disconnect",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "requestUrl": "http://127.0.0.1:53759/disconnect",
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/disconnect' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "timestamp": "2026-10-04T03:23:12.234Z",
+      "error": "Error invoking remote method 'request:send': Error: other side closed",
+      "scriptResults": {
+        "tests": [],
+        "logs": [],
+        "error": "Error invoking remote method 'request:send': Error: other side closed"
+      }
+    },
+    {
+      "id": "d0972d03-2b21-4397-8b4c-65c3dc843b9a",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/status/204",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 204,
+        "statusText": "No Content",
+        "headers": [
+          {
+            "id": "12502485-d62b-4a35-9dca-f6a9a8599989",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "e9bf6af5-3c54-4cb0-ab9b-bfec7136c448",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:23:10 GMT",
+            "enabled": true
+          },
+          {
+            "id": "55678354-0458-40e0-b461-af2925926c19",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "a1a74f0a-1d7a-49e5-b9bd-d91e44cb15c7",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          }
+        ],
+        "body": "",
+        "binary": false,
+        "duration": 19.82,
+        "size": 0,
+        "url": "http://127.0.0.1:53759/status/204",
+        "receivedAt": "2026-10-04T03:23:10.236Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/status/204",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/204' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:23:10.236Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/204' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/status/204"
+    },
+    {
+      "id": "c5ca1cf0-28c7-4edb-8930-1e5970064472",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/status/200",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "e00eded2-aa5b-4927-97a0-a3bb31371d24",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "fa52992b-fa52-4eb8-8541-016b7908c8c1",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:23:06 GMT",
+            "enabled": true
+          },
+          {
+            "id": "14266b43-b9a1-4cfe-9481-f88a72231658",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "650bc7ae-6094-4a40-9156-fed5e985519a",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "b51c53e5-bb4a-4c88-a6ea-2bbf915bad55",
+            "key": "Content-Length",
+            "value": "42",
+            "enabled": true
+          }
+        ],
+        "body": "{\"code\":200,\"detail\":\"fresh-response-200\"}",
+        "binary": false,
+        "duration": 15.82,
+        "size": 42,
+        "url": "http://127.0.0.1:53759/status/200",
+        "receivedAt": "2026-10-04T03:23:06.208Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/status/200",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/200' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:23:06.208Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/200' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/status/200"
+    },
+    {
+      "id": "6e5fb895-940b-49d5-9055-f5cc15fbd1fc",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/status/403",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 403,
+        "statusText": "Forbidden",
+        "headers": [
+          {
+            "id": "b3dfa59a-72b0-47e2-8bd4-bb2d6b4e6ddc",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "ccd364e0-0be0-4694-b40b-aec0ca61e6a2",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:23:02 GMT",
+            "enabled": true
+          },
+          {
+            "id": "a88da4a4-c6d7-489f-937e-f0bae383fecb",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "fd19d567-b64f-4829-be6a-6cad00664305",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "df2d7c56-50bf-4963-9d83-0af0a63981f2",
+            "key": "Content-Length",
+            "value": "42",
+            "enabled": true
+          }
+        ],
+        "body": "{\"code\":403,\"detail\":\"fresh-response-403\"}",
+        "binary": false,
+        "duration": 16.98,
+        "size": 42,
+        "url": "http://127.0.0.1:53759/status/403",
+        "receivedAt": "2026-10-04T03:23:02.175Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/status/403",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/403' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:23:02.175Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/403' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/status/403"
+    },
+    {
+      "id": "757162a4-231d-4fd7-85f9-b39df0e109d9",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/status/401",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 401,
+        "statusText": "Unauthorized",
+        "headers": [
+          {
+            "id": "06ed6608-9624-4ac9-9fdf-d0b3735558dd",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "ce078c86-f8ca-442d-a952-a3ccf53e0485",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:22:58 GMT",
+            "enabled": true
+          },
+          {
+            "id": "8e594752-6ae9-4b33-8a95-a654b63df08d",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "99e96a9e-92e6-40d3-bbd8-d70695bdb243",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "44cbb33f-b9d7-4db8-b06b-25cda0e072b9",
+            "key": "Content-Length",
+            "value": "42",
+            "enabled": true
+          }
+        ],
+        "body": "{\"code\":401,\"detail\":\"fresh-response-401\"}",
+        "binary": false,
+        "duration": 17.29,
+        "size": 42,
+        "url": "http://127.0.0.1:53759/status/401",
+        "receivedAt": "2026-10-04T03:22:58.152Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/status/401",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/401' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:22:58.152Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/401' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/status/401"
+    },
+    {
+      "id": "f1e7cbee-f889-4180-885a-dadbbf5fcb6e",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/status/404",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 404,
+        "statusText": "Not Found",
+        "headers": [
+          {
+            "id": "2b260a25-5121-4fa2-b1b1-e9c5bc4f91e1",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "0a74edd3-34a9-47f9-83ce-6b7959fa5db5",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:22:54 GMT",
+            "enabled": true
+          },
+          {
+            "id": "bca54c5b-19c6-4ded-bb46-546b637e50e2",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "b7fba085-019b-4b61-8fb7-3c9c72f4bae0",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "a5b263cb-628d-46bb-9694-fab0d9fa9ad0",
+            "key": "Content-Length",
+            "value": "42",
+            "enabled": true
+          }
+        ],
+        "body": "{\"code\":404,\"detail\":\"fresh-response-404\"}",
+        "binary": false,
+        "duration": 17.41,
+        "size": 42,
+        "url": "http://127.0.0.1:53759/status/404",
+        "receivedAt": "2026-10-04T03:22:54.136Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/status/404",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/404' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:22:54.136Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/404' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/status/404"
+    },
+    {
+      "id": "94487d29-6d10-4c48-ac83-b6f0d8af7585",
+      "request": {
+        "id": "f975a07e-1fa2-4b15-a479-7f4eb6633001",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/status/200",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "d5fbafae-6929-443f-8c2a-a9100c5922d3",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "b5ab5929-e0fb-4845-9818-17d9133c4017",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:22:50 GMT",
+            "enabled": true
+          },
+          {
+            "id": "e9a3760a-29f9-4d44-9dd1-d8a378fee609",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "bc444aec-aec1-45e8-98f8-6918f25e2586",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "85050abe-0544-4f62-9e53-6bcc5883f3e6",
+            "key": "Content-Length",
+            "value": "42",
+            "enabled": true
+          }
+        ],
+        "body": "{\"code\":200,\"detail\":\"fresh-response-200\"}",
+        "binary": false,
+        "duration": 275.62,
+        "size": 42,
+        "url": "http://127.0.0.1:53759/status/200",
+        "receivedAt": "2026-10-04T03:22:50.349Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/status/200",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/200' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:22:50.349Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/status/200' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/status/200"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "history",
+  "sidebarWidth": 268
+}

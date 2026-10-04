@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "tab",
+      "request": {
+        "id": "request",
+        "name": "Hover test",
+        "method": "GET",
+        "url": "http://localhost",
+        "params": [],
+        "headers": [],
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "body": {
+          "mode": "none",
+          "language": "json",
+          "raw": "",
+          "fields": []
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "header",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "body": "{\"message\":\"find hover test\"}",
+        "duration": 1,
+        "size": 29,
+        "url": "http://localhost",
+        "receivedAt": "2026-10-03T04:28:13.539Z"
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body:Pretty",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "tab",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

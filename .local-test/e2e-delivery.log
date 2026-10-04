@@ -1,0 +1,16 @@
+
+Running 9 tests using 1 worker
+
+(node:6408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:67:1 › imports collections and environments, sends JSON, copies, zooms and downloads responses (45.9s)
+  ok 2 tests\e2e\workspace.spec.ts:112:1 › restores drafts, active tabs, editor mode, zoom, theme and overflowing tabs after close (41.3s)
+  ok 3 tests\e2e\workspace.spec.ts:144:1 › restores workspace backups with confirmation and supports native JSON import/export (13.1s)
+  ok 4 tests\e2e\workspace.spec.ts:164:1 › shows import and request errors, cancels requests, and isolates HTML preview (19.0s)
+  ok 5 tests\e2e\workspace.spec.ts:190:1 › runs inherited scripts and dynamic globals, restores history responses and replays within the 200-run cap (28.2s)
+  ok 6 tests\e2e\workspace.spec.ts:240:1 › configures SOAP, beautifies without rounding JSON, wraps editors and uses advanced authorization forms (27.8s)
+  ok 7 tests\e2e\workspace.spec.ts:280:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run (11.7s)
+  ok 8 tests\e2e\workspace.spec.ts:305:1 › a Cancel pointer action cannot resend after the response completes (4.9s)
+  ok 9 tests\e2e\workspace.spec.ts:325:1 › keeps response and console usable at the minimum window size and restores the layout (11.2s)
+
+  9 passed (3.4m)

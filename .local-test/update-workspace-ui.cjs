@@ -1,0 +1,40 @@
+const fs = require('node:fs');
+const file = 'src/App.tsx';
+let source = fs.readFileSync(file, 'utf8');
+function replace(before, after) {
+  if (source.split(before).length !== 2) throw new Error('Expected one source fragment: ' + before.slice(0, 90));
+  source = source.replace(before, after);
+}
+replace("import { HelpDialog } from './components/HelpDialog';", "import { HelpDialog } from './components/HelpDialog';\nimport { RequestTabs } from './components/RequestTabs';\nimport { ResponseTooltip } from './components/ResponseTooltip';");
+replace("  const [wrap, setWrap] = useState(() => localStorage.getItem('api-manager-wrap') !== 'false');", "  const [requestWrap, setRequestWrap] = useState(() => (localStorage.getItem('api-manager-request-wrap') ?? localStorage.getItem('api-manager-wrap')) !== 'false');\n  const [responseWrap, setResponseWrap] = useState(() => (localStorage.getItem('api-manager-response-wrap') ?? localStorage.getItem('api-manager-wrap')) !== 'false');\n  useEffect(() => { localStorage.setItem('api-manager-request-wrap', String(requestWrap)); }, [requestWrap]);\n  useEffect(() => { localStorage.setItem('api-manager-response-wrap', String(responseWrap)); }, [responseWrap]);");
+replace('  const tabsRef = useRef<HTMLDivElement>(null);\n', '');
+replace("  useEffect(() => { tabsRef.current?.querySelector('[aria-selected=\"true\"]')?.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }, [workspace.activeTabId]);\n", '');
+replace('.request-title,.url-bar,.history-replay-banner,.response-heading', '.request-title,.url-bar,.response-heading');
+const eol = source.includes('\r\n') ? '\r\n' : '\n';
+const lines = source.split(/\r?\n/);
+const oldTabs = lines.findIndex(line => line.trim().startsWith('<main className="main-panel"><div className="request-tabs"'));
+if (oldTabs < 0) throw new Error('Original tab row missing.');
+lines[oldTabs] = '      <main className="main-panel">';
+const historyBar = lines.findIndex(line => line.trim().startsWith('{current.historyId && <div className="history-replay-banner"'));
+if (historyBar < 0) throw new Error('Original history bar missing.');
+lines.splice(historyBar, 1);
+source = lines.join(eol);
+replace('<div className="toolbar-spacer" /><div className="environment-selector">', '<RequestTabs tabs={workspace.tabs} activeTabId={workspace.activeTabId} isRequestActive={!selectedEnvironment} onSelect={id => { mutate(next => { next.activeTabId = id; }); setSelectedEnvironment(null); }} onClose={closeTab} onNew={() => addTab()} /><div className="environment-selector">');
+replace("<small>Use <code>{'{{variable}}'}</code> for environment values.</small>", '');
+replace(" Reference values with <code>{'{{variable}}'}</code> in URLs, headers, authorization, or request bodies.", '');
+replace('placeholder="urn:example:GetData or {{soap_action}}"', 'placeholder="urn:example:GetData"');
+replace('function ClockIcon() { return <span className="history-clock">↺</span>; }\n', '');
+// Keep request script wrapping with its request-side preference, as before.
+source = source.replaceAll('wordWrap={wrap}', 'wordWrap={requestWrap}');
+replace("className={`text-button ${wrap ? 'enabled' : ''}`} aria-label=\"Toggle request word wrap\" aria-pressed={wrap} onClick={() => { localStorage.setItem('api-manager-wrap', String(!wrap)); setWrap(!wrap); }}", "className={`text-button ${requestWrap ? 'enabled' : ''}`} aria-label=\"Toggle request word wrap\" aria-pressed={requestWrap} onClick={() => setRequestWrap(!requestWrap)}");
+replace("{wrap ? 'Unwrap' : 'Wrap'}</button>", "{requestWrap ? 'Unwrap' : 'Wrap'}</button>");
+replace("<button className={`icon-button ${wrap ? 'enabled' : ''}`} title=\"Toggle word wrap\" aria-label=\"Toggle response word wrap\" aria-pressed={wrap} onClick={() => { localStorage.setItem('api-manager-wrap', String(!wrap)); setWrap(!wrap); }}><WrapText size={16} /></button>", "<ResponseTooltip label={responseWrap ? 'Unwrap response lines' : 'Wrap response lines'}><button className={`icon-button ${responseWrap ? 'enabled' : ''}`} aria-label=\"Toggle response word wrap\" aria-pressed={responseWrap} onClick={() => setResponseWrap(!responseWrap)}><WrapText size={14} /></button></ResponseTooltip>");
+replace('readOnly fontSize={current.responseZoom} wordWrap={requestWrap}', 'readOnly fontSize={current.responseZoom} wordWrap={responseWrap}');
+replace('<button className="icon-button" title="Search response (Ctrl+F)" aria-label="Search response body" onClick={() => { if (responseMode === \'Preview\') patchTab({ responseTab: \'Body:Raw\' }); setResponseFindRequested(true); }}><Search size={16} /></button>', '<ResponseTooltip label="Search response (Ctrl+F)"><button className="icon-button" aria-label="Search response body" onClick={() => { if (responseMode === \'Preview\') patchTab({ responseTab: \'Body:Raw\' }); setResponseFindRequested(true); }}><Search size={14} /></button></ResponseTooltip>');
+replace('<button className="icon-button" title="Zoom out response" aria-label="Zoom out response" disabled={current.responseZoom <= 10} onClick={() => patchTab({ responseZoom: Math.max(10, current.responseZoom - 2) })}><ZoomOut size={16} /></button>', '<ResponseTooltip label="Zoom out response"><button className="icon-button" aria-label="Zoom out response" disabled={current.responseZoom <= 10} onClick={() => patchTab({ responseZoom: Math.max(10, current.responseZoom - 2) })}><ZoomOut size={14} /></button></ResponseTooltip>');
+replace('<button className="icon-button" title="Zoom in response" aria-label="Zoom in response" disabled={current.responseZoom >= 32} onClick={() => patchTab({ responseZoom: Math.min(32, current.responseZoom + 2) })}><ZoomIn size={16} /></button>', '<ResponseTooltip label="Zoom in response"><button className="icon-button" aria-label="Zoom in response" disabled={current.responseZoom >= 32} onClick={() => patchTab({ responseZoom: Math.min(32, current.responseZoom + 2) })}><ZoomIn size={14} /></button></ResponseTooltip>');
+replace('<button className="icon-button" title="Copy response" aria-label="Copy response options" onClick={() => setMenu(menu === \'copy\' ? null : \'copy\')}><Copy size={15} /><ChevronDown size={10} /></button>', '<ResponseTooltip label="Copy response"><button className="icon-button" aria-label="Copy response options" onClick={() => setMenu(menu === \'copy\' ? null : \'copy\')}><Copy size={14} /><ChevronDown size={10} /></button></ResponseTooltip>');
+replace('<button className="icon-button" title="Save response as JSON" aria-label="Save response options" onClick={() => setMenu(menu === \'download\' ? null : \'download\')}><Download size={16} /><ChevronDown size={10} /></button>', '<ResponseTooltip label="Save response as JSON"><button className="icon-button" aria-label="Save response options" onClick={() => setMenu(menu === \'download\' ? null : \'download\')}><Download size={14} /><ChevronDown size={10} /></button></ResponseTooltip>');
+if (/\bsetWrap\b|\bwordWrap=\{wrap\}|tabsRef|<ClockIcon/.test(source)) throw new Error('Old UI references remain.');
+fs.writeFileSync(file, source);
+console.log('Main workspace UI changes applied.');

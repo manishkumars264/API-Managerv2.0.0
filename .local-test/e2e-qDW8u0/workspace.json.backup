@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "8d4316d1-773f-4ec1-a848-49373e858744",
+      "request": {
+        "id": "9ad7aa14-9b45-4880-ba74-264146bfa27b",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:59858/search",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body:Raw",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "c7c3be68-97ae-4a08-b1ab-1b3b906aa483",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "4c216797-23c0-48d5-a814-5d583f28c772",
+            "key": "Date",
+            "value": "Sat, 03 Oct 2026 04:40:59 GMT",
+            "enabled": true
+          },
+          {
+            "id": "4e41aaea-05da-47fb-8d98-a946dee8bf37",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "70b0ba75-cc73-458c-8104-23ee459449a8",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "386d2a86-f60d-47ad-a98f-4db6ce04799f",
+            "key": "Content-Length",
+            "value": "92",
+            "enabled": true
+          }
+        ],
+        "body": "{\"items\":[\"match-token first\",\"match-token second\",\"match-token third\"],\"other\":\"unrelated\"}",
+        "binary": false,
+        "duration": 207.96,
+        "size": 92,
+        "url": "http://127.0.0.1:59858/search",
+        "receivedAt": "2026-10-03T04:40:59.294Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "8d4316d1-773f-4ec1-a848-49373e858744",
+  "history": [
+    {
+      "id": "1970cb10-066c-4efa-b193-89e38fe51b83",
+      "request": {
+        "id": "9ad7aa14-9b45-4880-ba74-264146bfa27b",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:59858/search",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "c7c3be68-97ae-4a08-b1ab-1b3b906aa483",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "4c216797-23c0-48d5-a814-5d583f28c772",
+            "key": "Date",
+            "value": "Sat, 03 Oct 2026 04:40:59 GMT",
+            "enabled": true
+          },
+          {
+            "id": "4e41aaea-05da-47fb-8d98-a946dee8bf37",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "70b0ba75-cc73-458c-8104-23ee459449a8",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "386d2a86-f60d-47ad-a98f-4db6ce04799f",
+            "key": "Content-Length",
+            "value": "92",
+            "enabled": true
+          }
+        ],
+        "body": "{\"items\":[\"match-token first\",\"match-token second\",\"match-token third\"],\"other\":\"unrelated\"}",
+        "binary": false,
+        "duration": 207.96,
+        "size": 92,
+        "url": "http://127.0.0.1:59858/search",
+        "receivedAt": "2026-10-03T04:40:59.294Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-03T04:40:59.294Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

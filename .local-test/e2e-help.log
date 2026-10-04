@@ -1,0 +1,51 @@
+
+Running 2 tests using 1 worker
+
+(node:3416) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft (17.3s)
+(node:22676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\e2e\workspace.spec.ts:410:1 › searches response text with highlighted matches, counts and Enter navigation (12.7s)
+
+
+  1) tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('dialog', { name: 'About and Help', exact: true })
+    Expected substring: "Next search match"
+    Received string:    "About and HelpAPI ManagerA local workspace for your APIs.v1.0.0AboutRelease notesVersion historyDeveloped byManish Kumar Singhmanishkumars264@gmail.comAPI Manager keeps requests, collections, environments, globals, cookies, and sessions on this computer. Your workspace resumes when you reopen the application.Version 1.0.02 October 2026 · Initial releaseKeyboard shortcutsRequest shortcuts apply while a dialog is closed. Editor shortcuts apply when the code editor has focus.ShortcutActionCtrl+NOpen a new request tabCtrl+SSave the request to a collectionCtrl+EnterSend the current requestCtrl+FFind textIn a request, script, or response code editorEnterGo to the next search matchWhen the editor Find input is focused; wraps to the first matchShift+EnterGo to the previous search matchWhen the editor Find input is focused; wraps to the last matchCtrl+HFind and replace textIn an editable code editorCtrl+ZUndo an editIn an editable code editorCtrl+YRedo an editAlso Ctrl + Shift + Z in an editable code editorEscClose an open dialog or menuTabMove to the next controlShift + Tab moves to the previous controlFound a bug?Open a prepared draft in your default email app. Add the issue, reproduction steps, and screenshots or videos.Report bugsLocal by design.Done"
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('dialog', { name: 'About and Help', exact: true }) with timeout 10000ms
+      - waiting for getByRole('dialog', { name: 'About and Help', exact: true })
+        23 × locator resolved to <div role="dialog" aria-modal="true" class="modal wide" aria-label="About and Help">…</div>
+           - unexpected value "About and HelpAPI ManagerA local workspace for your APIs.v1.0.0AboutRelease notesVersion historyDeveloped byManish Kumar Singhmanishkumars264@gmail.comAPI Manager keeps requests, collections, environments, globals, cookies, and sessions on this computer. Your workspace resumes when you reopen the application.Version 1.0.02 October 2026 · Initial releaseKeyboard shortcutsRequest shortcuts apply while a dialog is closed. Editor shortcuts apply when the code editor has focus.ShortcutActionCtrl+NOpen a new request tabCtrl+SSave the request to a collectionCtrl+EnterSend the current requestCtrl+FFind textIn a request, script, or response code editorEnterGo to the next search matchWhen the editor Find input is focused; wraps to the first matchShift+EnterGo to the previous search matchWhen the editor Find input is focused; wraps to the last matchCtrl+HFind and replace textIn an editable code editorCtrl+ZUndo an editIn an editable code editorCtrl+YRedo an editAlso Ctrl + Shift + Z in an editable code editorEscClose an open dialog or menuTabMove to the next controlShift + Tab moves to the previous controlFound a bug?Open a prepared draft in your default email app. Add the issue, reproduction steps, and screenshots or videos.Report bugsLocal by design.Done"
+
+
+      380 |     await expect(dialog).toContainText('Keyboard shortcuts');
+      381 |     await expect(dialog).toContainText('Send the current request');
+    > 382 |     await expect(dialog).toContainText('Next search match');
+          |                          ^
+      383 |     await page.keyboard.press('Control+n');
+      384 |     await expect(page.locator('.request-tabs').getByRole('tab')).toHaveCount(tabs);
+      385 |     await dialog.getByRole('tab', { name: 'Release notes', exact: true }).click();
+        at D:\Framework\API Manager v1.0.0\tests\e2e\workspace.spec.ts:382:26
+
+    Error Context: test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\error-context.md
+
+    Error Context: test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\workspace-opens-About-and--6c8c3-a-prepared-bug-report-draft\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft 
+  1 passed (31.8s)

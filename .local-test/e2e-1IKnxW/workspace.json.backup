@@ -1,0 +1,392 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "21e86475-f029-45e8-8fc9-08045e8de323",
+      "request": {
+        "id": "39349bb3-5ebc-4024-9ef4-7de0952bdd7a",
+        "name": "Untitled request",
+        "method": "POST",
+        "url": "http://127.0.0.1:60424/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\n  \"big\": 9007199254740993123,\n  \"text\": \"wrap me\"\n}",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Body",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "57ff21a6-b802-4eea-a8de-84d9d9283679",
+      "request": {
+        "id": "1d747ed5-2e3b-42ba-8b37-887cc478605f",
+        "name": "Untitled request",
+        "method": "POST",
+        "url": "http://127.0.0.1:60424/soap",
+        "params": [],
+        "headers": [
+          {
+            "id": "6f353b09-ab84-4f1e-b66f-295fd6ecbaff",
+            "key": "Content-Type",
+            "value": "application/soap+xml; charset=utf-8; action=\"urn:Echo\"",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>",
+          "language": "xml",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "soap": {
+          "version": "1.2",
+          "action": "urn:Echo"
+        }
+      },
+      "dirty": true,
+      "editorTab": "Body",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "6acf144e-a004-4e1c-906a-51283ea084bf",
+            "key": "Content-Type",
+            "value": "application/soap+xml",
+            "enabled": true
+          },
+          {
+            "id": "20be9f71-ff70-462f-ae3b-bc4adfc2b76a",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:10:50 GMT",
+            "enabled": true
+          },
+          {
+            "id": "045952ae-c996-4a9c-993c-9400b936078d",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "54ebf656-17d1-49fe-8828-dc17efc02e8f",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "4c586a3f-36cd-4b09-b157-b0fd0ab53eec",
+            "key": "Content-Length",
+            "value": "64",
+            "enabled": true
+          }
+        ],
+        "body": "<Envelope><Body><Result>SOAP accepted</Result></Body></Envelope>",
+        "binary": false,
+        "duration": 150.89,
+        "size": 64,
+        "url": "http://127.0.0.1:60424/soap",
+        "receivedAt": "2026-10-02T16:10:50.356Z",
+        "truncated": false
+      }
+    },
+    {
+      "id": "2d9cccb3-686c-46ec-8319-bdc234742d91",
+      "request": {
+        "id": "0632319a-856d-491c-8645-f638b1b76d45",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:60424/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "tokenUrl": "http://127.0.0.1:60424/token",
+            "clientId": "local-client",
+            "clientSecret": "local-secret",
+            "accessToken": "acquired-ui-token",
+            "refreshToken": "refresh-ui-token",
+            "tokenType": "Bearer"
+          },
+          "token": "acquired-ui-token"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Authorization",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "85b43904-c4ee-4b67-8175-3d7bf25d63f2",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "c8e4acc6-6dc6-413b-b805-7f9bec1dba84",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "7e4c2d1a-e060-4596-a7ab-47167396e399",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "a12d3dca-ba9c-4fef-8394-6563355c9d3f",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:11:04 GMT",
+            "enabled": true
+          },
+          {
+            "id": "c343b4be-810c-4741-9565-d84b949fe08e",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "271a78e3-7b33-4788-a129-4997eab22cdd",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "7a908b73-ef19-47f3-9f2c-7430c0dae2d7",
+            "key": "Content-Length",
+            "value": "174",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer acquired-ui-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 10.83,
+        "size": 174,
+        "url": "http://127.0.0.1:60424/echo",
+        "receivedAt": "2026-10-02T16:11:04.267Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "2d9cccb3-686c-46ec-8319-bdc234742d91",
+  "history": [
+    {
+      "id": "a143a4a3-fca1-46ba-bc47-31a4d00be359",
+      "request": {
+        "id": "0632319a-856d-491c-8645-f638b1b76d45",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:60424/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "tokenUrl": "http://127.0.0.1:60424/token",
+            "clientId": "local-client",
+            "clientSecret": "local-secret",
+            "accessToken": "acquired-ui-token",
+            "refreshToken": "refresh-ui-token",
+            "tokenType": "Bearer"
+          },
+          "token": "acquired-ui-token"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "85b43904-c4ee-4b67-8175-3d7bf25d63f2",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "c8e4acc6-6dc6-413b-b805-7f9bec1dba84",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "7e4c2d1a-e060-4596-a7ab-47167396e399",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "a12d3dca-ba9c-4fef-8394-6563355c9d3f",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:11:04 GMT",
+            "enabled": true
+          },
+          {
+            "id": "c343b4be-810c-4741-9565-d84b949fe08e",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "271a78e3-7b33-4788-a129-4997eab22cdd",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "7a908b73-ef19-47f3-9f2c-7430c0dae2d7",
+            "key": "Content-Length",
+            "value": "174",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer acquired-ui-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 10.83,
+        "size": 174,
+        "url": "http://127.0.0.1:60424/echo",
+        "receivedAt": "2026-10-02T16:11:04.267Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T16:11:04.267Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    },
+    {
+      "id": "b43d4216-9876-4c4c-ad1e-bb4a2fcf3929",
+      "request": {
+        "id": "1d747ed5-2e3b-42ba-8b37-887cc478605f",
+        "name": "Untitled request",
+        "method": "POST",
+        "url": "http://127.0.0.1:60424/soap",
+        "params": [],
+        "headers": [
+          {
+            "id": "6f353b09-ab84-4f1e-b66f-295fd6ecbaff",
+            "key": "Content-Type",
+            "value": "application/soap+xml; charset=utf-8; action=\"urn:Echo\"",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>",
+          "language": "xml",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "soap": {
+          "version": "1.2",
+          "action": "urn:Echo"
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "6acf144e-a004-4e1c-906a-51283ea084bf",
+            "key": "Content-Type",
+            "value": "application/soap+xml",
+            "enabled": true
+          },
+          {
+            "id": "20be9f71-ff70-462f-ae3b-bc4adfc2b76a",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 16:10:50 GMT",
+            "enabled": true
+          },
+          {
+            "id": "045952ae-c996-4a9c-993c-9400b936078d",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "54ebf656-17d1-49fe-8828-dc17efc02e8f",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "4c586a3f-36cd-4b09-b157-b0fd0ab53eec",
+            "key": "Content-Length",
+            "value": "64",
+            "enabled": true
+          }
+        ],
+        "body": "<Envelope><Body><Result>SOAP accepted</Result></Body></Envelope>",
+        "binary": false,
+        "duration": 150.89,
+        "size": 64,
+        "url": "http://127.0.0.1:60424/soap",
+        "receivedAt": "2026-10-02T16:10:50.356Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T16:10:50.356Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

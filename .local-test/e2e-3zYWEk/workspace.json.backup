@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "db5ac172-9293-47e9-b714-bf5432aa2775",
+      "request": {
+        "id": "5ca0e4bd-c7bc-4f0a-a756-537a0f5b7464",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "db5ac172-9293-47e9-b714-bf5432aa2775",
+  "history": [
+    {
+      "id": "console-oldest",
+      "timestamp": "2026-10-01T00:00:00Z",
+      "request": {
+        "id": "915ce526-b9bb-46e9-9abf-ede09e433c08",
+        "name": "oldest",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/echo?name=oldest",
+        "params": [
+          {
+            "id": "6cd7d017-e628-4d62-8bff-f7218ff44a5e",
+            "key": "name",
+            "value": "oldest",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "scriptResults": {
+        "tests": [],
+        "logs": [
+          {
+            "level": "log",
+            "message": "oldest-older-log"
+          },
+          {
+            "level": "log",
+            "message": "oldest-newer-log"
+          }
+        ]
+      }
+    },
+    {
+      "id": "console-newest",
+      "timestamp": "2026-10-04T00:00:00Z",
+      "request": {
+        "id": "5190b18b-b269-40e8-b2c3-092997183101",
+        "name": "newest",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/echo?name=newest",
+        "params": [
+          {
+            "id": "d684cfef-79eb-48fe-8edb-888f3765ec41",
+            "key": "name",
+            "value": "newest",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "scriptResults": {
+        "tests": [],
+        "logs": [
+          {
+            "level": "log",
+            "message": "newest-older-log"
+          },
+          {
+            "level": "log",
+            "message": "newest-newer-log"
+          }
+        ]
+      }
+    },
+    {
+      "id": "console-middle",
+      "timestamp": "2026-10-03T00:00:00Z",
+      "request": {
+        "id": "88d9c8e3-fd69-4640-8ab8-c388811f8c82",
+        "name": "middle",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/echo?name=middle",
+        "params": [
+          {
+            "id": "e0b9989c-0837-4288-b2d6-35805166835c",
+            "key": "name",
+            "value": "middle",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "scriptResults": {
+        "tests": [],
+        "logs": [
+          {
+            "level": "log",
+            "message": "middle-older-log"
+          },
+          {
+            "level": "log",
+            "message": "middle-newer-log"
+          }
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

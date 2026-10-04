@@ -16,20 +16,31 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - run: npm audit --audit-level moderate
       - name: Install desktop runtime
         run: node node_modules/electron/install.js
       - run: npm run check
-      - run: npm run test:e2e
       - name: Package desktop application
         run: npx electron-builder --win nsis portable --x64 --publish never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Test packaged desktop workflows
+        run: npx playwright test
+        env:
+          API_MANAGER_EXECUTABLE: ${{ github.workspace }}/release/win-unpacked/API Manager.exe
+      - name: Bundle software and instructions
+        shell: pwsh
+        run: |
+          $taskBundle = 'release/API-Manager-2.0.0-Windows'
+          New-Item -ItemType Directory -Path $taskBundle -Force | Out-Null
+          Copy-Item -LiteralPath 'release/API Manager Setup 2.0.0.exe', 'release/API Manager 2.0.0.exe', 'README.md', 'CHANGELOG.md', 'LICENSE' -Destination $taskBundle
+          Copy-Item -LiteralPath 'docs', 'examples' -Destination $taskBundle -Recurse
+          Get-FileHash -LiteralPath 'release/API Manager Setup 2.0.0.exe', 'release/API Manager 2.0.0.exe' -Algorithm SHA256 | ForEach-Object { '{0}  {1}' -f $_.Hash, (Split-Path $_.Path -Leaf) } | Set-Content -LiteralPath "$taskBundle/CHECKSUMS.txt" -Encoding utf8
+          Compress-Archive -Path "$taskBundle/*" -DestinationPath 'release/API-Manager-2.0.0-Windows.zip' -CompressionLevel Optimal
       - uses: actions/upload-artifact@v4
         with:
           name: API-Manager-Windows
-          path: |
-            release/*.exe
-            release/*.blockmap
+          path: release/API-Manager-2.0.0-Windows.zip
           if-no-files-found: error
       - uses: actions/upload-artifact@v4
         if: failure()

@@ -1,0 +1,13 @@
+.accent-selector { min-width: 0; margin: 0; padding: 0; border: 0; }
+.accent-selector > legend { color: var(--text); font-size: 12px; font-weight: 600; padding: 0; margin-bottom: 10px; }
+.accent-selector-options { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; }
+.accent-choice { position: relative; cursor: pointer; min-width: 0; }
+.accent-choice-input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.accent-choice-body { display: flex; align-items: center; gap: 7px; min-height: 48px; padding: 7px 8px; border: 1px solid var(--border); border-radius: 5px; background: var(--surface); }
+.accent-choice:hover .accent-choice-body { background: var(--surface-hover); }
+.accent-choice-input:checked + .accent-choice-body { border-color: var(--orange); background: var(--orange-soft); }
+.accent-choice-input:focus-visible + .accent-choice-body { outline: 2px solid var(--orange); outline-offset: 2px; }
+.accent-choice-swatch { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; flex-shrink: 0; color: #fff; border-radius: 50%; }
+.accent-choice-label { display: flex; flex-direction: column; gap: 2px; font-size: 11px; line-height: 14px; color: var(--text); }
+.accent-choice-label > small { color: var(--soft); font-size: 9px; line-height: 11px; }
+@media (max-width: 560px) { .accent-selector-options { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

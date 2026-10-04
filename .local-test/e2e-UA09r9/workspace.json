@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "85304e3e-a850-4ff7-9018-d13ea493c2b4",
+      "request": {
+        "id": "1bf220f1-ec1f-455e-94b5-4eb8b26c1931",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "82276988-32d8-437c-a531-97c41ffd6118",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "c40b5b3d-96bc-4a6c-bd04-0aa2a183e38d",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "14841c64-501e-424b-9653-3f9165ca1078",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "b5778781-7f87-4a20-bc0d-375a801c23c2",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 04:56:02 GMT",
+            "enabled": true
+          },
+          {
+            "id": "c6111183-ebbd-4ba7-9aba-13d33b54abb8",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c8496db6-9ac2-47d2-897f-c31b26c09c24",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "54d00d60-a975-49ce-b4e4-5126d901c992",
+            "key": "Content-Length",
+            "value": "152",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 182.22,
+        "size": 152,
+        "url": "http://127.0.0.1:57586/echo",
+        "receivedAt": "2026-10-04T04:56:02.510Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:57586/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:57586/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:57586' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      }
+    }
+  ],
+  "activeTabId": "85304e3e-a850-4ff7-9018-d13ea493c2b4",
+  "history": [
+    {
+      "id": "94b17077-c94e-4564-9b53-5d6afc4f0e7f",
+      "request": {
+        "id": "1bf220f1-ec1f-455e-94b5-4eb8b26c1931",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:57586/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "82276988-32d8-437c-a531-97c41ffd6118",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "c40b5b3d-96bc-4a6c-bd04-0aa2a183e38d",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "14841c64-501e-424b-9653-3f9165ca1078",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "b5778781-7f87-4a20-bc0d-375a801c23c2",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 04:56:02 GMT",
+            "enabled": true
+          },
+          {
+            "id": "c6111183-ebbd-4ba7-9aba-13d33b54abb8",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c8496db6-9ac2-47d2-897f-c31b26c09c24",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "54d00d60-a975-49ce-b4e4-5126d901c992",
+            "key": "Content-Length",
+            "value": "152",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 182.22,
+        "size": 152,
+        "url": "http://127.0.0.1:57586/echo",
+        "receivedAt": "2026-10-04T04:56:02.510Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:57586/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:57586/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:57586' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T04:56:02.510Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:57586/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:57586' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:57586/echo"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

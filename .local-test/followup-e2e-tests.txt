@@ -1,0 +1,97 @@
+
+test('closes the last tab, restores an empty workspace, and starts again by new/import/open', async () => {
+  const dataDir = await directory(); let { app, page } = await launch(dataDir);
+  try {
+    await expect(page.locator('.header-middle')).toHaveText('Store, organize, and test APIs locally.');
+    await page.getByRole('button', { name: 'Close Untitled request', exact: true }).click();
+    await expect(page.getByRole('tab')).toHaveCount(0); await expect(page.getByRole('region', { name: 'Empty workspace' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Empty workspace' })).toContainText('Open a saved API or import a cURL command, then send it to see the response.');
+    await page.getByRole('button', { name: 'Workspace actions', exact: true }).click(); await page.getByRole('button', { name: 'Save workspace now', exact: true }).click();
+    await expect.poll(async () => (await readWorkspace(dataDir)).tabs.length).toBe(0);
+    expect((await readWorkspace(dataDir)).activeTabId).toBe('');
+    await closeNormally(app); ({ app, page } = await launch(dataDir));
+    await expect(page.getByRole('tab')).toHaveCount(0); await expect(page.getByRole('region', { name: 'Empty workspace' })).toBeVisible();
+    await page.getByRole('button', { name: 'New request', exact: true }).click(); await expect(page.getByRole('tab')).toHaveCount(1);
+    await page.getByRole('textbox', { name: 'Request URL', exact: true }).fill(`${baseUrl}/echo`);
+    await page.getByRole('button', { name: 'Close Untitled request', exact: true }).click();
+    await expect(page.getByRole('dialog', { name: 'Close this request?' })).toBeVisible();
+    await page.getByRole('button', { name: 'Cancel', exact: true }).click(); await expect(page.getByRole('tab')).toHaveCount(1);
+    await page.getByRole('button', { name: 'Close Untitled request', exact: true }).click(); await page.getByRole('button', { name: 'Confirm', exact: true }).click();
+    await page.getByRole('button', { name: 'Import cURL', exact: true }).click();
+    await page.getByRole('textbox', { name: 'Import cURL or JSON' }).fill(`curl '${baseUrl}/echo?empty=restored'`);
+    await page.getByRole('button', { name: 'Import text', exact: true }).click(); await expect(page.getByRole('tab')).toHaveCount(1);
+    await page.getByRole('button', { name: 'Send', exact: true }).click(); await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+    await page.getByRole('button', { name: /^Close / }).click();
+    await expect(page.getByRole('region', { name: 'Empty workspace' })).toBeVisible();
+    await importText(page, JSON.stringify({ info: { name: 'Saved empty-state API', schema: 'https://schema.getpostman.com/json/collection/v2.1.0/collection.json' }, item: [{ name: 'Saved request', request: { method: 'GET', url: `${baseUrl}/echo?saved=opened` } }] }));
+    await expect(page.getByRole('tab')).toHaveCount(0);
+    await page.locator('.request-row .tree-main').click(); await expect(page.getByRole('tab')).toHaveCount(1);
+    await page.getByRole('button', { name: 'Send', exact: true }).click(); await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+  } finally { await cleanup(app); }
+});
+
+test('adds popup environment variables with plus and saves using Ctrl+S', async () => {
+  const dataDir = await directory(), workspace = initialWorkspace();
+  workspace.environments = [{ id: 'new-variables', name: 'Development', variables: [] }]; workspace.activeEnvironmentId = 'new-variables';
+  workspace.tabs[0].request.url = `${baseUrl}/echo?new={{new_value}}`;
+  await fs.writeFile(path.join(dataDir, 'workspace.json'), JSON.stringify(workspace));
+  const { app, page } = await launch(dataDir);
+  try {
+    await page.getByRole('button', { name: 'Edit active environment', exact: true }).click();
+    const dialog = page.getByRole('dialog', { name: 'Environment values', exact: true });
+    await dialog.getByRole('button', { name: 'Add variable', exact: true }).click();
+    await dialog.getByRole('textbox', { name: 'Variable name', exact: true }).fill('new_value');
+    await dialog.getByRole('textbox', { name: 'Value for new_value', exact: true }).fill('saved-from-shortcut');
+    await dialog.getByRole('textbox', { name: 'Value for new_value', exact: true }).press('Control+s');
+    await expect(dialog).toHaveCount(0); await expect(page.getByRole('dialog', { name: 'Save request' })).toHaveCount(0);
+    await page.getByRole('button', { name: 'Send', exact: true }).click(); await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+    await expect.poll(async () => { try { return JSON.parse((await readWorkspace(dataDir)).history[0].response!.body).path; } catch { return ''; } }).toBe('/echo?new=saved-from-shortcut');
+    await page.getByRole('button', { name: 'Edit active environment', exact: true }).click();
+    await dialog.getByRole('button', { name: 'Add variable', exact: true }).click();
+    await dialog.getByRole('textbox', { name: 'Variable name', exact: true }).last().fill('discarded');
+    await dialog.getByRole('button', { name: 'Cancel', exact: true }).click();
+    await page.getByRole('button', { name: 'Environments', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Delete environment', exact: true })).toHaveText('Delete');
+    await expect(page.locator('.environment-panel').getByRole('textbox', { name: 'Variable name', exact: true })).toHaveCount(1);
+  } finally { await cleanup(app); }
+});
+
+test('keeps newest Console runs and script messages at the top without changing saved history order', async () => {
+  const dataDir = await directory(), workspace = initialWorkspace();
+  const entry = (name: string, timestamp: string) => ({ id: `console-${name}`, timestamp, request: { ...newRequest(name), url: `${baseUrl}/echo?name=${name}` }, scriptResults: { tests: [], logs: [{ level: 'log', message: `${name}-older-log` }, { level: 'log', message: `${name}-newer-log` }] } });
+  workspace.history = [entry('oldest', '2026-10-01T00:00:00Z'), entry('newest', '2026-10-04T00:00:00Z'), entry('middle', '2026-10-03T00:00:00Z')];
+  await fs.writeFile(path.join(dataDir, 'workspace.json'), JSON.stringify(workspace));
+  const { app, page } = await launch(dataDir);
+  try {
+    await page.getByRole('button', { name: 'Console', exact: true }).click();
+    expect(await page.locator('.console-run-toggle').evaluateAll(nodes => nodes.map(node => node.getAttribute('aria-label')))).toEqual(['Expand console run newest', 'Expand console run middle', 'Expand console run oldest']);
+    expect(await page.locator('.console-entry').first().locator('.console-log pre').allTextContents()).toEqual(['newest-newer-log', 'newest-older-log']);
+    await page.getByRole('button', { name: 'Expand console run newest', exact: true }).click();
+    expect(await page.locator('.console-entry').first().locator('.console-log pre').allTextContents()).toEqual(['newest-newer-log', 'newest-older-log']);
+    await page.getByRole('button', { name: 'Workspace actions', exact: true }).click(); await page.getByRole('button', { name: 'Save workspace now', exact: true }).click();
+    await expect.poll(async () => (await readWorkspace(dataDir)).history.map(entry => entry.request.name)).toEqual(['oldest', 'newest', 'middle']);
+  } finally { await cleanup(app); }
+});
+
+test('uses Grey theme with every accent and restores it without changing request bytes', async () => {
+  test.setTimeout(120000);
+  const dataDir = await directory(); let { app, page } = await launch(dataDir);
+  try {
+    await page.getByRole('textbox', { name: 'Request URL', exact: true }).fill(`${baseUrl}/echo?grey=preserved`);
+    for (const accent of ['blue', 'red', 'orange', 'green', 'purple']) {
+      await page.getByRole('button', { name: 'Settings', exact: true }).click();
+      await page.getByRole('combobox', { name: 'Application theme', exact: true }).selectOption('grey');
+      await page.getByRole('radio', { name: new RegExp(`^${accent}$`, 'i') }).locator('..').click();
+      await page.getByRole('button', { name: 'Done', exact: true }).click();
+      await expect(page.locator('html')).toHaveAttribute('data-theme', 'grey'); await expect(page.locator('html')).toHaveAttribute('data-accent', accent);
+      await page.getByRole('button', { name: 'Send', exact: true }).click(); await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+      await expect(page.locator('.response-body .view-lines')).toContainText('Hello from API Manager');
+      await expect(page.locator('.response-body .monaco-editor')).toHaveAttribute('data-grey-theme', 'true');
+      await expect(page.getByRole('textbox', { name: 'Request URL', exact: true })).toHaveValue(`${baseUrl}/echo?grey=preserved`);
+    }
+    await page.screenshot({ path: path.join(appRoot, '.local-test', 'grey-theme-followup-20261004.png') });
+    await closeNormally(app); ({ app, page } = await launch(dataDir));
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'grey');
+    await expect(page.getByRole('textbox', { name: 'Request URL', exact: true })).toHaveValue(`${baseUrl}/echo?grey=preserved`);
+  } finally { await cleanup(app); }
+});

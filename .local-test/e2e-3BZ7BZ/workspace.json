@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "a6148e79-64e4-4010-acbf-71f79a124078",
+      "name": "Nested import",
+      "description": "",
+      "folders": [
+        {
+          "id": "fec16780-99e5-4979-839b-780691c6d0f5",
+          "name": "Folder",
+          "folders": [],
+          "requests": [
+            {
+              "id": "4d81a75e-ecd5-4b94-87bb-ec0a706c0c40",
+              "name": "Query API",
+              "method": "GET",
+              "url": "http://127.0.0.1:53759/echo?email=a@b.com&inline=yes&disabled=old",
+              "params": [
+                {
+                  "id": "8460c96f-0aa3-49ac-ac4a-5f04b9e5168e",
+                  "key": "inline",
+                  "value": "yes",
+                  "enabled": true
+                },
+                {
+                  "id": "1f42e2ce-f79b-4967-9a96-d8b6e9df3e68",
+                  "key": "email",
+                  "value": "a@b.com",
+                  "enabled": true,
+                  "description": "email metadata",
+                  "extra": {
+                    "postman": {},
+                    "postmanDescription": "email metadata"
+                  }
+                },
+                {
+                  "id": "0c4266ae-e2e9-4691-bd1d-83a36cb0a068",
+                  "key": "disabled",
+                  "value": "{{missing}}",
+                  "enabled": false,
+                  "extra": {
+                    "postman": {}
+                  }
+                }
+              ],
+              "headers": [],
+              "body": {
+                "mode": "none",
+                "raw": "",
+                "language": "json",
+                "fields": []
+              },
+              "auth": {
+                "type": "inherit"
+              },
+              "description": "",
+              "collectionId": "a6148e79-64e4-4010-acbf-71f79a124078",
+              "folderId": "fec16780-99e5-4979-839b-780691c6d0f5",
+              "extra": {
+                "postman": {
+                  "item": {},
+                  "request": {},
+                  "url": {
+                    "raw": "http://127.0.0.1:53759/echo?email=a@b.com&inline=yes&disabled=old",
+                    "query": [
+                      {
+                        "key": "email",
+                        "value": "a@b.com",
+                        "description": "email metadata"
+                      },
+                      {
+                        "key": "disabled",
+                        "value": "{{missing}}",
+                        "disabled": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "auth": {
+            "type": "inherit"
+          },
+          "variables": [],
+          "extra": {
+            "postman": {
+              "folder": {},
+              "order": [
+                "4d81a75e-ecd5-4b94-87bb-ec0a706c0c40"
+              ]
+            }
+          }
+        }
+      ],
+      "requests": [],
+      "variables": [],
+      "auth": {
+        "type": "none"
+      },
+      "extra": {
+        "postman": {
+          "collection": {},
+          "info": {},
+          "order": [
+            "fec16780-99e5-4979-839b-780691c6d0f5"
+          ]
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "a16e69d9-84dc-4dbd-bd79-91db5ddc52fc",
+      "request": {
+        "id": "410540b1-f5c5-4a71-9639-a3286d89f50f",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "cf84a3d2-f87c-4cd7-9512-165113e204b7",
+      "request": {
+        "id": "4d81a75e-ecd5-4b94-87bb-ec0a706c0c40",
+        "name": "Query API",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/echo?email=a@b.com&inline=yes&disabled=old",
+        "params": [
+          {
+            "id": "8460c96f-0aa3-49ac-ac4a-5f04b9e5168e",
+            "key": "inline",
+            "value": "yes",
+            "enabled": true
+          },
+          {
+            "id": "1f42e2ce-f79b-4967-9a96-d8b6e9df3e68",
+            "key": "email",
+            "value": "a@b.com",
+            "enabled": true,
+            "description": "email metadata",
+            "extra": {
+              "postman": {},
+              "postmanDescription": "email metadata"
+            }
+          },
+          {
+            "id": "0c4266ae-e2e9-4691-bd1d-83a36cb0a068",
+            "key": "disabled",
+            "value": "{{missing}}",
+            "enabled": false,
+            "extra": {
+              "postman": {}
+            }
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "a6148e79-64e4-4010-acbf-71f79a124078",
+        "folderId": "fec16780-99e5-4979-839b-780691c6d0f5",
+        "extra": {
+          "postman": {
+            "item": {},
+            "request": {},
+            "url": {
+              "raw": "http://127.0.0.1:53759/echo?email=a@b.com&inline=yes&disabled=old",
+              "query": [
+                {
+                  "key": "email",
+                  "value": "a@b.com",
+                  "description": "email metadata"
+                },
+                {
+                  "key": "disabled",
+                  "value": "{{missing}}",
+                  "disabled": true
+                }
+              ]
+            }
+          }
+        }
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "64a434df-110a-4662-bbcf-a15b2c601e35",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "1ccffbcc-2319-4c60-815b-a6265ef21068",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "48bc20e2-ca69-4c1c-9bc0-d8c4d3557b1a",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "5df9441e-2e6b-45ba-819a-7340d5156ce3",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:23:24 GMT",
+            "enabled": true
+          },
+          {
+            "id": "988c9ef8-9ea6-4eef-a712-6e40c8924dcf",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "95681a31-b566-4c8f-a402-97991720d6cc",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "17a797e6-1f67-4f9e-a3ad-9d43b4edd166",
+            "key": "Content-Length",
+            "value": "179",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo?inline=yes&email=a%40b.com\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 339.66,
+        "size": 179,
+        "url": "http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com",
+        "receivedAt": "2026-10-04T03:23:24.725Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      }
+    }
+  ],
+  "activeTabId": "cf84a3d2-f87c-4cd7-9512-165113e204b7",
+  "history": [
+    {
+      "id": "388b4e15-95a0-4298-8fe8-49ff9a2d1a31",
+      "request": {
+        "id": "4d81a75e-ecd5-4b94-87bb-ec0a706c0c40",
+        "name": "Query API",
+        "method": "GET",
+        "url": "http://127.0.0.1:53759/echo?email=a@b.com&inline=yes&disabled=old",
+        "params": [
+          {
+            "id": "8460c96f-0aa3-49ac-ac4a-5f04b9e5168e",
+            "key": "inline",
+            "value": "yes",
+            "enabled": true
+          },
+          {
+            "id": "1f42e2ce-f79b-4967-9a96-d8b6e9df3e68",
+            "key": "email",
+            "value": "a@b.com",
+            "enabled": true,
+            "description": "email metadata",
+            "extra": {
+              "postman": {},
+              "postmanDescription": "email metadata"
+            }
+          },
+          {
+            "id": "0c4266ae-e2e9-4691-bd1d-83a36cb0a068",
+            "key": "disabled",
+            "value": "{{missing}}",
+            "enabled": false,
+            "extra": {
+              "postman": {}
+            }
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "a6148e79-64e4-4010-acbf-71f79a124078",
+        "folderId": "fec16780-99e5-4979-839b-780691c6d0f5",
+        "extra": {
+          "postman": {
+            "item": {},
+            "request": {},
+            "url": {
+              "raw": "http://127.0.0.1:53759/echo?email=a@b.com&inline=yes&disabled=old",
+              "query": [
+                {
+                  "key": "email",
+                  "value": "a@b.com",
+                  "description": "email metadata"
+                },
+                {
+                  "key": "disabled",
+                  "value": "{{missing}}",
+                  "disabled": true
+                }
+              ]
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "64a434df-110a-4662-bbcf-a15b2c601e35",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "1ccffbcc-2319-4c60-815b-a6265ef21068",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "48bc20e2-ca69-4c1c-9bc0-d8c4d3557b1a",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "5df9441e-2e6b-45ba-819a-7340d5156ce3",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 03:23:24 GMT",
+            "enabled": true
+          },
+          {
+            "id": "988c9ef8-9ea6-4eef-a712-6e40c8924dcf",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "95681a31-b566-4c8f-a402-97991720d6cc",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "17a797e6-1f67-4f9e-a3ad-9d43b4edd166",
+            "key": "Content-Length",
+            "value": "179",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo?inline=yes&email=a%40b.com\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 339.66,
+        "size": 179,
+        "url": "http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com",
+        "receivedAt": "2026-10-04T03:23:24.725Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T03:23:24.725Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com' \\\n  --header 'Accept:' \\\n  --header 'host: 127.0.0.1:53759' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/1.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:53759/echo?inline=yes&email=a%40b.com"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

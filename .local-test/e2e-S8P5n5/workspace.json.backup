@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "5fdc80b1-15f9-4aae-8d75-0f8d8372ad15",
+      "request": {
+        "id": "295d0ebd-4461-473f-a36d-51cb65a11b43",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:49484/html",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "a5b925a0-75d1-4621-a291-f79dd77ef584",
+            "key": "Content-Type",
+            "value": "text/html",
+            "enabled": true
+          },
+          {
+            "id": "8b4ee6f8-ab35-4f46-bb22-33d81a7d0fae",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 05:24:38 GMT",
+            "enabled": true
+          },
+          {
+            "id": "f954ce23-28ac-4f7c-b7fe-27b181c6426c",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "bcbf34b6-8c9b-4982-8ed8-3a25d32dc0ad",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "1ef746c3-fe97-4da2-81f0-6234f23265fe",
+            "key": "Content-Length",
+            "value": "109",
+            "enabled": true
+          }
+        ],
+        "body": "<h1>Safe preview</h1><script>window.parent.compromised=true</script><img src=\"https://invalid.example/track\">",
+        "binary": false,
+        "duration": 10.11,
+        "size": 109,
+        "url": "http://127.0.0.1:49484/html",
+        "receivedAt": "2026-10-02T05:24:38.162Z",
+        "truncated": false
+      }
+    }
+  ],
+  "activeTabId": "5fdc80b1-15f9-4aae-8d75-0f8d8372ad15",
+  "history": [
+    {
+      "id": "21914add-9b7c-4895-b24d-17c7d505f1ce",
+      "request": {
+        "id": "295d0ebd-4461-473f-a36d-51cb65a11b43",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:49484/html",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "a5b925a0-75d1-4621-a291-f79dd77ef584",
+            "key": "Content-Type",
+            "value": "text/html",
+            "enabled": true
+          },
+          {
+            "id": "8b4ee6f8-ab35-4f46-bb22-33d81a7d0fae",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 05:24:38 GMT",
+            "enabled": true
+          },
+          {
+            "id": "f954ce23-28ac-4f7c-b7fe-27b181c6426c",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "bcbf34b6-8c9b-4982-8ed8-3a25d32dc0ad",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "1ef746c3-fe97-4da2-81f0-6234f23265fe",
+            "key": "Content-Length",
+            "value": "109",
+            "enabled": true
+          }
+        ],
+        "body": "<h1>Safe preview</h1><script>window.parent.compromised=true</script><img src=\"https://invalid.example/track\">",
+        "binary": false,
+        "duration": 10.11,
+        "size": 109,
+        "url": "http://127.0.0.1:49484/html",
+        "receivedAt": "2026-10-02T05:24:38.162Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T05:24:38.162Z"
+    },
+    {
+      "id": "88e52677-61f8-457b-9dad-81b343b77282",
+      "request": {
+        "id": "295d0ebd-4461-473f-a36d-51cb65a11b43",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:49484/slow",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "5c8cd09e-4aa9-4082-a0f3-86ee688193db",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "0aab17db-4bb0-49c1-b592-d48f44d44ff2",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "0d3035b3-cd45-4faf-88fb-5b638ed71aa6",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "4d1c1858-1db3-4aa8-8eb1-5bd4e1c8a24a",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 05:24:36 GMT",
+            "enabled": true
+          },
+          {
+            "id": "d1e55e7e-fb6c-4a95-86d8-16eec4c5eb73",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "8e23c743-acd6-42d8-ada2-e29a2f277c27",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "5671bfa1-da9b-4799-a62a-f32478231877",
+            "key": "Content-Length",
+            "value": "114",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/slow\",\"body\":null,\"authorization\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 1012.1,
+        "size": 114,
+        "url": "http://127.0.0.1:49484/slow",
+        "receivedAt": "2026-10-02T05:24:36.156Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T05:24:36.156Z"
+    },
+    {
+      "id": "1316b51d-cde1-41b6-ab83-e8c249f7058d",
+      "request": {
+        "id": "295d0ebd-4461-473f-a36d-51cb65a11b43",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:49484/slow",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "75246395-12aa-4d47-8fea-33c7dd38b7c0",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "872fb68a-b08e-4f51-a7b8-28e19188118d",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "b5eeafbc-72f0-4a0f-b9ba-489e06a56cd5",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "d2c7553f-afa0-4d7e-bf37-bebaff6be579",
+            "key": "Date",
+            "value": "Fri, 02 Oct 2026 05:24:32 GMT",
+            "enabled": true
+          },
+          {
+            "id": "32c1f5a7-2436-48d7-a297-c54ee5d7eadc",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "e7948e65-3f0e-4222-bcfd-bfdacb4cd452",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "afc61eb3-9d3f-4b7d-bcad-e37aa7781f84",
+            "key": "Content-Length",
+            "value": "114",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/slow\",\"body\":null,\"authorization\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 1026.86,
+        "size": 114,
+        "url": "http://127.0.0.1:49484/slow",
+        "receivedAt": "2026-10-02T05:24:32.139Z",
+        "truncated": false
+      },
+      "timestamp": "2026-10-02T05:24:32.139Z"
+    },
+    {
+      "id": "ec6dd8a8-d8ea-4bde-81b8-b74cd591957d",
+      "request": {
+        "id": "295d0ebd-4461-473f-a36d-51cb65a11b43",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "{{undefined}}/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "timestamp": "2026-10-02T05:24:27.155Z",
+      "error": "Error invoking remote method 'request:send': Error: Unresolved variable: {{undefined}}"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

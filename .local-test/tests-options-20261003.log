@@ -1,0 +1,78 @@
+
+> api-manager@1.0.0 test
+> vitest run && node --test tests/backend*.test.cjs
+
+
+ RUN  v5.0.3 D:/Framework/API Manager v1.0.0
+
+
+ Test Files  6 passed (6)
+      Tests  239 passed (239)
+   Start at  11:34:21
+   Duration  2.60s (tests 55%, import 25%, transform 18%, worker 1%)
+
+✔ Digest MD5 matches the RFC 2617 published example and handles stale bounded retries (3.3896ms)
+✔ Digest SHA-256 auth-int changes with the actual body bytes and rejects unknown algorithms (0.9324ms)
+✔ OAuth 1 HMAC-SHA1 matches RFC 5849 with repeated query/body parameters (2.2893ms)
+✔ OAuth 1 query signing contains only OAuth auth attributes and changes when body data changes (0.8083ms)
+✔ Hawk MAC and payload hash authenticate with the Hawk server verifier (2.3255ms)
+✔ Hawk accepts the Postman authKey and extraData field aliases (1.6352ms)
+✔ AWS Signature V4 matches the published IAM ListUsers signing vector (1.9556ms)
+✔ AWS query signatures include session token, preserve duplicate params, and hash binary bodies (0.9875ms)
+✔ EdgeGrid signature verifies independently using actual binary bytes and signed headers (1.1776ms)
+✔ JWT HS256 matches a published JWT example and rejects algorithm none (0.7726ms)
+✔ JWT RSA, ECDSA JOSE encoding, and PSS signatures verify with public keys (172.5145ms)
+✔ ASAP creates a verified RSA token with required issuer, audience, key ID, expiry, and token ID (75.4118ms)
+✔ JWT and OAuth2 support query tokens and variable resolution without leaking credentials into the original object (0.7576ms)
+✔ NTLM negotiates Type1 and creates an NTLMv2 Type3 response from a validated server challenge (5.2199ms)
+✔ NTLMv2 proof and LM response match Microsoft MS-NLMP 4.2.4 published vectors (2.1945ms)
+✔ NTLMv2 honors server AV timestamp, zeros LM response, and passes independent proof verification (1.3042ms)
+✔ NTLM Type1 preserves ASCII domain and workstation without URI escaping (0.3361ms)
+✔ NTLMv2 validates AV field sizes, terminators, duplicate time, and required channel binding (0.6349ms)
+✔ unsupported signing/body combinations and CRLF credential injection fail explicitly (0.3261ms)
+✔ OAuth2 client credentials, refresh, manual PKCE code, and password grants reach a local token endpoint correctly (55.1629ms)
+✔ OAuth2 rejects redirects, malformed JSON, invalid token URLs, and missing access tokens (11.9963ms)
+✔ bug report opens only a fixed recipient email draft with encoded subject and template (1.9132ms)
+✔ unavailable mail association gives a useful error without exposing native details (0.5802ms)
+✔ all allowed Postman dynamic names resolve to cached string values without evaluation (15.7673ms)
+✔ dynamic sessions reuse flight samples, accept known samples and release on cancellation (0.7056ms)
+✔ active flight samples survive idle expiry and cache pressure, then expire after release (23.7744ms)
+✔ all-active cache refuses excess concurrent operations rather than evicting active samples (5.9969ms)
+✔ real HTTP resolves recursive variables, enabled params, duplicate headers and bearer auth (221.1878ms)
+✔ dynamic values remain stable across URL, headers, body and authorization within a flight (15.6301ms)
+✔ supports raw JSON, duplicate URL-encoded form keys, multipart files and binary uploads (32.6837ms)
+✔ raw response header duplicates survive and compressed JSON is decoded (12.4439ms)
+✔ SOAP 1.1 and 1.2 send XML envelopes with version-specific headers and receive XML (6.5781ms)
+✔ response limits apply after decompression and binary bodies are base64 (7.3747ms)
+✔ redirects strip credentials across origins and preserve or transform methods correctly (24.7369ms)
+✔ timeout, explicit cancellation and duplicate in-flight IDs are handled (45.1879ms)
+✔ Digest and NTLM challenges retry through the actual transport and retain the NTLM socket (24.0162ms)
+✔ advanced tokens are applied on same-origin redirects and stripped on cross-origin redirects (8.593ms)
+✔ cookie jar persists across launches and supports domain clearing (31.6982ms)
+✔ variables reject unresolved tokens and cycles before contacting the server (1.0753ms)
+✔ SSL verification is enabled by default and can be deliberately disabled (76.6531ms)
+✔ pre-request scripts mutate request headers, URL, body and persistent variable scopes (16.3018ms)
+✔ post-response scripts use real Chai assertions, JSON, headers and status helpers (4.6687ms)
+✔ response assertions support negation, status text, nested JSON paths and correct status groups (9.5553ms)
+✔ async functions, done callbacks and timers finish before test results return (28.9557ms)
+✔ script exceptions preserve earlier tests, logs and mutations and unsupported APIs explain failure (4.7186ms)
+✔ local overrides survive sequential stages while environment mutations update effective values (4.4058ms)
+✔ explicit folder scopes retain equal or environment-masked fallback values across script mutations (4.1285ms)
+✔ script payload validation bounds source and requires a response for post-response stage (0.2869ms)
+✔ oversized script results are rejected in the sandbox before being sent to the application (148.7942ms)
+✔ actual Electron sandbox denies Node, DOM and network, terminates loops, and cancels by request ID (5396.6958ms)
+✔ workspace saves atomically, serializes concurrent saves and restores latest state (43.6905ms)
+✔ damaged primary recovers backup with warning and preserves corruption evidence (23.1578ms)
+✔ missing primary recovers valid backup and invalid-schema primary is rejected (21.0961ms)
+✔ no valid backup returns recoverable warning and subsequent save succeeds (14.5067ms)
+✔ schema failures cannot overwrite good data or break the next save (15.6177ms)
+✔ cookie storage corruption recovers an earlier validated backup (18.5391ms)
+✔ saved window layouts keep visible positions and recover after a monitor is removed (1.2667ms)
+ℹ tests 57
+ℹ suites 0
+ℹ pass 57
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5784.362
