@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "3cc08bea-f28c-44d8-81dc-3da33aa13a29",
+      "request": {
+        "id": "1c57c261-412a-4e8b-a42b-43e90525b1ed",
+        "name": "Untitled request",
+        "method": "POST",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\n  \"big\": 9007199254740993123,\n  \"text\": \"wrap me\"\n}",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Body",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "d2306020-112d-4653-8a9d-0e2d0dac4c3b",
+      "request": {
+        "id": "318f4cf2-65f2-40d9-ba09-91a89165ba67",
+        "name": "Untitled request",
+        "method": "POST",
+        "url": "http://127.0.0.1:63986/soap",
+        "params": [],
+        "headers": [
+          {
+            "id": "19759e65-ade5-43b7-9356-e4ddbd372040",
+            "key": "Content-Type",
+            "value": "application/soap+xml; charset=utf-8; action=\"urn:Echo\"",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>",
+          "language": "xml",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "soap": {
+          "version": "1.2",
+          "action": "urn:Echo"
+        }
+      },
+      "dirty": true,
+      "editorTab": "Body",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "e1ad5629-be78-4270-a9b6-a4fe67e1ca0f",
+            "key": "Content-Type",
+            "value": "application/soap+xml",
+            "enabled": true
+          },
+          {
+            "id": "8e659938-95c8-4ae8-8540-252104b4150d",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:05:36 GMT",
+            "enabled": true
+          },
+          {
+            "id": "3fe03f0d-2d93-48a4-a01b-991e8dc8a13e",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "53b6b5db-bd4b-422f-9b76-fb282394aa67",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "93be86c8-1ff2-4b71-89e5-3e3a7fa5d2c8",
+            "key": "Content-Length",
+            "value": "64",
+            "enabled": true
+          }
+        ],
+        "body": "<Envelope><Body><Result>SOAP accepted</Result></Body></Envelope>",
+        "binary": false,
+        "duration": 149.19,
+        "size": 64,
+        "url": "http://127.0.0.1:63986/soap",
+        "receivedAt": "2026-10-04T09:05:36.058Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/soap",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:63986/soap' \\\n  --data-binary '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Content-Type: application/soap+xml; charset=utf-8; action=\"urn:Echo\"' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 213'"
+      }
+    },
+    {
+      "id": "f782cb98-fcaa-4f49-a4b4-19ae4e682743",
+      "request": {
+        "id": "d961076b-084e-4222-a351-79f1218e06c0",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "tokenUrl": "http://127.0.0.1:63986/token",
+            "clientId": "local-client",
+            "clientSecret": "local-secret",
+            "accessToken": "acquired-ui-token",
+            "refreshToken": "refresh-ui-token",
+            "tokenType": "Bearer"
+          },
+          "token": "acquired-ui-token"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Authorization",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "04f36753-0bdd-420b-90aa-1a004be186b4",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "a43fa17d-21be-43fc-be51-dd767f0ac5a5",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "076042a7-c7c7-4c3c-9a19-e559fe2af614",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "dab5e257-7a53-424d-873e-19f7e5a3a92f",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:05:49 GMT",
+            "enabled": true
+          },
+          {
+            "id": "fc5f8b73-b612-4362-a63b-4fe31309cf7c",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "7e8ba3f5-e8bf-49d4-b5db-6bc1c30dc9c2",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "b2d3db86-32fe-4674-8b25-dfb8f5c8b7c7",
+            "key": "Content-Length",
+            "value": "188",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer acquired-ui-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.52,
+        "size": 188,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:05:49.956Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Authorization: Bearer acquired-ui-token'"
+      }
+    }
+  ],
+  "activeTabId": "f782cb98-fcaa-4f49-a4b4-19ae4e682743",
+  "history": [
+    {
+      "id": "51755ccf-68ad-44a8-af14-cd1d8976b8a2",
+      "request": {
+        "id": "d961076b-084e-4222-a351-79f1218e06c0",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "tokenUrl": "http://127.0.0.1:63986/token",
+            "clientId": "local-client",
+            "clientSecret": "local-secret",
+            "accessToken": "acquired-ui-token",
+            "refreshToken": "refresh-ui-token",
+            "tokenType": "Bearer"
+          },
+          "token": "acquired-ui-token"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "04f36753-0bdd-420b-90aa-1a004be186b4",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "a43fa17d-21be-43fc-be51-dd767f0ac5a5",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "076042a7-c7c7-4c3c-9a19-e559fe2af614",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "dab5e257-7a53-424d-873e-19f7e5a3a92f",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:05:49 GMT",
+            "enabled": true
+          },
+          {
+            "id": "fc5f8b73-b612-4362-a63b-4fe31309cf7c",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "7e8ba3f5-e8bf-49d4-b5db-6bc1c30dc9c2",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "b2d3db86-32fe-4674-8b25-dfb8f5c8b7c7",
+            "key": "Content-Length",
+            "value": "188",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer acquired-ui-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.52,
+        "size": 188,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:05:49.956Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Authorization: Bearer acquired-ui-token'"
+      },
+      "timestamp": "2026-10-04T09:05:49.956Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Authorization: Bearer acquired-ui-token'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "f8471f7e-71a6-48cc-983e-bfb2916d9776",
+      "request": {
+        "id": "318f4cf2-65f2-40d9-ba09-91a89165ba67",
+        "name": "Untitled request",
+        "method": "POST",
+        "url": "http://127.0.0.1:63986/soap",
+        "params": [],
+        "headers": [
+          {
+            "id": "19759e65-ade5-43b7-9356-e4ddbd372040",
+            "key": "Content-Type",
+            "value": "application/soap+xml; charset=utf-8; action=\"urn:Echo\"",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>",
+          "language": "xml",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": "",
+        "soap": {
+          "version": "1.2",
+          "action": "urn:Echo"
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "e1ad5629-be78-4270-a9b6-a4fe67e1ca0f",
+            "key": "Content-Type",
+            "value": "application/soap+xml",
+            "enabled": true
+          },
+          {
+            "id": "8e659938-95c8-4ae8-8540-252104b4150d",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:05:36 GMT",
+            "enabled": true
+          },
+          {
+            "id": "3fe03f0d-2d93-48a4-a01b-991e8dc8a13e",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "53b6b5db-bd4b-422f-9b76-fb282394aa67",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "93be86c8-1ff2-4b71-89e5-3e3a7fa5d2c8",
+            "key": "Content-Length",
+            "value": "64",
+            "enabled": true
+          }
+        ],
+        "body": "<Envelope><Body><Result>SOAP accepted</Result></Body></Envelope>",
+        "binary": false,
+        "duration": 149.19,
+        "size": 64,
+        "url": "http://127.0.0.1:63986/soap",
+        "receivedAt": "2026-10-04T09:05:36.058Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/soap",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:63986/soap' \\\n  --data-binary '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Content-Type: application/soap+xml; charset=utf-8; action=\"urn:Echo\"' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 213'"
+      },
+      "timestamp": "2026-10-04T09:05:36.058Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:63986/soap' \\\n  --data-binary '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Header />\n  <soap:Body>\n    <!-- Add your SOAP operation here -->\n  </soap:Body>\n</soap:Envelope>' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Content-Type: application/soap+xml; charset=utf-8; action=\"urn:Echo\"' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 213'",
+      "requestUrl": "http://127.0.0.1:63986/soap"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

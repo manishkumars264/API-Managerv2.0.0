@@ -1,0 +1,13 @@
+{
+  "sha256": "CA5E65D26E90A79F79DABE80A01D339119A174AF86F222DF8853FA6C66726AF2",
+  "builtAssets": 96,
+  "sourceFiles": 101,
+  "executableHashes": {
+    "release/API Manager 2.0.0.exe": "D1205D21112EF65227D421D6E3729D04E8E0B92036D535A40A882EA4BF3FA7C2",
+    "release/API Manager Setup 2.0.0.exe": "7AE36FA656E656EE7E1F1E5EE21616A7463C0BAB4381EBDD430F45803E1A2C1E"
+  },
+  "entries": 200,
+  "bytes": 269963119,
+  "stagingZip": "D:\\Framework\\API Manager v1.0.0\\.local-test\\API-Manager-2.0.0-controls.zip",
+  "allFileHashesVerified": true
+}

@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "5b67b2b5-32e7-4284-9c67-26b4eba4280d",
+      "request": {
+        "id": "d73a0fa6-c81d-4a05-8f64-93c3e9470a4c",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "tokenUrl": "http://127.0.0.1:63986/token?delay",
+            "clientId": "client",
+            "clientSecret": "secret",
+            "grantType": "client_credentials",
+            "accessToken": "acquired-ui-token",
+            "refreshToken": "refresh-ui-token",
+            "tokenType": "Bearer"
+          },
+          "token": "acquired-ui-token"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Authorization",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "f017c3a2-90eb-4184-a0a9-cb00e076a909",
+      "request": {
+        "id": "13cde78a-6d6f-48b8-bc82-ffcb46229b47",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/edited-after-send",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      }
+    }
+  ],
+  "activeTabId": "f017c3a2-90eb-4184-a0a9-cb00e076a909",
+  "history": [
+    {
+      "id": "27b115ef-2970-4cce-80d9-d423b96e1118",
+      "request": {
+        "id": "13cde78a-6d6f-48b8-bc82-ffcb46229b47",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/slow?long",
+        "params": [
+          {
+            "id": "e66fe903-743b-43fe-992a-168d5f665b59",
+            "key": "long",
+            "value": "",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "timestamp": "2026-10-04T09:05:57.821Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "error": "Request cancelled.",
+      "requestUrl": "http://127.0.0.1:63986/slow?long=",
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/slow?long=' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

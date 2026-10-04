@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "992baf73-a9a1-48be-8ebe-a95d18ee773e",
+      "request": {
+        "id": "fe6fe701-bcc0-446e-9099-abaa077cb717",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/race",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "c42681ca-afee-4417-8c70-36a87bdb8e44",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "e3d26709-9b74-4a4b-8aeb-d3214f50f201",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "58e5f339-0df9-46b7-b057-9722cd6bc30f",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "16c6ac62-32a5-4b97-b35f-feefb97dabae",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:06:06 GMT",
+            "enabled": true
+          },
+          {
+            "id": "8421c079-bcb0-4b9d-af81-bce82161dead",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "f845a000-6254-4faa-b8a9-d1322719c078",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "ce12ffcc-6ab6-48a4-b493-88dc4f6bc09a",
+            "key": "Content-Length",
+            "value": "166",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/race\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 1014.3,
+        "size": 166,
+        "url": "http://127.0.0.1:63986/race",
+        "receivedAt": "2026-10-04T09:06:06.881Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/race",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/race' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      }
+    }
+  ],
+  "activeTabId": "992baf73-a9a1-48be-8ebe-a95d18ee773e",
+  "history": [
+    {
+      "id": "0c151138-a63c-4ab4-bad4-528220c7a999",
+      "request": {
+        "id": "fe6fe701-bcc0-446e-9099-abaa077cb717",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/race",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "c42681ca-afee-4417-8c70-36a87bdb8e44",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "e3d26709-9b74-4a4b-8aeb-d3214f50f201",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "58e5f339-0df9-46b7-b057-9722cd6bc30f",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "16c6ac62-32a5-4b97-b35f-feefb97dabae",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:06:06 GMT",
+            "enabled": true
+          },
+          {
+            "id": "8421c079-bcb0-4b9d-af81-bce82161dead",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "f845a000-6254-4faa-b8a9-d1322719c078",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "ce12ffcc-6ab6-48a4-b493-88dc4f6bc09a",
+            "key": "Content-Length",
+            "value": "166",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/race\",\"body\":null,\"authorization\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 1014.3,
+        "size": 166,
+        "url": "http://127.0.0.1:63986/race",
+        "receivedAt": "2026-10-04T09:06:06.881Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/race",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/race' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T09:06:06.881Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/race' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:63986/race"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

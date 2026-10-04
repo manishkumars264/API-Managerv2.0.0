@@ -1,0 +1,62 @@
+import { ChevronDown, ChevronRight, CircleHelp, Clock3, Download, Folder, FolderPlus, Globe2, Layers, Layers2, MoreHorizontal, Plus, Search, Send, Settings2, SlidersHorizontal, TerminalSquare, Trash2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import type { ApiCollection, ApiFolder, ApiRequest, HistoryEntry, Workspace } from '../types';
+
+interface Props {
+  workspace: Workspace;
+  selectedEnvironment: string | null;
+  onView: (view: Workspace['sidebarView']) => void;
+  onOpen: (request: ApiRequest, copy?: boolean) => void;
+  onOpenHistory: (entry: HistoryEntry, run?: boolean) => void;
+  onNew: () => void;
+  onEnvironment: (id: string) => void;
+  consoleOpen: boolean;
+  onToggleConsole: () => void;
+  onAction: (action: string, id?: string, collectionId?: string) => void;
+}
+
+export function Sidebar({ workspace, selectedEnvironment, onView, onOpen, onOpenHistory, onNew, onEnvironment, consoleOpen, onToggleConsole, onAction }: Props) {
+  const [query, setQuery] = useState('');
+  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
+    try { return JSON.parse(localStorage.getItem('api-manager-tree') || '{}'); } catch { return {}; }
+  });
+  const [menu, setMenu] = useState<string | null>(null);
+  useEffect(() => {
+    const click = (event: PointerEvent) => { if (!(event.target as Element)?.closest('.context-menu, .row-more')) setMenu(null); };
+    const key = (event: KeyboardEvent) => { if (event.key === 'Escape') setMenu(null); };
+    document.addEventListener('pointerdown', click); document.addEventListener('keydown', key);
+    return () => { document.removeEventListener('pointerdown', click); document.removeEventListener('keydown', key); };
+  }, []);
+  const lower = query.toLowerCase();
+  const toggle = (id: string) => setExpanded(previous => {
+    const next = { ...previous, [id]: previous[id] === false };
+    localStorage.setItem('api-manager-tree', JSON.stringify(next));
+    return next;
+  });
+  const action = (key: string, id: string, collectionId?: string) => { setMenu(null); onAction(key, id, collectionId); };
+  const requestRow = (request: ApiRequest, level: number, collectionId: string) => <div className={`tree-row request-row ${workspace.tabs.find(tab => tab.id === workspace.activeTabId)?.request.id === request.id ? 'active' : ''}`} style={{ paddingLeft: 12 + level * 16 }} key={request.id}>
+    <button className="tree-main" onClick={() => onOpen(request)} title={request.url || request.name}><span className={`method-badge ${request.method.toLowerCase()}`}>{request.method}</span><span className="ellipsis">{request.name}</span></button>
+    <button className="icon-button row-more" aria-label={`Actions for ${request.name}`} onClick={() => setMenu(menu === request.id ? null : request.id)}><MoreHorizontal size={15} /></button>
+    {menu === request.id && <div className="context-menu"><button onClick={() => action('duplicate-request', request.id, collectionId)}>Duplicate request</button><button onClick={() => action('rename-request', request.id, request.collectionId)}>Rename</button><button onClick={() => action('move-request', request.id, request.collectionId)}>Move to folder…</button><button className="danger" onClick={() => action('delete-request', request.id, request.collectionId)}>Delete</button></div>}
+  </div>;
+  const contains = (folder: ApiFolder): boolean => folder.name.toLowerCase().includes(lower) || folder.requests.some(request => request.name.toLowerCase().includes(lower) || request.url.toLowerCase().includes(lower)) || folder.folders.some(contains);
+  const folderRows = (folder: ApiFolder, collection: ApiCollection, level: number): React.ReactNode => {
+    if (query && !contains(folder)) return null;
+    const open = query || expanded[folder.id] !== false;
+    return <div key={folder.id}><div className="tree-row folder-row" style={{ paddingLeft: 12 + level * 16 }}><button className="tree-main" onClick={() => toggle(folder.id)}>{open ? <ChevronDown size={13} /> : <ChevronRight size={13} />}<Folder size={14} /><span className="ellipsis">{folder.name}</span></button><button className="icon-button row-more" aria-label={`Actions for ${folder.name}`} onClick={() => setMenu(menu === folder.id ? null : folder.id)}><MoreHorizontal size={15} /></button>{menu === folder.id && <div className="context-menu"><button onClick={() => action('new-request-folder', folder.id, collection.id)}>Add request</button><button onClick={() => action('new-folder-child', folder.id, collection.id)}>Add folder</button><button onClick={() => action('edit-folder', folder.id, collection.id)}>Settings & variables</button><button onClick={() => action('rename-folder', folder.id, collection.id)}>Rename</button><button className="danger" onClick={() => action('delete-folder', folder.id, collection.id)}>Delete</button></div>}</div>{open && <>{folder.folders.map(child => folderRows(child, collection, level + 1))}{folder.requests.filter(request => !query || folder.name.toLowerCase().includes(lower) || request.name.toLowerCase().includes(lower) || request.url.toLowerCase().includes(lower)).map(request => requestRow(request, level + 1, collection.id))}</>}</div>;
+  };
+  return <aside className="sidebar" style={{ width: workspace.sidebarWidth }}>
+    <nav className="sidebar-rail" aria-label="Workspace sections"><button className={workspace.sidebarView === 'collections' ? 'selected' : ''} onClick={() => onView('collections')} title="Collections"><Layers size={20} /><span>Collections</span></button><button className={workspace.sidebarView === 'environments' ? 'selected' : ''} onClick={() => onView('environments')} title="Environments"><SlidersHorizontal size={20} /><span>Environments</span></button><button className={consoleOpen ? 'selected' : ''} aria-label="Console" aria-pressed={consoleOpen} onClick={onToggleConsole} title="Console"><TerminalSquare size={20} /><span>Console</span></button><button className={workspace.sidebarView === 'history' ? 'selected' : ''} onClick={() => onView('history')} title="History"><Clock3 size={20} /><span>History</span></button><div className="rail-spacer" /><button title="About and Help" aria-label="Help" onClick={() => onAction('help')}><CircleHelp size={20} /><span>About and Help</span></button><button title="Settings" onClick={() => onAction('settings')}><Settings2 size={20} /><span>Settings</span></button></nav>
+    <div className="sidebar-panel"><div className="sidebar-title"><strong>{workspace.sidebarView === 'collections' ? 'Collections' : workspace.sidebarView === 'environments' ? 'Environments' : 'History'}</strong><button className="icon-button" aria-label={workspace.sidebarView === 'history' ? 'Clear history' : 'Add'} title={workspace.sidebarView === 'history' ? 'Clear history' : 'Add'} onClick={() => onAction(workspace.sidebarView === 'collections' ? 'new-collection' : workspace.sidebarView === 'environments' ? 'new-environment' : 'clear-history')}>{workspace.sidebarView === 'history' ? <Trash2 size={15} /> : <Plus size={17} />}</button></div>
+      <div className="sidebar-search"><Search size={14} /><input aria-label="Search workspace" placeholder={`Search ${workspace.sidebarView}`} value={query} onChange={event => setQuery(event.target.value)} /></div>
+      <div className="tree-scroll">
+        {workspace.sidebarView === 'collections' && <>{workspace.collections.filter(collection => !query || collection.name.toLowerCase().includes(lower) || collection.requests.some(request => request.name.toLowerCase().includes(lower) || request.url.toLowerCase().includes(lower)) || collection.folders.some(contains)).map(collection => {
+          const open = query || expanded[collection.id] !== false;
+          return <div className="collection-tree" key={collection.id}><div className="tree-row collection-row"><button className="tree-main" onClick={() => toggle(collection.id)}>{open ? <ChevronDown size={13} /> : <ChevronRight size={13} />}<Folder size={15} /><span className="ellipsis">{collection.name}</span></button><button className="icon-button row-more" aria-label={`Actions for ${collection.name}`} onClick={() => setMenu(menu === collection.id ? null : collection.id)}><MoreHorizontal size={16} /></button>{menu === collection.id && <div className="context-menu"><button onClick={() => action('new-request-collection', collection.id)}>Add request</button><button onClick={() => action('new-folder', collection.id)}>Add folder</button><button onClick={() => action('edit-collection', collection.id)}>Settings & variables</button><button onClick={() => action('rename-collection', collection.id)}>Rename</button><button onClick={() => action('export-collection', collection.id)}><Download size={13} /> Export</button><button className="danger" onClick={() => action('delete-collection', collection.id)}>Delete</button></div>}</div>{open && <>{collection.folders.map(folder => folderRows(folder, collection, 1))}{collection.requests.filter(request => !query || collection.name.toLowerCase().includes(lower) || request.name.toLowerCase().includes(lower) || request.url.toLowerCase().includes(lower)).map(request => requestRow(request, 1, collection.id))}{!collection.requests.length && !collection.folders.length && <button className="tree-add" onClick={() => action('new-request-collection', collection.id)}><Plus size={13} /> Add a request</button>}</>}</div>;
+        })}{!workspace.collections.length && <div className="sidebar-empty"><FolderPlus size={28} /><strong>Keep requests together</strong><p>Organize your API requests in local collections.</p><button className="button small" onClick={() => onAction('new-collection')}>Create collection</button></div>}{!!workspace.collections.length && <button className="sidebar-bottom-action" onClick={onNew}><Plus size={14} /> New request</button>}</>}
+        {workspace.sidebarView === 'environments' && <><button className={`environment-row ${selectedEnvironment === 'globals' ? 'active' : ''}`} onClick={() => onEnvironment('globals')}><Globe2 size={15} /><span>Globals</span><span className="count">{workspace.globals.length}</span></button>{workspace.environments.filter(environment => environment.name.toLowerCase().includes(lower)).map(environment => <button className={`environment-row ${selectedEnvironment === environment.id ? 'active' : ''}`} key={environment.id} onClick={() => onEnvironment(environment.id)}><Layers2 size={15} /><span className="ellipsis">{environment.name}</span>{workspace.activeEnvironmentId === environment.id && <span className="active-dot" title="Active environment" />}<span className="count">{environment.variables.length}</span></button>)}{!workspace.environments.length && <div className="sidebar-empty"><SlidersHorizontal size={28} /><strong>Variables for every context</strong><p>Store base URLs, tokens, and values locally.</p><button className="button small" onClick={() => onAction('new-environment')}>Create environment</button></div>}</>}
+        {workspace.sidebarView === 'history' && <><div className="history-limit">Latest {workspace.history.length} of 200 runs</div>{workspace.history.filter(entry => !query || entry.request.name.toLowerCase().includes(lower) || entry.request.url.toLowerCase().includes(lower)).map(entry => <div className="history-item" key={entry.id}><button className="history-row" aria-label={`Open saved run ${entry.request.name}`} onClick={() => onOpenHistory(entry)} title={entry.error || entry.request.url}><div><span className={`method-badge ${entry.request.method.toLowerCase()}`}>{entry.request.method}</span><span className={`history-status ${entry.error ? 'error' : ''}`}>{entry.error ? 'Error' : entry.response?.status}</span><time>{new Date(entry.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</time></div><span className="ellipsis">{entry.request.url || entry.request.name}</span><small>{new Date(entry.timestamp).toLocaleDateString()}</small></button><button className="history-run icon-button" aria-label={`Run again ${entry.request.name}`} title="Run again" onClick={() => onOpenHistory(entry, true)}><Send size={12} /></button></div>)}{!workspace.history.length && <div className="sidebar-empty"><Clock3 size={28} /><strong>Your request history</strong><p>The latest 200 runs, including response bodies, are saved on this computer.</p></div>}</>}
+      </div><div className="sidebar-foot"><span className="local-dot" />Stored on this device</div>
+    </div>
+  </aside>;
+}

@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [
+    {
+      "id": "new-variables",
+      "name": "Development",
+      "variables": []
+    }
+  ],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "d40f6181-254c-409a-8b1b-2fa7c099bd16",
+      "request": {
+        "id": "ac4771a5-a7b4-4306-a7c6-2a4cd15fa6cd",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:54144/echo?new={{new_value}}",
+        "params": [
+          {
+            "id": "087e55f3-5ea7-414f-8b7b-22c0d4f3b8e4",
+            "key": "new",
+            "value": "{{new_value}}",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "5d98c6f5-50b8-47bc-9c75-ec1a1bc0aeaf",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "2b5a2943-1d59-491e-b9de-349a5366dfd3",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "46cf0354-6b5f-4008-9365-10e2ab7f4e36",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "3af0e601-3efe-4d4d-850e-98fc392e087c",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 08:50:20 GMT",
+            "enabled": true
+          },
+          {
+            "id": "4c1c80b0-6c08-4d24-825b-13e119bfb37a",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "f80aa9e6-1388-4e33-94c7-c6a09426b88e",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "ed78c0d0-06c2-4dd0-8ea7-1d328975bdc9",
+            "key": "Content-Length",
+            "value": "190",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo?new=saved-from-shortcut\",\"body\":null,\"authorization\":null,\"apiKey\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 161.7,
+        "size": 190,
+        "url": "http://127.0.0.1:54144/echo?new=saved-from-shortcut",
+        "receivedAt": "2026-10-04T08:50:20.067Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54144/echo?new=saved-from-shortcut",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54144/echo?new=saved-from-shortcut' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54144' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      }
+    }
+  ],
+  "activeTabId": "d40f6181-254c-409a-8b1b-2fa7c099bd16",
+  "history": [
+    {
+      "id": "355eca47-cedc-46d9-a157-f277639f6bbf",
+      "request": {
+        "id": "ac4771a5-a7b4-4306-a7c6-2a4cd15fa6cd",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:54144/echo?new={{new_value}}",
+        "params": [
+          {
+            "id": "087e55f3-5ea7-414f-8b7b-22c0d4f3b8e4",
+            "key": "new",
+            "value": "{{new_value}}",
+            "enabled": true
+          }
+        ],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "5d98c6f5-50b8-47bc-9c75-ec1a1bc0aeaf",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "2b5a2943-1d59-491e-b9de-349a5366dfd3",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "46cf0354-6b5f-4008-9365-10e2ab7f4e36",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "3af0e601-3efe-4d4d-850e-98fc392e087c",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 08:50:20 GMT",
+            "enabled": true
+          },
+          {
+            "id": "4c1c80b0-6c08-4d24-825b-13e119bfb37a",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "f80aa9e6-1388-4e33-94c7-c6a09426b88e",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "ed78c0d0-06c2-4dd0-8ea7-1d328975bdc9",
+            "key": "Content-Length",
+            "value": "190",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo?new=saved-from-shortcut\",\"body\":null,\"authorization\":null,\"apiKey\":null,\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true}",
+        "binary": false,
+        "duration": 161.7,
+        "size": 190,
+        "url": "http://127.0.0.1:54144/echo?new=saved-from-shortcut",
+        "receivedAt": "2026-10-04T08:50:20.067Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54144/echo?new=saved-from-shortcut",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54144/echo?new=saved-from-shortcut' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54144' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T08:50:20.067Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54144/echo?new=saved-from-shortcut' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54144' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:54144/echo?new=saved-from-shortcut"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "environments",
+  "sidebarWidth": 268
+}

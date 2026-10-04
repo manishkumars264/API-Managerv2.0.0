@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "8154d2fc-21c0-4596-a570-42200181b3d4",
+      "name": "Example API",
+      "description": "",
+      "folders": [
+        {
+          "id": "cfde32c3-e695-4d03-9117-a33082e4ae1b",
+          "name": "Users",
+          "folders": [],
+          "requests": [
+            {
+              "id": "30b69157-9e75-48ab-ab3d-cb5be4935b6c",
+              "name": "Create user",
+              "method": "POST",
+              "url": "{{base_url}}/echo",
+              "params": [],
+              "headers": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"API Manager\"}",
+                "language": "json",
+                "fields": []
+              },
+              "auth": {
+                "type": "inherit"
+              },
+              "description": "",
+              "collectionId": "8154d2fc-21c0-4596-a570-42200181b3d4",
+              "folderId": "cfde32c3-e695-4d03-9117-a33082e4ae1b",
+              "extra": {
+                "postman": {
+                  "item": {},
+                  "request": {},
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"API Manager\"}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "auth": {
+            "type": "inherit"
+          },
+          "variables": [],
+          "extra": {
+            "postman": {
+              "folder": {},
+              "order": [
+                "30b69157-9e75-48ab-ab3d-cb5be4935b6c"
+              ]
+            }
+          }
+        }
+      ],
+      "requests": [],
+      "variables": [],
+      "auth": {
+        "type": "bearer",
+        "token": "{{token}}"
+      },
+      "extra": {
+        "postman": {
+          "collection": {},
+          "info": {},
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "{{token}}"
+              }
+            ]
+          },
+          "order": [
+            "cfde32c3-e695-4d03-9117-a33082e4ae1b"
+          ]
+        }
+      }
+    }
+  ],
+  "environments": [
+    {
+      "id": "affd1858-2dde-42bf-b041-d3aa78efc527",
+      "name": "Local",
+      "variables": [
+        {
+          "id": "278eb516-1b52-47a0-9e45-de79517d53c6",
+          "key": "base_url",
+          "value": "http://127.0.0.1:63986",
+          "enabled": true,
+          "extra": {
+            "postman": {}
+          }
+        },
+        {
+          "id": "422ecc28-b4d4-4f80-a28b-4368e68b271f",
+          "key": "token",
+          "value": "local-demo-token",
+          "enabled": true,
+          "extra": {
+            "postman": {}
+          }
+        }
+      ],
+      "extra": {
+        "postman": {}
+      }
+    }
+  ],
+  "globals": [],
+  "activeEnvironmentId": "affd1858-2dde-42bf-b041-d3aa78efc527",
+  "tabs": [
+    {
+      "id": "e6a92cea-11ec-4e84-ba35-e778d176e16c",
+      "request": {
+        "id": "9026988d-08cb-4956-87c9-a21ec8b5f4ba",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    },
+    {
+      "id": "2dfc74b1-870c-44d6-a9d9-cbce9caaae86",
+      "request": {
+        "id": "30b69157-9e75-48ab-ab3d-cb5be4935b6c",
+        "name": "Create user",
+        "method": "POST",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"API Manager\"}",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "8154d2fc-21c0-4596-a570-42200181b3d4",
+        "folderId": "cfde32c3-e695-4d03-9117-a33082e4ae1b",
+        "extra": {
+          "postman": {
+            "item": {},
+            "request": {},
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"API Manager\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      },
+      "dirty": false,
+      "editorTab": "Body",
+      "responseTab": "Body:Pretty",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "b8bd1585-d2ff-4dbd-bdc3-6718d88eee3c",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "652d276c-59f1-4397-9d3a-7f1da52ee0c5",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "d5db9761-2caf-4d8f-aa01-f2e6fd3b167a",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "91c500fc-13ef-470f-92eb-b046e9721dbb",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:01:58 GMT",
+            "enabled": true
+          },
+          {
+            "id": "40d46b2a-29bc-4525-b2f2-f5d7026935ca",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "f6ad443f-7715-4104-a8ed-e83ecdbff613",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "526c0ef3-f328-4157-b22b-92ba22d51287",
+            "key": "Content-Length",
+            "value": "220",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo\",\"body\":{\"name\":\"API Manager\"},\"authorization\":\"Bearer local-demo-token\",\"correlation\":null,\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 136.01,
+        "size": 220,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:01:58.510Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --data-binary '{\"name\":\"API Manager\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer local-demo-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 22'"
+      }
+    }
+  ],
+  "activeTabId": "2dfc74b1-870c-44d6-a9d9-cbce9caaae86",
+  "history": [
+    {
+      "id": "c40efdc0-c115-4c11-a415-ed0d4a0f895f",
+      "request": {
+        "id": "30b69157-9e75-48ab-ab3d-cb5be4935b6c",
+        "name": "Create user",
+        "method": "POST",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"API Manager\"}",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "8154d2fc-21c0-4596-a570-42200181b3d4",
+        "folderId": "cfde32c3-e695-4d03-9117-a33082e4ae1b",
+        "extra": {
+          "postman": {
+            "item": {},
+            "request": {},
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"API Manager\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "b8bd1585-d2ff-4dbd-bdc3-6718d88eee3c",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "652d276c-59f1-4397-9d3a-7f1da52ee0c5",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "d5db9761-2caf-4d8f-aa01-f2e6fd3b167a",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "91c500fc-13ef-470f-92eb-b046e9721dbb",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:01:58 GMT",
+            "enabled": true
+          },
+          {
+            "id": "40d46b2a-29bc-4525-b2f2-f5d7026935ca",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "f6ad443f-7715-4104-a8ed-e83ecdbff613",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "526c0ef3-f328-4157-b22b-92ba22d51287",
+            "key": "Content-Length",
+            "value": "220",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo\",\"body\":{\"name\":\"API Manager\"},\"authorization\":\"Bearer local-demo-token\",\"correlation\":null,\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 136.01,
+        "size": 220,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:01:58.510Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --data-binary '{\"name\":\"API Manager\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer local-demo-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 22'"
+      },
+      "timestamp": "2026-10-04T09:01:58.510Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --data-binary '{\"name\":\"API Manager\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer local-demo-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 22'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

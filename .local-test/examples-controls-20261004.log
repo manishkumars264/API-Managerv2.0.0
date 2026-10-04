@@ -1,0 +1,17 @@
+{
+  "import": "5 requests + Local environment",
+  "get": 200,
+  "json": 200,
+  "dynamicUuidMatchesHeader": true,
+  "freshUuidOnNextRun": true,
+  "soap": 200,
+  "soapDetected": {
+    "version": "1.2",
+    "action": "urn:api-manager:Echo"
+  },
+  "token": 200,
+  "protected": 200,
+  "nativeOAuthHelper": "Bearer",
+  "missingToken": 401,
+  "boundAddress": "127.0.0.1"
+}

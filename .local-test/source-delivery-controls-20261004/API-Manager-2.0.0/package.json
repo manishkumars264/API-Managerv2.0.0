@@ -1,0 +1,86 @@
+{
+  "name": "api-manager",
+  "version": "2.0.0",
+  "description": "A local-first desktop API client with collections, environments and restored sessions.",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": "API Manager contributors",
+  "license": "MIT",
+  "overrides": {
+    "dompurify": "3.4.16",
+    "underscore": "1.13.8"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "start": "electron .",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run && node --test tests/backend*.test.cjs",
+    "test:backend": "node --test tests/backend*.test.cjs",
+    "test:e2e": "npm run build && playwright test",
+    "test:watch": "vitest",
+    "check": "npm run build && npm test",
+    "dist": "npm run build && electron-builder --win nsis --x64",
+    "dist:portable": "npm run build && electron-builder --win portable --x64",
+    "dist:dir": "npm run build && electron-builder --dir"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "@hapi/hawk": "^8.0.0",
+    "@monaco-editor/react": "4.7.0",
+    "akamai-edgegrid": "^4.0.4",
+    "aws4": "^1.13.2",
+    "chai": "^6.3.0",
+    "fast-xml-parser": "^5.11.2",
+    "httpntlm": "^1.8.13",
+    "jsonc-parser": "^3.3.1",
+    "lucide-react": "^0.468.0",
+    "monaco-editor": "0.57.0",
+    "oauth-1.0a": "^2.2.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tough-cookie": "^6.0.0",
+    "undici": "8.11.2",
+    "xml-formatter": "^3.7.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "concurrently": "^9.2.1",
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3",
+    "typescript": "^5.9.3",
+    "vite": "8.3.2",
+    "vitest": "5.0.3",
+    "wait-on": "^9.0.0"
+  },
+  "build": {
+    "appId": "com.apimanager.desktop",
+    "productName": "API Manager",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "shared/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}

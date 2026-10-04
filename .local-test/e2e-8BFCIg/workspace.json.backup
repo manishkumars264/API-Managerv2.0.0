@@ -1,0 +1,1018 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "headers-collection",
+      "name": "Header previews",
+      "description": "",
+      "variables": [
+        {
+          "id": "6b52fc8f-b9a0-4057-8867-920da6e51a58",
+          "key": "credential",
+          "value": "collection-token",
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "token": "{{credential}}"
+      },
+      "requests": [
+        {
+          "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+          "name": "Untitled request",
+          "method": "GET",
+          "url": "http://127.0.0.1:63986/echo",
+          "params": [],
+          "headers": [
+            {
+              "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+              "key": "authorization",
+              "value": "old-custom-token",
+              "enabled": true
+            }
+          ],
+          "body": {
+            "mode": "none",
+            "raw": "",
+            "language": "json",
+            "fields": []
+          },
+          "auth": {
+            "type": "inherit"
+          },
+          "description": "",
+          "collectionId": "headers-collection"
+        }
+      ],
+      "folders": []
+    }
+  ],
+  "environments": [
+    {
+      "id": "headers-dev",
+      "name": "Development",
+      "variables": [
+        {
+          "id": "6e3b8a4c-1c9f-4f05-b622-71f181fdb904",
+          "key": "credential",
+          "value": "edited-token",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "globals": [],
+  "activeEnvironmentId": "headers-dev",
+  "tabs": [
+    {
+      "id": "a4c65b36-16ae-4798-9b4b-23a70d15968f",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "{{$guid}}",
+            "key": "X-Api-Key",
+            "value": "{{credential}}",
+            "accessToken": "oauth-token",
+            "headerPrefix": "Token"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "{{$guid}}",
+          "key": "X-Api-Key",
+          "value": "{{credential}}",
+          "in": "query"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "dirty": true,
+      "editorTab": "Headers",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "e32b24ac-b016-4e42-8aed-430ffddb7118",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "23923160-090c-4e3d-8ed6-7a9c17abea97",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "10aca554-f4c9-4251-8cae-2986cd7eec59",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "4fbc72b0-16be-4f09-8c04-7fd7221a3668",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:44 GMT",
+            "enabled": true
+          },
+          {
+            "id": "cff88277-15f2-4fc3-9697-8cb616045873",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "286b30e3-c933-433d-b77b-beac1735ca3d",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "3c9e6940-1509-4757-93f5-f6b65de64812",
+            "key": "Content-Length",
+            "value": "180",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"old-custom-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 8.24,
+        "size": 180,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:44.509Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      }
+    }
+  ],
+  "activeTabId": "a4c65b36-16ae-4798-9b4b-23a70d15968f",
+  "history": [
+    {
+      "id": "9ed11aa0-f474-47c0-9512-f8ce28ca2ec9",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "{{$guid}}",
+            "key": "X-Api-Key",
+            "value": "{{credential}}",
+            "accessToken": "oauth-token",
+            "headerPrefix": "Token"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "{{$guid}}",
+          "key": "X-Api-Key",
+          "value": "{{credential}}",
+          "in": "query"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "e32b24ac-b016-4e42-8aed-430ffddb7118",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "23923160-090c-4e3d-8ed6-7a9c17abea97",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "10aca554-f4c9-4251-8cae-2986cd7eec59",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "4fbc72b0-16be-4f09-8c04-7fd7221a3668",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:44 GMT",
+            "enabled": true
+          },
+          {
+            "id": "cff88277-15f2-4fc3-9697-8cb616045873",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "286b30e3-c933-433d-b77b-beac1735ca3d",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "3c9e6940-1509-4757-93f5-f6b65de64812",
+            "key": "Content-Length",
+            "value": "180",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"old-custom-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 8.24,
+        "size": 180,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:44.509Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:44.509Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "1bed9033-7359-4f7d-9e8b-cb13e608be58",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "{{$guid}}",
+            "key": "X-Api-Key",
+            "value": "{{credential}}",
+            "accessToken": "oauth-token",
+            "headerPrefix": "Token"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "{{$guid}}",
+          "key": "X-Api-Key",
+          "value": "{{credential}}",
+          "in": "query"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "200360bc-b0b5-4595-9bcc-f59fe158f26e",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "63f4a551-7c0b-4f68-bf78-9974399134fb",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "4059e841-37ab-4941-a83e-fa5e453fc035",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ec5778c5-1c0a-4019-aea1-4138eb29a4e6",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:38 GMT",
+            "enabled": true
+          },
+          {
+            "id": "965a5b8f-ef92-4c82-b6b0-49215db7fd2d",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "2d8672ac-c71f-4d33-a60f-06d16cbaeb6f",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "1dd25a57-dda9-4b94-aecf-1004113f686f",
+            "key": "Content-Length",
+            "value": "207",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer beb502dd-a549-413a-9d5f-e6483c4e52cc\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 10.32,
+        "size": 207,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:38.492Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer beb502dd-a549-413a-9d5f-e6483c4e52cc' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:38.492Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer beb502dd-a549-413a-9d5f-e6483c4e52cc' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "cfc6f7e4-8cef-4b8c-8dbe-a2ac1cb8cfff",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "oauth2",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "updated-bearer",
+            "key": "X-Api-Key",
+            "value": "{{credential}}",
+            "accessToken": "oauth-token",
+            "headerPrefix": "Token"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "updated-bearer",
+          "key": "X-Api-Key",
+          "value": "{{credential}}",
+          "in": "query"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "19b57c26-ebf1-424e-864a-9dbec87555b9",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "b0baa890-ec6f-4a4a-99f4-79b6aba97418",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "a2b86b11-c13b-4546-8b53-93927ea243f6",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ccfdc11a-5d2e-4da9-ab2b-e2ccfc2384c9",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:32 GMT",
+            "enabled": true
+          },
+          {
+            "id": "82b7aac1-f2f1-476c-a4ca-9957f4b21232",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "eec276e0-cfb5-455b-81a5-460feee67790",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "d484c88d-a3de-44f1-9a79-be66fae7f4de",
+            "key": "Content-Length",
+            "value": "181",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Token oauth-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.04,
+        "size": 181,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:32.472Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Authorization: Token oauth-token' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:32.472Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Authorization: Token oauth-token' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "39fe54cc-0cd2-40a0-a9d6-0ba811d4f1f6",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "apikey",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "updated-bearer",
+            "key": "X-Api-Key",
+            "value": "{{credential}}"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "updated-bearer",
+          "key": "X-Api-Key",
+          "value": "{{credential}}",
+          "in": "query"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "f57e03e5-2df3-47de-8746-d2e172eda073",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "92771da9-adaa-4d44-a910-6a40c9f03171",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "dc8d0718-a719-44fd-9cc8-8396da756061",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "bdf830f2-864e-430d-8a93-9d079184c082",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:26 GMT",
+            "enabled": true
+          },
+          {
+            "id": "f7880017-696e-4f88-86e9-06e459ccefc6",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "9a74bd64-ab80-45b8-93af-5f8a27cf3d5f",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "291818dc-3ee3-4e22-96c9-6a8ffb1b3612",
+            "key": "Content-Length",
+            "value": "203",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo?X-Api-Key=edited-token\",\"body\":null,\"authorization\":\"old-custom-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.4,
+        "size": 203,
+        "url": "http://127.0.0.1:63986/echo?X-Api-Key=edited-token",
+        "receivedAt": "2026-10-04T09:11:26.451Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo?X-Api-Key=edited-token",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo?X-Api-Key=edited-token' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:26.451Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo?X-Api-Key=edited-token' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo?X-Api-Key=edited-token"
+    },
+    {
+      "id": "506871f9-e1b7-4b7a-8b4f-2fdf61e07e31",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "apikey",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "updated-bearer",
+            "key": "X-Api-Key",
+            "value": "{{credential}}"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "updated-bearer",
+          "key": "X-Api-Key",
+          "value": "{{credential}}"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "92fafdd4-1688-477a-a70c-781304033e8e",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "8352cbba-04d5-4a83-9466-33409c01f6ca",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "962b97b6-fd43-4e44-8296-e97abca1c4d3",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "b5f755d6-0280-4d88-ab34-ea10a53f2434",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:20 GMT",
+            "enabled": true
+          },
+          {
+            "id": "af58b998-41d9-4cdd-953d-06d262526928",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "d3721115-3c4b-4fbb-93ed-b245d6426555",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "59c858e4-2c13-4a9b-95ee-73b9864ed011",
+            "key": "Content-Length",
+            "value": "190",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"old-custom-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":\"edited-token\"}",
+        "binary": false,
+        "duration": 10.24,
+        "size": 190,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:20.415Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'X-Api-Key: edited-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:20.415Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'authorization: old-custom-token' \\\n  --header 'X-Api-Key: edited-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "39c3d589-d6f4-4f1d-b2a5-6d739981badb",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑",
+            "token": "updated-bearer"
+          },
+          "username": "用户",
+          "password": "päss:🔑",
+          "token": "updated-bearer"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "91044dbb-2930-45d2-adcb-b1d572cdbb89",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "acbc620a-d1ba-486f-85c5-b91f21663a93",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "aaad7926-5d10-4535-bffe-7d966953fe8e",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "90f0617c-2a8f-4e7a-b7df-cc8033d51b48",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:14 GMT",
+            "enabled": true
+          },
+          {
+            "id": "598b0147-972e-4814-bd33-6c2c0a3728f3",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c5cd0251-25bb-4367-b73b-e5d621a6f508",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "dfc2f884-162e-415f-b574-5f9671be73f2",
+            "key": "Content-Length",
+            "value": "185",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer updated-bearer\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 71.13,
+        "size": 185,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:14.456Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer updated-bearer' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:14.456Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer updated-bearer' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "6a0a055f-c2f8-4256-a0ae-f22cea29531d",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "basic",
+          "fields": {
+            "username": "用户",
+            "password": "päss:🔑"
+          },
+          "username": "用户",
+          "password": "päss:🔑"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "9c4ecafe-cce6-4dc1-bee8-43d103254df4",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "a88c86d5-fad1-4142-8556-1aa37cc0484d",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "2142a408-292f-4723-8fb1-08c441696504",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "593a6ec5-bc79-41ec-a6b7-cc5ea76ec223",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:08 GMT",
+            "enabled": true
+          },
+          {
+            "id": "e970127a-fd6a-4c70-ab66-1bf27d1a8036",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "5e00ce4f-9936-427a-9f17-8ba44cb20459",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "46f41c8c-a79d-4984-a213-0621eeaff785",
+            "key": "Content-Length",
+            "value": "194",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Basic 55So5oi3OnDDpHNzOvCflJE=\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.57,
+        "size": 194,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:08.379Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Basic 55So5oi3OnDDpHNzOvCflJE=' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-04T09:11:08.379Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Basic 55So5oi3OnDDpHNzOvCflJE=' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    },
+    {
+      "id": "742f8894-17bf-490e-9a2a-60a9ceada30f",
+      "request": {
+        "id": "9240b569-c15a-477c-97b7-17e12ae3a407",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:63986/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "6700a51c-e825-4b7a-bc81-e148b86af1e1",
+            "key": "authorization",
+            "value": "old-custom-token",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "headers-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "7e568359-708b-481e-91e9-8096c7341ec5",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "0e057ca9-aed2-4893-a6c9-b98ee42c5f52",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "ae2a5e96-862b-4e6b-aaca-f3741268f651",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ea1f3a10-74ad-4620-8a44-b98c33a31965",
+            "key": "Date",
+            "value": "Sun, 04 Oct 2026 09:11:01 GMT",
+            "enabled": true
+          },
+          {
+            "id": "10217dfc-d1b7-4d8c-9e8e-321a7bf86d86",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "bff2a374-3354-4823-a393-818812ff4882",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "d079212a-087f-4f36-9dad-438c55da26c4",
+            "key": "Content-Length",
+            "value": "183",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer edited-token\",\"correlation\":null,\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 159.57,
+        "size": 183,
+        "url": "http://127.0.0.1:63986/echo",
+        "receivedAt": "2026-10-04T09:11:01.509Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:63986/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer edited-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-04T09:11:01.509Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:63986/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:63986' \\\n  --header 'connection: keep-alive' \\\n  --header 'Authorization: Bearer edited-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:63986/echo"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}
