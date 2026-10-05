@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Local Echo",
+    "description": "Offline examples for bundled mock-server.mjs. Start with Node.js 24 and select the imported Local environment. All credentials are fake demo values. See examples/README.md.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": { "type": "noauth" },
+  "item": [
+    {
+      "name": "Echo",
+      "item": [
+        {
+          "name": "GET echo",
+          "request": {
+            "method": "GET", "url": "{{base_url}}/echo?message=Hello%20from%20API%20Manager&repeat=first&repeat=second",
+            "description": "Returns method, query, headers, and receive time. Try Params, Headers, and disabling a row."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Echo status is 200', () => pm.response.to.have.status(200));", "console.log('GET echo received', pm.response.code);"] } }]
+        },
+        {
+          "name": "Send JSON with dynamic values",
+          "request": {
+            "method": "POST", "url": "{{base_url}}/echo",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "X-Request-ID", "value": "{{$guid}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"message\": \"Hello from API Manager\",\n  \"created\": {{$timestamp}},\n  \"requestId\": \"{{$guid}}\"\n}", "options": { "raw": { "language": "json" } } },
+            "description": "created is UNIX seconds. requestId matches X-Request-ID within one send, and changes on another send."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('JSON status is 200', () => pm.response.to.have.status(200));", "const echo = pm.response.json();", "pm.test('One UUID across body and header', () => pm.expect(echo.json.requestId).eq(echo.headers['x-request-id']));", "console.log('JSON echo', echo.json.requestId, echo.json.created);"] } }]
+        },
+        {
+          "name": "Send SOAP 1.2",
+          "request": {
+            "method": "POST", "url": "{{base_url}}/soap",
+            "header": [{ "key": "Content-Type", "value": "application/soap+xml; charset=utf-8; action=\"urn:api-manager:Echo\"" }],
+            "body": { "mode": "raw", "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:m=\"urn:api-manager:demo\">\n  <soap:Body>\n    <m:Echo>\n      <m:message>Hello from API Manager</m:message>\n    </m:Echo>\n  </soap:Body>\n</soap:Envelope>", "options": { "raw": { "language": "xml" } } },
+            "description": "SOAP metadata is detected from Content-Type. The toy server returns a fixed EchoResponse and received request byte count."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('SOAP status is 200', () => pm.response.to.have.status(200));", "pm.test('SOAP envelope received', () => pm.expect(pm.response.text()).include('EchoResponse'));", "console.log('SOAP response', pm.response.code);"] } }]
+        }
+      ]
+    },
+    {
+      "name": "Authorization demo",
+      "item": [
+        {
+          "name": "Get demo token",
+          "request": {
+            "method": "POST", "url": "{{base_url}}/oauth/token",
+            "auth": { "type": "basic", "basic": [{ "key": "username", "value": "{{demo_client_id}}", "type": "string" }, { "key": "password", "value": "{{demo_client_secret}}", "type": "string" }] },
+            "body": { "mode": "urlencoded", "urlencoded": [{ "key": "grant_type", "value": "client_credentials" }, { "key": "scope", "value": "demo:read" }] },
+            "description": "Send to obtain a fake local token. The post-response script saves it to Local as demo_token."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Token status is 200', () => pm.response.to.have.status(200));", "const token = pm.response.json();", "if (pm.response.code === 200 && token.access_token) pm.environment.set('demo_token', token.access_token);", "console.log('Demo token saved in Local environment');"] } }]
+        },
+        {
+          "name": "Echo with OAuth 2.0",
+          "request": {
+            "method": "GET", "url": "{{base_url}}/protected?message=Authenticated%20local%20request",
+            "auth": { "type": "oauth2", "oauth2": [
+              { "key": "accessToken", "value": "{{demo_token}}", "type": "string" },
+              { "key": "tokenUrl", "value": "{{base_url}}/oauth/token", "type": "string" },
+              { "key": "clientId", "value": "{{demo_client_id}}", "type": "string" },
+              { "key": "clientSecret", "value": "{{demo_client_secret}}", "type": "string" },
+              { "key": "grantType", "value": "client_credentials", "type": "string" },
+              { "key": "clientAuthentication", "value": "header", "type": "string" },
+              { "key": "scope", "value": "demo:read", "type": "string" },
+              { "key": "addTokenTo", "value": "header", "type": "string" },
+              { "key": "headerPrefix", "value": "Bearer", "type": "string" }
+            ] },
+            "description": "After Get demo token, Send uses {{demo_token}}. Alternatively open Authorization and click Get token, then Send, to try the native OAuth2 helper."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Authenticated echo is 200', () => pm.response.to.have.status(200));", "console.log('Protected echo', pm.response.code);"] } }]
+        }
+      ]
+    }
+  ]
+}

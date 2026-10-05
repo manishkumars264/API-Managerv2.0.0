@@ -1,0 +1,40 @@
+{
+  "appAsarSha256": "02c1019d4d65172109d5e2df4656bcd77ae97181fd61b76550dc6173d0da2edf",
+  "automaticVariableRows": true,
+  "variableDeletion": true,
+  "popupCtrlSave": true,
+  "generatedHeaders": true,
+  "passed": true,
+  "actualPortable": true,
+  "wrapper": {
+    "id": 17780,
+    "started": "2026-10-04T10:05:58.9122897Z"
+  },
+  "executable": "C:\\Users\\mukes\\AppData\\Local\\Temp\\3KE26FSu163hcFhZpCnbmrtstyz\\API Manager.exe",
+  "profile": "D:\\Framework\\API Manager v1.0.0\\.local-test\\portable-cdp-profile-140DxE",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "/json",
+      "bodyBytes": 0,
+      "authorization": "Bearer portable-verified-token"
+    },
+    {
+      "method": "POST",
+      "url": "/soap",
+      "contentType": "application/soap+xml; charset=utf-8; action=\"urn:PortableEcho\"",
+      "bodyBytes": 213,
+      "authorization": "Bearer portable-verified-token"
+    }
+  ],
+  "savedRuns": 2,
+  "jsonRendered": true,
+  "helpAndResponseSearch": true,
+  "soapTransportAndPersistence": true,
+  "accentSetting": true,
+  "greyTheme": true,
+  "inlineReleaseNotes": true,
+  "resizableConsole": true,
+  "codeGeneration": true,
+  "visualLimitation": "Hidden renderer connected through CDP cannot have native background throttling disabled; SOAP Monaco redraw is not asserted."
+}

@@ -1,0 +1,9 @@
+
+Running 2 tests using 1 worker
+
+(node:18424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace.spec.ts:888:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values (36.8s)
+  ok 2 tests\e2e\workspace.spec.ts:994:1 › automatically adds checked popup variables, deletes rows, and saves with Ctrl+S (58.8s)
+
+  2 passed (1.6m)

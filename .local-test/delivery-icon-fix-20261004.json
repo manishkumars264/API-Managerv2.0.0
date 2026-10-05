@@ -1,0 +1,13 @@
+{
+  "entries": 200,
+  "stagingZip": "D:\\Framework\\API Manager v1.0.0\\.local-test\\API-Manager-2.0.0-icon-fix.zip",
+  "executableHashes": {
+    "release/API Manager 2.0.0.exe": "2C5C96B576C5238DFC799CD2E6AE0E88907BA14CFF005AF24BD2D856D72992D7",
+    "release/API Manager Setup 2.0.0.exe": "3871F84AF7902BE53E2B02305E5F938ED4DA2D0F8454CDC02DAE6A12432DFD1E"
+  },
+  "bytes": 269963876,
+  "sourceFiles": 101,
+  "sha256": "BCD2F9885A570FAB3DA297349E5BA54BBCAA527E708CECE87824DBFD3E655169",
+  "allFileHashesVerified": true,
+  "builtAssets": 96
+}
