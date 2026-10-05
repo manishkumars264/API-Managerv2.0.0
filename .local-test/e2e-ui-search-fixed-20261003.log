@@ -1,8 +1,0 @@
-
-Running 1 test using 1 worker
-
-(node:26132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-  ok 1 tests\e2e\workspace.spec.ts:566:1 › searches response text with highlighted matches, cyclic navigation and tooltips below controls (42.5s)
-
-  1 passed (43.6s)

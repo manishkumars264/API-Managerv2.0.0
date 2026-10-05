@@ -1,9 +1,0 @@
-
-Running 2 tests using 1 worker
-
-(node:20248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-  ok 1 tests\e2e\workspace.spec.ts:280:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run (11.5s)
-  ok 2 tests\e2e\workspace.spec.ts:325:1 › keeps response and console usable at the minimum window size and restores the layout (11.5s)
-
-  2 passed (23.8s)

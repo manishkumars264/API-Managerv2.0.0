@@ -1,8 +1,0 @@
-
-Running 1 test using 1 worker
-
-(node:27132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-  ok 1 tests\e2e\workspace.spec.ts:365:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft (19.9s)
-
-  1 passed (21.2s)

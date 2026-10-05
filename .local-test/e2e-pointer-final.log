@@ -1,8 +1,0 @@
-
-Running 1 test using 1 worker
-
-(node:24744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-  ok 1 tests\e2e\workspace.spec.ts:302:1 › a Cancel pointer action cannot resend after the response completes (5.0s)
-
-  1 passed (6.0s)

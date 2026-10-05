@@ -1,9 +1,0 @@
-{
-  "version": "tough-cookie@6.0.2",
-  "storeType": "MemoryCookieStore",
-  "rejectPublicSuffixes": true,
-  "enableLooseMode": false,
-  "allowSpecialUseDomain": true,
-  "prefixSecurity": "silent",
-  "cookies": []
-}
