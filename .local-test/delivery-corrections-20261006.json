@@ -1,0 +1,16 @@
+{
+  "sourceFiles": 101,
+  "zip": "D:\\Framework\\API Manager v1.0.0\\release\\2026-10-06_08-39-40_IST\\API-Manager-2.0.0.zip",
+  "bytes": 269968303,
+  "entries": 200,
+  "applicationVersion": "2.0.0",
+  "sha256": "8E45DA28F5A62125C3CAEBB99A9BE4B6EB11E3A1C7EA22EA79A63A9FA2693DAB",
+  "builtAssets": 96,
+  "releaseDate": "2026-10-04",
+  "allFileHashesVerified": true,
+  "executableHashes": {
+    "release/API Manager Setup 2.0.0.exe": "B8E63CF17E9A7724587ECEB59E28221BDB133A9AEBE7CDB464989CDE45746DB6",
+    "release/API Manager 2.0.0.exe": "F48F2B0D6882F15CA58104E9C9B73DED2D19AEC4E1F6EF248CA373B7F6281A7E"
+  },
+  "folder": "D:\\Framework\\API Manager v1.0.0\\release\\2026-10-06_08-39-40_IST"
+}

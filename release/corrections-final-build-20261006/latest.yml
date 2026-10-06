@@ -1,0 +1,8 @@
+version: 2.0.0
+files:
+  - url: API-Manager-Setup-2.0.0.exe
+    sha512: sT5wNyFGSyjvYMuWbRbc2G7Ow3TR0yWAxwIxG52nYLq6QHCiEG/7eF973Ru7PlrL0+tWzTCgzHN+Wk73MnBTiQ==
+    size: 132963788
+path: API-Manager-Setup-2.0.0.exe
+sha512: sT5wNyFGSyjvYMuWbRbc2G7Ow3TR0yWAxwIxG52nYLq6QHCiEG/7eF973Ru7PlrL0+tWzTCgzHN+Wk73MnBTiQ==
+releaseDate: '2026-10-06T03:06:58.096Z'

@@ -1,0 +1,17 @@
+.response-tooltip-anchor { display: inline-flex; flex: 0 0 auto; align-items: center; }
+.response-toolbar-tooltip {
+  position: fixed;
+  z-index: 3000;
+  max-width: min(280px, calc(100vw - 16px));
+  padding: 6px 9px;
+  border: 1px solid var(--border, #444);
+  border-radius: 5px;
+  color: var(--text, #eee);
+  background: var(--surface-raised, #252525);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 22%);
+  font: 12px/1.4 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+/* Monaco owns hover content and interaction. Only response Find positioning changes. */
+.api-manager-response-find-tooltip .workbench-hover-pointer { display: none; }

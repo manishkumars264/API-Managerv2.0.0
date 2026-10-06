@@ -1,0 +1,37 @@
+
+Running 28 tests using 1 worker
+
+(node:13280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\workspace.spec.ts:70:1 › changes accent colours in both themes without altering requests and restores the selection (1.7m)
+  ok  2 tests\e2e\workspace.spec.ts:111:1 › resizes console by pointer and keyboard and preserves the preferred height across reopening (27.4s)
+  ok  3 tests\e2e\workspace.spec.ts:162:1 › previews and copies all request code languages without sending or modifying the request (36.1s)
+  ok  4 tests\e2e\workspace.spec.ts:217:1 › imports collections and environments, sends JSON, copies, zooms and downloads responses (45.1s)
+  ok  5 tests\e2e\workspace.spec.ts:262:1 › restores drafts, active tabs, editor mode, zoom, theme and overflowing tabs after close (41.2s)
+  ok  6 tests\e2e\workspace.spec.ts:296:1 › scrolls overflowing tabs without overlap and supports Ctrl-wheel and middle-click closing (43.2s)
+  ok  7 tests\e2e\workspace.spec.ts:392:1 › persists independent request and response wrapping while resolving variables without inline announcements (22.8s)
+  ok  8 tests\e2e\workspace.spec.ts:448:1 › restores workspace backups with confirmation and supports native JSON import/export (15.0s)
+  ok  9 tests\e2e\workspace.spec.ts:468:1 › shows import and request errors, cancels requests, and isolates HTML preview (19.1s)
+  ok 10 tests\e2e\workspace.spec.ts:494:1 › runs inherited scripts and dynamic globals, restores history responses and replays within the 200-run cap (31.2s)
+  ok 11 tests\e2e\workspace.spec.ts:550:1 › configures SOAP, beautifies without rounding JSON, wraps editors and uses advanced authorization forms (27.8s)
+  ok 12 tests\e2e\workspace.spec.ts:590:1 › keeps OAuth acquisition in its original tab and records an immutable cancelled console run (11.9s)
+  ok 13 tests\e2e\workspace.spec.ts:615:1 › a Cancel pointer action cannot resend after the response completes (4.4s)
+  ok 14 tests\e2e\workspace.spec.ts:635:1 › keeps response and console usable at the minimum window size and restores the layout (11.0s)
+  ok 15 tests\e2e\workspace.spec.ts:674:1 › opens About and Help with shortcuts, release history, and a prepared bug report draft (28.3s)
+  ok 16 tests\e2e\workspace.spec.ts:740:1 › searches response text with highlighted matches, cyclic navigation and tooltips below controls (41.4s)
+  ok 17 tests\e2e\workspace.spec.ts:804:1 › imports cURL query params, preserves literal email, saves updates, and duplicates within the collection (22.2s)
+  ok 18 tests\e2e\workspace.spec.ts:844:1 › shows fresh HTTP error and empty bodies and clears the old response on connection failure (41.2s)
+  ok 19 tests\e2e\workspace.spec.ts:869:1 › imports structured and inline collection params and duplicates a saved folder request (13.3s)
+  ok 20 tests\e2e\workspace.spec.ts:888:1 › edits environment values in the toolbar popup, saves them, and shows variable scope and current values (36.0s)
+  ok 21 tests\e2e\workspace.spec.ts:941:1 › console retains the cURL actually sent after scripts and variable resolution (10.2s)
+  ok 22 tests\e2e\workspace.spec.ts:961:1 › closes the last tab, restores an empty workspace, and starts again by new/import/open (36.2s)
+  ok 23 tests\e2e\workspace.spec.ts:994:1 › automatically adds checked popup variables, deletes rows, and saves with Ctrl+S (58.1s)
+  ok 24 tests\e2e\workspace.spec.ts:1077:1 › previews generated authorization headers and keeps them consistent with real sends (1.1m)
+  ok 25 tests\e2e\workspace.spec.ts:1149:1 › keeps newest Console runs and script messages at the top without changing saved history order (9.0s)
+  ok 26 tests\e2e\workspace.spec.ts:1166:1 › uses Grey theme with every accent and restores it without changing request bytes (53.2s)
+  ok 27 tests\e2e\workspace.spec.ts:1191:1 › selects and activates Global values while preserving folder precedence and saved environment data (21.7s)
+  ok 28 tests\e2e\workspace.spec.ts:1245:1 › keeps hidden headers collapsed on entry and after returning to editor or request tabs (28.1s)
+
+  Slow test file: tests\e2e\workspace.spec.ts (15.1m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  28 passed (15.1m)

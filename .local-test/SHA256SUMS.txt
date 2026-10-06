@@ -1,0 +1,3 @@
+2c5c96b576c5238dfc799cd2e6ae0e88907ba14cff005af24bd2d856d72992d7  API-Manager-2.0.0.exe
+3871f84af7902be53e2b02305e5f938ed4da2d0f8454cdc02dae6a12432dfd1e  API-Manager-Setup-2.0.0.exe
+bcd2f9885a570fab3da297349e5ba54bbcaa527e708cece87824dbfd3e655169  API-Manager-2.0.0.zip

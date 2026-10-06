@@ -1,0 +1,503 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "global-test-collection",
+      "name": "Scope collection",
+      "description": "",
+      "variables": [
+        {
+          "id": "0f2cff59-125f-4b7a-8736-1f22e5f58b93",
+          "key": "shared",
+          "value": "collection-shared",
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "type": "none"
+      },
+      "requests": [],
+      "folders": [
+        {
+          "id": "global-test-folder",
+          "name": "Scope folder",
+          "variables": [
+            {
+              "id": "05f5e1f2-ca67-4161-9233-67de4a5158c1",
+              "key": "shared",
+              "value": "folder-shared",
+              "enabled": true
+            }
+          ],
+          "requests": [
+            {
+              "id": "92a70bb8-f048-4f6f-a45d-f2926bf1b649",
+              "name": "Global scopes",
+              "method": "GET",
+              "url": "{{base_url}}/echo",
+              "params": [],
+              "headers": [
+                {
+                  "id": "304f0072-2378-4c2e-bdee-758692713666",
+                  "key": "X-Run-Guid",
+                  "value": "{{shared}}",
+                  "enabled": true
+                }
+              ],
+              "body": {
+                "mode": "none",
+                "raw": "",
+                "language": "json",
+                "fields": []
+              },
+              "auth": {
+                "type": "bearer",
+                "token": "{{token}}"
+              },
+              "description": "",
+              "collectionId": "global-test-collection",
+              "folderId": "global-test-folder"
+            }
+          ],
+          "folders": []
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "global-test-dev",
+      "name": "Development",
+      "variables": [
+        {
+          "id": "e6ba1453-9bc2-42fd-b988-acc22507223b",
+          "key": "token",
+          "value": "environment-token",
+          "enabled": true
+        },
+        {
+          "id": "c94ef639-97a0-42ad-83da-2cd985e411ed",
+          "key": "shared",
+          "value": "environment-shared",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "globals": [
+    {
+      "id": "59368152-2282-44e2-99a9-0dc601c8e44a",
+      "key": "base_url",
+      "value": "http://127.0.0.1:54094",
+      "enabled": true
+    },
+    {
+      "id": "007730c9-700e-4235-8836-2bbd957a9d4a",
+      "key": "token",
+      "value": "global-edited",
+      "enabled": true
+    },
+    {
+      "id": "f9b2b6ad-3383-4175-ad62-815c14922bb0",
+      "key": "shared",
+      "value": "global-shared",
+      "enabled": true
+    }
+  ],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "d3ff6a2e-0234-4139-9817-fe801440b400",
+      "request": {
+        "id": "92a70bb8-f048-4f6f-a45d-f2926bf1b649",
+        "name": "Global scopes",
+        "method": "GET",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "304f0072-2378-4c2e-bdee-758692713666",
+            "key": "X-Run-Guid",
+            "value": "{{shared}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": "",
+        "collectionId": "global-test-collection",
+        "folderId": "global-test-folder"
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "6359d14a-e6c8-4bdc-9392-f7dbb434778e",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "d54025cb-f387-4081-a296-d1a715a92d96",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "94d2f074-6ef8-4e3b-b1c7-d752811c0888",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ab0bab3a-cee5-4d4f-85d6-622075353393",
+            "key": "Date",
+            "value": "Tue, 06 Oct 2026 03:21:37 GMT",
+            "enabled": true
+          },
+          {
+            "id": "796abefa-1017-4d93-976e-42c9ddcda984",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "21f14c11-8a1e-4420-ba9b-17ca668e0dba",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "2dc24009-0d5a-4207-ae4a-45a6a8b7fc6a",
+            "key": "Content-Length",
+            "value": "195",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer global-edited\",\"correlation\":\"folder-shared\",\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.16,
+        "size": 195,
+        "url": "http://127.0.0.1:54094/echo",
+        "receivedAt": "2026-10-06T03:21:37.162Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54094/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: folder-shared' \\\n  --header 'Authorization: Bearer global-edited' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      }
+    }
+  ],
+  "activeTabId": "d3ff6a2e-0234-4139-9817-fe801440b400",
+  "history": [
+    {
+      "id": "a562fb10-379d-4c0b-8f37-370bf44bd600",
+      "request": {
+        "id": "92a70bb8-f048-4f6f-a45d-f2926bf1b649",
+        "name": "Global scopes",
+        "method": "GET",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "304f0072-2378-4c2e-bdee-758692713666",
+            "key": "X-Run-Guid",
+            "value": "{{shared}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": "",
+        "collectionId": "global-test-collection",
+        "folderId": "global-test-folder"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "6359d14a-e6c8-4bdc-9392-f7dbb434778e",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "d54025cb-f387-4081-a296-d1a715a92d96",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "94d2f074-6ef8-4e3b-b1c7-d752811c0888",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "ab0bab3a-cee5-4d4f-85d6-622075353393",
+            "key": "Date",
+            "value": "Tue, 06 Oct 2026 03:21:37 GMT",
+            "enabled": true
+          },
+          {
+            "id": "796abefa-1017-4d93-976e-42c9ddcda984",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "21f14c11-8a1e-4420-ba9b-17ca668e0dba",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "2dc24009-0d5a-4207-ae4a-45a6a8b7fc6a",
+            "key": "Content-Length",
+            "value": "195",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer global-edited\",\"correlation\":\"folder-shared\",\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 11.16,
+        "size": 195,
+        "url": "http://127.0.0.1:54094/echo",
+        "receivedAt": "2026-10-06T03:21:37.162Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54094/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: folder-shared' \\\n  --header 'Authorization: Bearer global-edited' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-06T03:21:37.162Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: folder-shared' \\\n  --header 'Authorization: Bearer global-edited' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:54094/echo"
+    },
+    {
+      "id": "84cbc2eb-7cf4-483b-9379-e29a88f02125",
+      "request": {
+        "id": "92a70bb8-f048-4f6f-a45d-f2926bf1b649",
+        "name": "Global scopes",
+        "method": "GET",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "304f0072-2378-4c2e-bdee-758692713666",
+            "key": "X-Run-Guid",
+            "value": "{{shared}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": "",
+        "collectionId": "global-test-collection",
+        "folderId": "global-test-folder"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "62e4e73d-47a2-4fab-b6ef-d72c57d686d7",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "08d8f131-1a91-4ebd-9e68-92e610c01ef9",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "4572da1c-96dc-4bc0-a357-5e8e536fe410",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "469cc954-7729-442a-9ec5-4f3c7b417a3d",
+            "key": "Date",
+            "value": "Tue, 06 Oct 2026 03:21:33 GMT",
+            "enabled": true
+          },
+          {
+            "id": "a0230545-f917-4cfe-880d-e80be58c14fa",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "219cd0b4-926f-47eb-85bb-e7035ec7a364",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "687406dd-bf99-49b8-8807-77539816914a",
+            "key": "Content-Length",
+            "value": "204",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer environment-token\",\"correlation\":\"environment-shared\",\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 9.88,
+        "size": 204,
+        "url": "http://127.0.0.1:54094/echo",
+        "receivedAt": "2026-10-06T03:21:33.176Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54094/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: environment-shared' \\\n  --header 'Authorization: Bearer environment-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'"
+      },
+      "timestamp": "2026-10-06T03:21:33.176Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: environment-shared' \\\n  --header 'Authorization: Bearer environment-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'Cookie: local=only'",
+      "requestUrl": "http://127.0.0.1:54094/echo"
+    },
+    {
+      "id": "07aa6686-95e4-4fdc-b064-f351f8bee781",
+      "request": {
+        "id": "92a70bb8-f048-4f6f-a45d-f2926bf1b649",
+        "name": "Global scopes",
+        "method": "GET",
+        "url": "{{base_url}}/echo",
+        "params": [],
+        "headers": [
+          {
+            "id": "304f0072-2378-4c2e-bdee-758692713666",
+            "key": "X-Run-Guid",
+            "value": "{{shared}}",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{token}}"
+        },
+        "description": "",
+        "collectionId": "global-test-collection",
+        "folderId": "global-test-folder"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "910dbee1-9ab1-47f4-afd4-ad58768b0d7c",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "578705b0-f5db-46d7-87e6-b2c966b50e49",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "e7163d5e-6eb3-4554-9711-0b9d40ce7e43",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "a3608bec-579d-4eed-aefa-e0b8ce18301e",
+            "key": "Date",
+            "value": "Tue, 06 Oct 2026 03:21:30 GMT",
+            "enabled": true
+          },
+          {
+            "id": "c2a08263-aee2-4565-ba9e-d0f57e9739f3",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "4339cc62-9b3b-499a-bea2-97f845093487",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "122655e5-d3b0-4aed-abdb-ef85f4cc5b35",
+            "key": "Content-Length",
+            "value": "194",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"GET\",\"path\":\"/echo\",\"body\":null,\"authorization\":\"Bearer global-token\",\"correlation\":\"folder-shared\",\"contentType\":null,\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 111,
+        "size": 194,
+        "url": "http://127.0.0.1:54094/echo",
+        "receivedAt": "2026-10-06T03:21:30.233Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54094/echo",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: folder-shared' \\\n  --header 'Authorization: Bearer global-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'"
+      },
+      "timestamp": "2026-10-06T03:21:30.233Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'GET' \\\n  --url 'http://127.0.0.1:54094/echo' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Run-Guid: folder-shared' \\\n  --header 'Authorization: Bearer global-token' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br'",
+      "requestUrl": "http://127.0.0.1:54094/echo"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

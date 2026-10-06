@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "code-collection",
+      "name": "Code collection",
+      "description": "",
+      "requests": [
+        {
+          "id": "72e8b834-93f3-4f57-9d0d-57c8268537b3",
+          "name": "Generated example",
+          "method": "POST",
+          "url": "{{base_url}}/echo?repeat=old",
+          "params": [
+            {
+              "id": "be39b1f9-9b5e-4e25-a8a7-944beaf2753a",
+              "key": "repeat",
+              "value": "one",
+              "enabled": true
+            },
+            {
+              "id": "7a211f1a-2887-411f-b038-414f1390e15a",
+              "key": "repeat",
+              "value": "two",
+              "enabled": true
+            }
+          ],
+          "headers": [
+            {
+              "id": "7d576548-67fc-4283-8d93-fc18ce636e20",
+              "key": "X-Custom",
+              "value": "{{header_value}}",
+              "enabled": true
+            },
+            {
+              "id": "bbb8a825-8648-4aed-8262-e75dff57c1a4",
+              "key": "Disabled",
+              "value": "excluded",
+              "enabled": false
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "language": "json",
+            "raw": "{\"message\":\"{{body_value}}\"}",
+            "fields": []
+          },
+          "auth": {
+            "type": "inherit"
+          },
+          "description": "",
+          "collectionId": "code-collection"
+        }
+      ],
+      "folders": [],
+      "variables": [],
+      "auth": {
+        "type": "bearer",
+        "token": "{{token}}"
+      }
+    }
+  ],
+  "environments": [],
+  "globals": [
+    {
+      "id": "9a436a48-4ed8-4afe-8a77-31bb3a1b8cbe",
+      "key": "base_url",
+      "value": "http://127.0.0.1:54094",
+      "enabled": true
+    },
+    {
+      "id": "eca50183-c3b1-47b1-8ff7-060c84d8f79a",
+      "key": "header_value",
+      "value": "generated-header",
+      "enabled": true
+    },
+    {
+      "id": "1ed10a2c-77cd-4d4a-9617-17509815a4f1",
+      "key": "body_value",
+      "value": "generated-body",
+      "enabled": true
+    },
+    {
+      "id": "0561ea10-97d0-4406-a56e-44989f2558b6",
+      "key": "token",
+      "value": "generated-token",
+      "enabled": true
+    }
+  ],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "b0f4c423-8dfa-48b2-8e7f-5f94bb3a4000",
+      "request": {
+        "id": "72e8b834-93f3-4f57-9d0d-57c8268537b3",
+        "name": "Generated example",
+        "method": "POST",
+        "url": "{{base_url}}/echo?repeat=old",
+        "params": [
+          {
+            "id": "be39b1f9-9b5e-4e25-a8a7-944beaf2753a",
+            "key": "repeat",
+            "value": "one",
+            "enabled": true
+          },
+          {
+            "id": "7a211f1a-2887-411f-b038-414f1390e15a",
+            "key": "repeat",
+            "value": "two",
+            "enabled": true
+          }
+        ],
+        "headers": [
+          {
+            "id": "7d576548-67fc-4283-8d93-fc18ce636e20",
+            "key": "X-Custom",
+            "value": "{{header_value}}",
+            "enabled": true
+          },
+          {
+            "id": "bbb8a825-8648-4aed-8262-e75dff57c1a4",
+            "key": "Disabled",
+            "value": "excluded",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"message\":\"{{body_value}}\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "code-collection"
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14,
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "54ad4260-a981-45c6-b554-008a69b864d1",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "081367cb-f663-4a6b-80ce-534f4fcaff15",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "1a40d757-6298-4fd7-a53a-155598422e43",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "c2dc8151-7409-49c0-8838-471c0f22e796",
+            "key": "Date",
+            "value": "Tue, 06 Oct 2026 03:09:35 GMT",
+            "enabled": true
+          },
+          {
+            "id": "47a07e44-4778-4354-943b-04722f93893a",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c1e0dab2-0034-4b35-a6c7-b29b36730cbb",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "60116259-89cc-4525-afe9-55963c0f3b75",
+            "key": "Content-Length",
+            "value": "247",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo?repeat=one&repeat=two\",\"body\":{\"message\":\"generated-body\"},\"authorization\":\"Bearer generated-token\",\"correlation\":null,\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 113.14,
+        "size": 247,
+        "url": "http://127.0.0.1:54094/echo?repeat=one&repeat=two",
+        "receivedAt": "2026-10-06T03:09:35.456Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54094/echo?repeat=one&repeat=two",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:54094/echo?repeat=one&repeat=two' \\\n  --data-binary '{\"message\":\"generated-body\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Custom: generated-header' \\\n  --header 'Authorization: Bearer generated-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 28'"
+      }
+    },
+    {
+      "id": "4b4565e1-ad04-4037-8647-29ec08548932",
+      "request": {
+        "id": "9b8522a0-1bb6-4a30-bebe-a5c8ac176aac",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "http://127.0.0.1:54094/echo",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": true,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "4b4565e1-ad04-4037-8647-29ec08548932",
+  "history": [
+    {
+      "id": "3984667b-d39e-492c-96fe-6723e3e55cc3",
+      "request": {
+        "id": "72e8b834-93f3-4f57-9d0d-57c8268537b3",
+        "name": "Generated example",
+        "method": "POST",
+        "url": "{{base_url}}/echo?repeat=old",
+        "params": [
+          {
+            "id": "be39b1f9-9b5e-4e25-a8a7-944beaf2753a",
+            "key": "repeat",
+            "value": "one",
+            "enabled": true
+          },
+          {
+            "id": "7a211f1a-2887-411f-b038-414f1390e15a",
+            "key": "repeat",
+            "value": "two",
+            "enabled": true
+          }
+        ],
+        "headers": [
+          {
+            "id": "7d576548-67fc-4283-8d93-fc18ce636e20",
+            "key": "X-Custom",
+            "value": "{{header_value}}",
+            "enabled": true
+          },
+          {
+            "id": "bbb8a825-8648-4aed-8262-e75dff57c1a4",
+            "key": "Disabled",
+            "value": "excluded",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "language": "json",
+          "raw": "{\"message\":\"{{body_value}}\"}",
+          "fields": []
+        },
+        "auth": {
+          "type": "inherit"
+        },
+        "description": "",
+        "collectionId": "code-collection"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "headers": [
+          {
+            "id": "54ad4260-a981-45c6-b554-008a69b864d1",
+            "key": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "id": "081367cb-f663-4a6b-80ce-534f4fcaff15",
+            "key": "X-Echo",
+            "value": "API Manager",
+            "enabled": true
+          },
+          {
+            "id": "1a40d757-6298-4fd7-a53a-155598422e43",
+            "key": "Set-Cookie",
+            "value": "local=only; Path=/; HttpOnly",
+            "enabled": true
+          },
+          {
+            "id": "c2dc8151-7409-49c0-8838-471c0f22e796",
+            "key": "Date",
+            "value": "Tue, 06 Oct 2026 03:09:35 GMT",
+            "enabled": true
+          },
+          {
+            "id": "47a07e44-4778-4354-943b-04722f93893a",
+            "key": "Connection",
+            "value": "keep-alive",
+            "enabled": true
+          },
+          {
+            "id": "c1e0dab2-0034-4b35-a6c7-b29b36730cbb",
+            "key": "Keep-Alive",
+            "value": "timeout=5",
+            "enabled": true
+          },
+          {
+            "id": "60116259-89cc-4525-afe9-55963c0f3b75",
+            "key": "Content-Length",
+            "value": "247",
+            "enabled": true
+          }
+        ],
+        "body": "{\"method\":\"POST\",\"path\":\"/echo?repeat=one&repeat=two\",\"body\":{\"message\":\"generated-body\"},\"authorization\":\"Bearer generated-token\",\"correlation\":null,\"contentType\":\"application/json\",\"message\":\"Hello from API Manager\",\"success\":true,\"apiKey\":null}",
+        "binary": false,
+        "duration": 113.14,
+        "size": 247,
+        "url": "http://127.0.0.1:54094/echo?repeat=one&repeat=two",
+        "receivedAt": "2026-10-06T03:09:35.456Z",
+        "truncated": false,
+        "requestUrl": "http://127.0.0.1:54094/echo?repeat=one&repeat=two",
+        "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:54094/echo?repeat=one&repeat=two' \\\n  --data-binary '{\"message\":\"generated-body\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Custom: generated-header' \\\n  --header 'Authorization: Bearer generated-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 28'"
+      },
+      "timestamp": "2026-10-06T03:09:35.456Z",
+      "scriptResults": {
+        "tests": [],
+        "logs": []
+      },
+      "sentCurl": "curl \\\n  --http1.1 \\\n  --globoff \\\n  --path-as-is \\\n  --request 'POST' \\\n  --url 'http://127.0.0.1:54094/echo?repeat=one&repeat=two' \\\n  --data-binary '{\"message\":\"generated-body\"}' \\\n  --header 'Accept:' \\\n  --header 'Expect:' \\\n  --header 'host: 127.0.0.1:54094' \\\n  --header 'connection: keep-alive' \\\n  --header 'X-Custom: generated-header' \\\n  --header 'Authorization: Bearer generated-token' \\\n  --header 'Content-Type: application/json' \\\n  --header 'User-Agent: API-Manager/2.0.0' \\\n  --header 'Accept-Encoding: gzip, deflate, br' \\\n  --header 'content-length: 28'",
+      "requestUrl": "http://127.0.0.1:54094/echo?repeat=one&repeat=two"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

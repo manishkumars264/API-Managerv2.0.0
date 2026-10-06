@@ -1,0 +1,13 @@
+{
+  "method": "POST",
+  "path": "/echo",
+  "body": {
+    "name": "API Manager"
+  },
+  "authorization": "Bearer local-demo-token",
+  "correlation": null,
+  "contentType": "application/json",
+  "message": "Hello from API Manager",
+  "success": true,
+  "apiKey": null
+}

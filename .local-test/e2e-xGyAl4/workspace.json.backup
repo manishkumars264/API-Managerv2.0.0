@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "collections": [],
+  "environments": [],
+  "globals": [],
+  "activeEnvironmentId": null,
+  "tabs": [
+    {
+      "id": "039b07d0-97a5-4f2d-9e7b-78aab9b985a0",
+      "request": {
+        "id": "6ce78d97-a73a-4386-8093-495082ac9983",
+        "name": "Untitled request",
+        "method": "GET",
+        "url": "",
+        "params": [],
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "raw": "",
+          "language": "json",
+          "fields": []
+        },
+        "auth": {
+          "type": "none"
+        },
+        "description": ""
+      },
+      "dirty": false,
+      "editorTab": "Params",
+      "responseTab": "Body",
+      "responseZoom": 14
+    }
+  ],
+  "activeTabId": "039b07d0-97a5-4f2d-9e7b-78aab9b985a0",
+  "history": [],
+  "settings": {
+    "theme": "dark",
+    "timeout": 30000,
+    "followRedirects": true,
+    "verifySsl": true,
+    "maxResponseMB": 20
+  },
+  "sidebarView": "collections",
+  "sidebarWidth": 268
+}

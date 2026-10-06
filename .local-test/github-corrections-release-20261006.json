@@ -1,0 +1,35 @@
+{
+  "id": 404281481,
+  "tag": "v2.0.0-corrections",
+  "version": "2.0.0",
+  "release_date": "2026-10-04",
+  "source_commit": "7da5edaf6103631b9c462cf3cf7344e674eb7fbc",
+  "url": "https://github.com/manishkumars264/API-Managerv2.0.0/releases/tag/v2.0.0-corrections",
+  "verified": true,
+  "assets": [
+    {
+      "name": "API-Manager-2.0.0.exe",
+      "size": 132746425,
+      "digest": "sha256:f48f2b0d6882f15ca58104e9c9b73ded2d19aec4e1f6ef248ca373b7f6281a7e",
+      "url": "https://github.com/manishkumars264/API-Managerv2.0.0/releases/download/v2.0.0-corrections/API-Manager-2.0.0.exe"
+    },
+    {
+      "name": "API-Manager-2.0.0.zip",
+      "size": 269968303,
+      "digest": "sha256:8e45da28f5a62125c3caebb99a9be4b6eb11e3a1c7ea22ea79a63a9fa2693dab",
+      "url": "https://github.com/manishkumars264/API-Managerv2.0.0/releases/download/v2.0.0-corrections/API-Manager-2.0.0.zip"
+    },
+    {
+      "name": "API-Manager-Setup-2.0.0.exe",
+      "size": 132963788,
+      "digest": "sha256:b8e63cf17e9a7724587eceb59e28221bdb133a9aebe7cdb464989cde45746db6",
+      "url": "https://github.com/manishkumars264/API-Managerv2.0.0/releases/download/v2.0.0-corrections/API-Manager-Setup-2.0.0.exe"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 273,
+      "digest": "sha256:3a8b07a1133178f5803a6f6a587453d4e26e713506487d36450bf61bc778efc8",
+      "url": "https://github.com/manishkumars264/API-Managerv2.0.0/releases/download/v2.0.0-corrections/SHA256SUMS.txt"
+    }
+  ]
+}
