@@ -21,12 +21,21 @@ export const releases: ReleaseNote[] = [{
   historyDescription: 'A comprehensive redesign of API Manager v1.0.0, with a more flexible workspace and expanded tools for building and testing APIs.',
   sections: [
     {
+      title: 'Corrections to this release',
+      items: [
+        'The version and release date remain v2.0.0 and 04 October 2026; these corrections refine existing features.',
+        'Select Global in the environment dropdown or use Set active in Globals to clear environment overrides while preserving saved environments and collection/folder precedence. The selection survives relaunch.',
+        'Auto-generated hidden headers start collapsed, expand only when clicked, and return to collapsed after leaving Headers, switching request tabs, or relaunching.',
+        'Grey now uses neutral medium-grey surfaces, matching editors, and contrast-tested text, syntax, statuses, and all five accents. Dark and Light themes are unchanged.',
+      ],
+    },
+    {
       title: 'Local workspace and restored sessions',
       items: [
         'Store collections, nested folders, requests, environments, globals, cookies, response history, and drafts on this computer.',
         'Automatically save changes and restore open tabs, the selected request/environment, editor modes, response zoom, cursor/scroll positions, split preference, theme, and window position/size on relaunch.',
         'Create, switch, duplicate, and close request tabs in the workspace toolbar, including the last tab; the empty workspace explains how to begin. Use arrows for overflowing tabs, Ctrl plus mouse wheel to navigate, and middle click to close a tab. Resize the sidebar and request/response split.',
-        'Dark, light, and soft grey themes with blue (default), red, orange, green, and purple accent choices in Settings; compact-window layouts, keyboard navigation, and confirmation before discarding a draft or deleting saved data.',
+        'Dark, light, and medium grey themes with blue (default), red, orange, green, and purple accent choices in Settings; compact-window layouts, keyboard navigation, and confirmation before discarding a draft or deleting saved data.',
       ],
     },
     {

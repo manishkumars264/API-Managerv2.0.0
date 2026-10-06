@@ -5,7 +5,7 @@ import './GeneratedHeaders.css';
 
 export function GeneratedHeaders({ workspace, request }: { workspace: Workspace; request: ApiRequest }) {
   const preview = useMemo(() => buildGeneratedHeaders(workspace, request), [workspace, request]);
-  return <details className="generated-headers" open>
+  return <details className="generated-headers">
     <summary>Auto-generated headers <span>({preview.headers.length})</span></summary>
     <div className="generated-header-table" role="table" aria-label="Auto-generated request headers">
       <div className="generated-header-row heading" role="row"><span role="columnheader">HEADER</span><span role="columnheader">VALUE</span><span role="columnheader">SOURCE</span></div>

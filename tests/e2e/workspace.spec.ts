@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { ChildProcess } from 'node:child_process';
 import { initialWorkspace, newRequest, newTab, row } from '../../src/lib/model';
-import type { Workspace } from '../../src/types';
+import type { ApiRequest, Workspace } from '../../src/types';
 
 let server: Server;
 let baseUrl: string;
@@ -917,7 +917,7 @@ test('edits environment values in the toolbar popup, saves them, and shows varia
     await expect.poll(async () => { try { return JSON.parse((await readWorkspace(dataDir)).history[0].response!.body).authorization; } catch { return ''; } }).toBe('Bearer production-token');
     await page.getByRole('combobox', { name: 'Active environment' }).selectOption('');
     await page.getByRole('button', { name: 'Edit active environment', exact: true }).click();
-    await expect(dialog).toContainText('No environment selected'); await expect(dialog).toContainText('Globals');
+    await expect(dialog).toContainText('Global active'); await expect(dialog).toContainText('Globals');
     await dialog.getByRole('textbox', { name: 'Value for token', exact: true }).fill('saved-global');
     await dialog.getByRole('button', { name: 'Save', exact: true }).click();
     await page.getByRole('button', { name: 'Send', exact: true }).click();
@@ -1084,7 +1084,14 @@ test('previews generated authorization headers and keeps them consistent with re
   await fs.writeFile(path.join(dataDir, 'workspace.json'), JSON.stringify(workspace));
   let { app, page } = await launch(dataDir); const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
   try {
-    const editorTab = (name: string) => page.locator('.request-editor .editor-tabs').getByRole('button', { name: new RegExp(`^${name}`) }).click();
+    const editorTab = async (name: string) => {
+      await page.locator('.request-editor .editor-tabs').getByRole('button', { name: new RegExp(`^${name}`) }).click();
+      if (name === 'Headers') {
+        await expect(page.locator('.generated-headers')).not.toHaveAttribute('open', '');
+        await page.locator('.generated-headers > summary').click();
+        await expect(page.getByRole('table', { name: 'Auto-generated request headers', exact: true })).toBeVisible();
+      }
+    };
     const generated = page.getByRole('table', { name: 'Auto-generated request headers', exact: true });
     const generatedAuth = generated.getByRole('row').filter({ has: page.getByRole('cell', { name: 'Authorization', exact: true }) });
     await editorTab('Headers');
@@ -1131,6 +1138,8 @@ test('previews generated authorization headers and keeps them consistent with re
     await editorTab('Headers'); await expect(generatedAuth).toHaveCount(0); await sendAndCheck({ authorization: 'old-custom-token' });
     expect((await readWorkspace(dataDir)).tabs[0].request.headers.map(row => [row.key, row.value])).toEqual([['authorization', 'old-custom-token']]);
     await closeNormally(app); ({ app, page } = await launch(dataDir));
+    await expect(page.locator('.generated-headers')).not.toHaveAttribute('open', '');
+    await page.locator('.generated-headers > summary').click();
     await expect(page.getByRole('table', { name: 'Auto-generated request headers', exact: true })).toContainText('API-Manager/2.0.0');
     await expect(page.locator('.generated-header-row').filter({ has: page.getByRole('cell', { name: 'Authorization', exact: true }) })).toHaveCount(0);
     expect(errors).toEqual([]);
@@ -1168,12 +1177,102 @@ test('uses Grey theme with every accent and restores it without changing request
       await expect(page.locator('html')).toHaveAttribute('data-theme', 'grey'); await expect(page.locator('html')).toHaveAttribute('data-accent', accent);
       await page.getByRole('button', { name: 'Send', exact: true }).click(); await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
       await expect(page.locator('.response-body .view-lines')).toContainText('Hello from API Manager');
-      await expect(page.locator('.response-body .monaco-editor-background')).toHaveCSS('background-color', 'rgb(205, 210, 216)');
+      await expect(page.locator('.response-body .monaco-editor-background')).toHaveCSS('background-color', 'rgb(170, 170, 170)');
+      if (accent === 'blue') await page.screenshot({ path: path.join(appRoot, '.local-test', 'grey-corrections-20261006.png') });
       await expect(page.getByRole('textbox', { name: 'Request URL', exact: true })).toHaveValue(`${baseUrl}/echo?grey=preserved`);
     }
     await closeNormally(app); ({ app, page } = await launch(dataDir));
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'grey');
     await expect(page.getByRole('textbox', { name: 'Request URL', exact: true })).toHaveValue(`${baseUrl}/echo?grey=preserved`);
+    expect(errors).toEqual([]);
+  } finally { await cleanup(app); }
+});
+
+test('selects and activates Global values while preserving folder precedence and saved environment data', async () => {
+  test.setTimeout(120000);
+  const dataDir = await directory(), workspace = initialWorkspace();
+  workspace.globals = [row('base_url', baseUrl), row('token', 'global-token'), row('shared', 'global-shared')];
+  workspace.environments = [{ id: 'global-test-dev', name: 'Development', variables: [row('token', 'environment-token'), row('shared', 'environment-shared')] }];
+  workspace.activeEnvironmentId = 'global-test-dev';
+  const request = workspace.tabs[0].request;
+  Object.assign(request, { name: 'Global scopes', url: '{{base_url}}/echo', collectionId: 'global-test-collection', folderId: 'global-test-folder', auth: { type: 'bearer', token: '{{token}}' }, headers: [row('X-Run-Guid', '{{shared}}')] });
+  workspace.collections = [{ id: 'global-test-collection', name: 'Scope collection', description: '', variables: [row('shared', 'collection-shared')], auth: { type: 'none' }, requests: [], folders: [{ id: 'global-test-folder', name: 'Scope folder', variables: [row('shared', 'folder-shared')], requests: [structuredClone(request)], folders: [] }] }];
+  await fs.writeFile(path.join(dataDir, 'workspace.json'), JSON.stringify(workspace));
+  let { app, page } = await launch(dataDir);
+  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+  try {
+    const selector = page.getByRole('combobox', { name: 'Active environment', exact: true });
+    await expect(selector.locator('option').filter({ hasText: /^Global$/ })).toHaveCount(1);
+    await page.getByRole('button', { name: 'Environments', exact: true }).click();
+    const globalRow = page.locator('.environment-row').filter({ hasText: 'Globals' });
+    await globalRow.click();
+    await page.locator('.environment-panel').getByRole('button', { name: 'Set active', exact: true }).click();
+    await expect(selector).toHaveValue('');
+    await expect(selector.locator('option:checked')).toHaveText('Global');
+    await expect(globalRow.locator('.active-dot')).toHaveAttribute('title', 'Global active');
+    await expect(page.locator('.environment-panel').getByRole('button', { name: 'Active', exact: true })).toBeDisabled();
+    await page.getByRole('button', { name: 'Collections', exact: true }).click();
+    let runs = 0;
+    const sendAndCheck = async (authorization: string, correlation: string) => {
+      await page.getByRole('button', { name: 'Send', exact: true }).click(); runs++;
+      await expect.poll(async () => { try { const saved = await readWorkspace(dataDir); return saved.history.length === runs ? JSON.parse(saved.history[0].response!.body) : null; } catch { return null; } }).toMatchObject({ authorization, correlation });
+      await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+    };
+    await sendAndCheck('Bearer global-token', 'folder-shared');
+    await selector.selectOption('global-test-dev');
+    await sendAndCheck('Bearer environment-token', 'environment-shared');
+    await selector.selectOption({ label: 'Global' });
+    await page.getByRole('button', { name: 'Edit active environment', exact: true }).click();
+    const popup = page.getByRole('dialog', { name: 'Environment values', exact: true });
+    await expect(popup).toContainText('Global active');
+    await popup.getByRole('textbox', { name: 'Value for token', exact: true }).fill('global-edited');
+    await popup.getByRole('textbox', { name: 'Value for token', exact: true }).press('Control+s');
+    await expect(popup).toHaveCount(0);
+    await sendAndCheck('Bearer global-edited', 'folder-shared');
+    const saved = await readWorkspace(dataDir);
+    expect(saved.activeEnvironmentId).toBeNull();
+    expect(saved.environments[0].variables.map(variable => variable.value)).toEqual(['environment-token', 'environment-shared']);
+    expect(saved.collections[0].variables[0].value).toBe('collection-shared');
+    expect(saved.collections[0].folders[0].variables![0].value).toBe('folder-shared');
+    await closeNormally(app); ({ app, page } = await launch(dataDir));
+    await expect(page.getByRole('combobox', { name: 'Active environment', exact: true }).locator('option:checked')).toHaveText('Global');
+    await page.getByRole('button', { name: 'Edit active environment', exact: true }).click();
+    await expect(page.getByRole('dialog', { name: 'Environment values', exact: true }).getByRole('textbox', { name: 'Value for token', exact: true })).toHaveValue('global-edited');
+    expect(errors).toEqual([]);
+  } finally { await cleanup(app); }
+});
+
+test('keeps hidden headers collapsed on entry and after returning to editor or request tabs', async () => {
+  const dataDir = await directory(), workspace = initialWorkspace();
+  const request: ApiRequest = { ...newRequest('Shared API'), url: `${baseUrl}/echo`, auth: { type: 'bearer', token: 'hidden-header-token' } };
+  const first = { ...newTab(request), editorTab: 'Headers' }, second = { ...newTab(structuredClone(request)), editorTab: 'Headers' };
+  workspace.tabs = [first, second]; workspace.activeTabId = first.id;
+  await fs.writeFile(path.join(dataDir, 'workspace.json'), JSON.stringify(workspace));
+  let { app, page } = await launch(dataDir);
+  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+  try {
+    const disclosure = () => page.locator('.generated-headers');
+    const table = () => page.getByRole('table', { name: 'Auto-generated request headers', exact: true });
+    const collapsed = async () => { await expect(disclosure()).not.toHaveAttribute('open', ''); await expect(table()).toBeHidden(); };
+    const expand = async () => { await disclosure().locator('summary').click(); await expect(table()).toBeVisible(); await expect(table()).toContainText('Bearer hidden-header-token'); };
+    await collapsed(); await expand();
+    await page.getByRole('button', { name: 'Send', exact: true }).click();
+    await expect(page.locator('.response-metrics .status')).toHaveText('200 OK');
+    await expect(table()).toBeVisible();
+    await page.locator('.request-editor .editor-tabs').getByRole('button', { name: 'Body', exact: true }).click();
+    await page.locator('.request-editor .editor-tabs').getByRole('button', { name: 'Headers', exact: true }).click();
+    await collapsed(); await expand();
+    await page.getByRole('tablist', { name: 'Request tabs', exact: true }).getByRole('tab').nth(1).click();
+    await collapsed(); await expand();
+    await page.getByRole('tablist', { name: 'Request tabs', exact: true }).getByRole('tab').nth(0).click();
+    await collapsed(); await expand();
+    await disclosure().locator('summary').click(); await collapsed();
+    await page.locator('.request-editor .editor-tabs').getByRole('button', { name: 'Params', exact: true }).click();
+    await page.locator('.request-editor .editor-tabs').getByRole('button', { name: 'Headers', exact: true }).click();
+    await collapsed(); await expand();
+    await closeNormally(app); ({ app, page } = await launch(dataDir));
+    await collapsed();
+    expect((await readWorkspace(dataDir)).tabs.map(tab => tab.request.auth)).toEqual([request.auth, request.auth]);
     expect(errors).toEqual([]);
   } finally { await cleanup(app); }
 });

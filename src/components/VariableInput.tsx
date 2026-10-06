@@ -74,7 +74,7 @@ function VariableSurface({ value, element, masked = false, multiline = false, hi
     {!!tokens.length && !masked && <span ref={mirror} className="variable-input-mirror" aria-hidden="true"><span ref={content} className="variable-input-content">{parts}</span></span>}
     {details && createPortal(<div ref={popup} id={id} role="tooltip" className={`variable-value-tooltip variable-${details.status}`} data-variable-tooltip={details.name} style={position}>
       <strong>{`{{${details.name}}}`}</strong>
-      <dl><dt>Scope</dt><dd>{details.source ? `${details.source.scope} · ${details.source.name}` : 'Unresolved'}</dd><dt>Environment</dt><dd>{details.environmentName || 'No environment selected'}</dd>{details.value !== undefined && <><dt>Value</dt><dd className="variable-tooltip-value">{trim(details.value) || '(empty string)'}</dd></>}</dl>
+      <dl><dt>Scope</dt><dd>{details.source ? `${details.source.scope} · ${details.source.name}` : 'Unresolved'}</dd><dt>Environment</dt><dd>{details.environmentName || 'Global'}</dd>{details.value !== undefined && <><dt>Value</dt><dd className="variable-tooltip-value">{trim(details.value) || '(empty string)'}</dd></>}</dl>
       {details.message && <p>{details.message}</p>}
     </div>, document.body)}
   </span>;

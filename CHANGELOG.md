@@ -4,6 +4,15 @@
 
 A major upgrade to API Manager v1.0.0, which remains the initial release.
 
+### Corrections to this release
+
+The version and release date remain v2.0.0 and 04 October 2026. These corrections refine the existing features.
+
+- **Global** is visible in the environment selector, and **Set active** is available in Globals. Selecting or activating Global clears environment overrides while retaining saved environments and collection/folder variable precedence. Selection persists across relaunch; the popup and variable hover use matching labels.
+- Auto-generated (hidden) headers start collapsed. They expand only when clicked and return to collapsed after leaving Headers, switching request tabs, or relaunching. Header generation and authorization values are unchanged.
+- Grey uses neutral medium-grey backgrounds and matching editors, with readable text, syntax, statuses, and all five accents. Dark and Light themes remain unchanged.
+- Added regression coverage for Global activation/scoped sends/session restoration and hidden-header disclosure across editor and request tabs.
+
 ### Added and expanded
 
 - Resizable Console with newest runs and script messages first, network activity, saved request/response details, filtering, replay, and copying the cURL captured from the actual send. Display sorting preserves stored history and script order. The capture includes resolved variables, script changes, authorization, cookies, and native headers.

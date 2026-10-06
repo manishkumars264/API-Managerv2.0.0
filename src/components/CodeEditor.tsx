@@ -9,7 +9,7 @@ import TsWorker from 'monaco-editor/language/typescript/ts.worker.js?worker';
 import './ResponseTooltip.css';
 import './VariableInput.css';
 import { useVariableContext } from './VariableContext';
-import { editorThemeName, GREY_THEME } from '../lib/appearance';
+import { editorThemeName, GREY_EDITOR_HIGHLIGHTS, GREY_EDITOR_RULES, GREY_THEME } from '../lib/appearance';
 
 // Bundle the editor and workers locally. Never load code or fonts from a CDN.
 self.MonacoEnvironment = {
@@ -23,17 +23,27 @@ self.MonacoEnvironment = {
 };
 loader.config({ monaco });
 monaco.editor.defineTheme('api-manager-grey', {
-  base: 'vs', inherit: true, rules: [],
+  base: 'vs', inherit: false, rules: GREY_EDITOR_RULES,
   colors: {
     'editor.background': GREY_THEME.editor, 'editor.foreground': GREY_THEME.text,
     'editorLineNumber.foreground': GREY_THEME.muted, 'editorLineNumber.activeForeground': GREY_THEME.text,
-    'editor.lineHighlightBackground': '#bec4cc', 'editor.selectionBackground': '#a6bfd8',
-    'editor.inactiveSelectionBackground': '#bbc8d6', 'editorCursor.foreground': GREY_THEME.text,
+    'editor.lineHighlightBackground': GREY_EDITOR_HIGHLIGHTS.line, 'editor.selectionBackground': GREY_EDITOR_HIGHLIGHTS.selection,
+    'editor.inactiveSelectionBackground': GREY_EDITOR_HIGHLIGHTS.inactiveSelection, 'editorCursor.foreground': GREY_THEME.text,
+    'editor.findMatchBackground': GREY_EDITOR_HIGHLIGHTS.search, 'editor.findMatchBorder': GREY_THEME.yellow,
+    'editor.findMatchHighlightBackground': '#d4b15e66', 'editor.findMatchHighlightBorder': GREY_THEME.yellow,
+    'editorIndentGuide.background1': GREY_THEME.borderSubtle, 'editorIndentGuide.activeBackground1': GREY_THEME.border,
+    'editorError.foreground': GREY_THEME.red, 'editorWarning.foreground': GREY_THEME.yellow,
+    'editorInfo.foreground': GREY_THEME.blue, 'editorHint.foreground': GREY_THEME.muted,
+    'editorBracketHighlight.foreground1': GREY_THEME.blue, 'editorBracketHighlight.foreground2': GREY_THEME.purple,
+    'editorBracketHighlight.foreground3': GREY_THEME.green, 'editorBracketHighlight.foreground4': GREY_THEME.yellow,
+    'editorBracketHighlight.foreground5': GREY_THEME.red, 'editorBracketHighlight.foreground6': GREY_THEME.pink,
     'editorWidget.background': GREY_THEME.raised, 'editorWidget.foreground': GREY_THEME.text,
     'editorWidget.border': GREY_THEME.border, 'editorHoverWidget.background': GREY_THEME.raised,
     'editorHoverWidget.foreground': GREY_THEME.text, 'editorHoverWidget.border': GREY_THEME.border,
     'editorSuggestWidget.background': GREY_THEME.raised, 'editorSuggestWidget.foreground': GREY_THEME.text,
-    'editorSuggestWidget.border': GREY_THEME.border, 'editorSuggestWidget.selectedBackground': '#a6bfd8',
+    'editorSuggestWidget.border': GREY_THEME.border, 'editorSuggestWidget.selectedBackground': GREY_EDITOR_HIGHLIGHTS.selection,
+    'editorSuggestWidget.selectedForeground': GREY_THEME.text, 'editorSuggestWidget.highlightForeground': GREY_THEME.blue,
+    'editorSuggestWidget.focusHighlightForeground': GREY_THEME.blue,
     'input.background': GREY_THEME.raised, 'input.foreground': GREY_THEME.text, 'input.border': GREY_THEME.border,
     'dropdown.background': GREY_THEME.raised, 'dropdown.foreground': GREY_THEME.text, 'dropdown.border': GREY_THEME.border,
     'scrollbarSlider.background': '#63708033', 'scrollbarSlider.hoverBackground': '#63708055',
@@ -119,7 +129,7 @@ function EditorSession({ value, onChange, language = 'json', readOnly = false, f
     const escape = (text: string) => text.slice(0, 4096).replace(/[\\`*_\[\]()<>#+.!|~-]/g, '\\$&');
     const decorations = context.tokens(model.getValue()).map(token => {
       const details = token.details;
-      const hover = [`**{{${escape(details.name)}}}**`, `**Scope:** ${details.source ? `${details.source.scope} · ${escape(details.source.name)}` : 'Unresolved'}`, `**Environment:** ${escape(details.environmentName || 'No environment selected')}`];
+      const hover = [`**{{${escape(details.name)}}}**`, `**Scope:** ${details.source ? `${details.source.scope} · ${escape(details.source.name)}` : 'Unresolved'}`, `**Environment:** ${escape(details.environmentName || 'Global')}`];
       if (details.value !== undefined) hover.push(`**Value:** ${escape(details.value || '(empty string)')}`);
       if (details.message) hover.push(escape(details.message));
       return { range: monaco.Range.fromPositions(model.getPositionAt(token.start), model.getPositionAt(token.end)), options: { inlineClassName: `monaco-variable-token variable-${details.status}`, hoverMessage: { value: hover.join('\n\n'), isTrusted: false, supportHtml: false }, stickiness: monaco.editor.TrackedRangeStickiness.NeverGrowsWhenTypingAtEdges } };

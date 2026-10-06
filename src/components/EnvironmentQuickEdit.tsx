@@ -59,8 +59,8 @@ export function EnvironmentQuickEdit({ environment, globals, onSave, onClose }: 
     return () => { dialog?.removeEventListener('keydown', shortcut, true); };
   }, []);
   return <div ref={popup} className="environment-quick-edit">
-    <div className="quick-environment-name">{environment ? <Layers2 size={18} /> : <Globe2 size={18} />}<div><strong>{environment?.name || 'Globals'}</strong><span>{environment ? 'Active environment' : 'No environment selected'}</span></div></div>
-    <p className="quick-environment-intro">{environment ? 'Edit the values used by requests in this environment.' : 'Requests use global, collection, and folder values while no environment is selected. Edit global values below.'} Changes apply when you save.</p>
+    <div className="quick-environment-name">{environment ? <Layers2 size={18} /> : <Globe2 size={18} />}<div><strong>{environment?.name || 'Globals'}</strong><span>{environment ? 'Active environment' : 'Global active'}</span></div></div>
+    <p className="quick-environment-intro">{environment ? 'Edit the values used by requests in this environment.' : 'Requests use global, collection, and folder values without environment overrides. Edit global values below.'} Changes apply when you save.</p>
     <div className="quick-variable-list">
       <div className="quick-variable-heading"><span /><span>Variable</span><span>Value</span><span /></div>
       {rows.map((variable, index) => {
